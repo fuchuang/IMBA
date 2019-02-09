@@ -36,6 +36,10 @@
 
 
     <dependencies>
+
+
+
+
         <dependency>
             <artifactId>IMBA</artifactId>
             <groupId>IMBA</groupId>
@@ -110,7 +114,8 @@
                 <directory>src/main/resources</directory>
                 <includes>
                     <include>/*.properties</include>
-                    <include>**/*.xml</include>
+                    <include>/*.xml</include>
+                    <include>/mapping/*.xml</include>
                 </includes>
                 <filtering>false</filtering>
             </resource>

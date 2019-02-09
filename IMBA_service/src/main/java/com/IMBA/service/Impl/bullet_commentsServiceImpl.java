@@ -8,8 +8,8 @@ import org.springframework.stereotype.Service;
 @Service("bullet_commentsService")
 public class bullet_commentsServiceImpl implements bullet_commentsService {
         @Autowired
-        bullet_commentsMapper bullet_commentsMapper;
-        
+        private bullet_commentsMapper bullet_commentsMapper;
+
 
 
 }

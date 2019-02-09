@@ -5,7 +5,7 @@ public class major {
 
     private String marjorName;
 
-    private Integer class;
+    private Integer classes;
 
     private Integer grade;
 
@@ -25,12 +25,12 @@ public class major {
         this.marjorName = marjorName == null ? null : marjorName.trim();
     }
 
-    public Integer getClass() {
-        return class;
+    public Integer getClasses() {
+        return classes;
     }
 
-    public void setClass(Integer class) {
-        this.class = class;
+    public void setClasses(Integer classes) {
+        this.classes = classes;
     }
 
     public Integer getGrade() {
