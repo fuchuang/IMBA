@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.posts_collectionMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.posts_collectionKey" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="posts_id" property="postsId" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.posts_collectionKey" >
+    delete from posts_collection
+    where id = #{id,jdbcType=INTEGER}
+      and posts_id = #{postsId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.posts_collectionKey" >
+    insert into posts_collection (id, posts_id, student_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{postsId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.posts_collectionKey" >
+    insert into posts_collection
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="postsId != null" >
+        posts_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="postsId != null" >
+        #{postsId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

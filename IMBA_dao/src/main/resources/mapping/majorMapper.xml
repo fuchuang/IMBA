@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.majorMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.major" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="marjor_name" property="marjorName" jdbcType="VARCHAR" />
+    <result column="class" property="class" jdbcType="INTEGER" />
+    <result column="grade" property="grade" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, marjor_name, class, grade
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from major
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from major
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.major" >
+    insert into major (id, marjor_name, class, 
+      grade)
+    values (#{id,jdbcType=INTEGER}, #{marjorName,jdbcType=VARCHAR}, #{class,jdbcType=INTEGER}, 
+      #{grade,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.major" >
+    insert into major
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="marjorName != null" >
+        marjor_name,
+      </if>
+      <if test="class != null" >
+        class,
+      </if>
+      <if test="grade != null" >
+        grade,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="marjorName != null" >
+        #{marjorName,jdbcType=VARCHAR},
+      </if>
+      <if test="class != null" >
+        #{class,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        #{grade,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.major" >
+    update major
+    <set >
+      <if test="marjorName != null" >
+        marjor_name = #{marjorName,jdbcType=VARCHAR},
+      </if>
+      <if test="class != null" >
+        class = #{class,jdbcType=INTEGER},
+      </if>
+      <if test="grade != null" >
+        grade = #{grade,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.major" >
+    update major
+    set marjor_name = #{marjorName,jdbcType=VARCHAR},
+      class = #{class,jdbcType=INTEGER},
+      grade = #{grade,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

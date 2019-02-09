@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.examinationMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.examination" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="course_id" property="courseId" jdbcType="INTEGER" />
+    <result column="site" property="site" jdbcType="VARCHAR" />
+    <result column="invigilator" property="invigilator" jdbcType="VARCHAR" />
+    <result column="day_of_week" property="dayOfWeek" jdbcType="TINYINT" />
+    <result column="week_of_semester" property="weekOfSemester" jdbcType="TINYINT" />
+    <result column="exam_time" property="examTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, course_id, site, invigilator, day_of_week, week_of_semester, exam_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.examinationKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from examination
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.examinationKey" >
+    delete from examination
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.examination" >
+    insert into examination (id, course_id, site, 
+      invigilator, day_of_week, week_of_semester, 
+      exam_time)
+    values (#{id,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}, #{site,jdbcType=VARCHAR}, 
+      #{invigilator,jdbcType=VARCHAR}, #{dayOfWeek,jdbcType=TINYINT}, #{weekOfSemester,jdbcType=TINYINT}, 
+      #{examTime,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.examination" >
+    insert into examination
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="courseId != null" >
+        course_id,
+      </if>
+      <if test="site != null" >
+        site,
+      </if>
+      <if test="invigilator != null" >
+        invigilator,
+      </if>
+      <if test="dayOfWeek != null" >
+        day_of_week,
+      </if>
+      <if test="weekOfSemester != null" >
+        week_of_semester,
+      </if>
+      <if test="examTime != null" >
+        exam_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="courseId != null" >
+        #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="site != null" >
+        #{site,jdbcType=VARCHAR},
+      </if>
+      <if test="invigilator != null" >
+        #{invigilator,jdbcType=VARCHAR},
+      </if>
+      <if test="dayOfWeek != null" >
+        #{dayOfWeek,jdbcType=TINYINT},
+      </if>
+      <if test="weekOfSemester != null" >
+        #{weekOfSemester,jdbcType=TINYINT},
+      </if>
+      <if test="examTime != null" >
+        #{examTime,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.examination" >
+    update examination
+    <set >
+      <if test="site != null" >
+        site = #{site,jdbcType=VARCHAR},
+      </if>
+      <if test="invigilator != null" >
+        invigilator = #{invigilator,jdbcType=VARCHAR},
+      </if>
+      <if test="dayOfWeek != null" >
+        day_of_week = #{dayOfWeek,jdbcType=TINYINT},
+      </if>
+      <if test="weekOfSemester != null" >
+        week_of_semester = #{weekOfSemester,jdbcType=TINYINT},
+      </if>
+      <if test="examTime != null" >
+        exam_time = #{examTime,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.examination" >
+    update examination
+    set site = #{site,jdbcType=VARCHAR},
+      invigilator = #{invigilator,jdbcType=VARCHAR},
+      day_of_week = #{dayOfWeek,jdbcType=TINYINT},
+      week_of_semester = #{weekOfSemester,jdbcType=TINYINT},
+      exam_time = #{examTime,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+</mapper>

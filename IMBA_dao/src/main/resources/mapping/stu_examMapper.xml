@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.stu_examMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.stu_exam" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="examination_id" property="examinationId" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="seat_number" property="seatNumber" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, examination_id, student_id, seat_number
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.stu_examKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from stu_exam
+    where id = #{id,jdbcType=INTEGER}
+      and examination_id = #{examinationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.stu_examKey" >
+    delete from stu_exam
+    where id = #{id,jdbcType=INTEGER}
+      and examination_id = #{examinationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.stu_exam" >
+    insert into stu_exam (id, examination_id, student_id, 
+      seat_number)
+    values (#{id,jdbcType=INTEGER}, #{examinationId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, 
+      #{seatNumber,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.stu_exam" >
+    insert into stu_exam
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="examinationId != null" >
+        examination_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="seatNumber != null" >
+        seat_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="examinationId != null" >
+        #{examinationId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="seatNumber != null" >
+        #{seatNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.stu_exam" >
+    update stu_exam
+    <set >
+      <if test="seatNumber != null" >
+        seat_number = #{seatNumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and examination_id = #{examinationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.stu_exam" >
+    update stu_exam
+    set seat_number = #{seatNumber,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+      and examination_id = #{examinationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+</mapper>

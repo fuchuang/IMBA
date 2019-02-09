@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.course_filesMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.course_files" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="uploader_id" property="uploaderId" jdbcType="INTEGER" />
+    <id column="course_id1" property="courseId1" jdbcType="INTEGER" />
+    <result column="files_title" property="filesTitle" jdbcType="VARCHAR" />
+    <result column="files_path" property="filesPath" jdbcType="VARCHAR" />
+    <result column="upload_time" property="uploadTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, uploader_id, course_id1, files_title, files_path, upload_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.course_filesKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from course_files
+    where id = #{id,jdbcType=INTEGER}
+      and uploader_id = #{uploaderId,jdbcType=INTEGER}
+      and course_id1 = #{courseId1,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.course_filesKey" >
+    delete from course_files
+    where id = #{id,jdbcType=INTEGER}
+      and uploader_id = #{uploaderId,jdbcType=INTEGER}
+      and course_id1 = #{courseId1,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.course_files" >
+    insert into course_files (id, uploader_id, course_id1, 
+      files_title, files_path, upload_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{uploaderId,jdbcType=INTEGER}, #{courseId1,jdbcType=INTEGER}, 
+      #{filesTitle,jdbcType=VARCHAR}, #{filesPath,jdbcType=VARCHAR}, #{uploadTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.course_files" >
+    insert into course_files
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="uploaderId != null" >
+        uploader_id,
+      </if>
+      <if test="courseId1 != null" >
+        course_id1,
+      </if>
+      <if test="filesTitle != null" >
+        files_title,
+      </if>
+      <if test="filesPath != null" >
+        files_path,
+      </if>
+      <if test="uploadTime != null" >
+        upload_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="uploaderId != null" >
+        #{uploaderId,jdbcType=INTEGER},
+      </if>
+      <if test="courseId1 != null" >
+        #{courseId1,jdbcType=INTEGER},
+      </if>
+      <if test="filesTitle != null" >
+        #{filesTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="filesPath != null" >
+        #{filesPath,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null" >
+        #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.course_files" >
+    update course_files
+    <set >
+      <if test="filesTitle != null" >
+        files_title = #{filesTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="filesPath != null" >
+        files_path = #{filesPath,jdbcType=VARCHAR},
+      </if>
+      <if test="uploadTime != null" >
+        upload_time = #{uploadTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and uploader_id = #{uploaderId,jdbcType=INTEGER}
+      and course_id1 = #{courseId1,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.course_files" >
+    update course_files
+    set files_title = #{filesTitle,jdbcType=VARCHAR},
+      files_path = #{filesPath,jdbcType=VARCHAR},
+      upload_time = #{uploadTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and uploader_id = #{uploaderId,jdbcType=INTEGER}
+      and course_id1 = #{courseId1,jdbcType=INTEGER}
+  </update>
+</mapper>
