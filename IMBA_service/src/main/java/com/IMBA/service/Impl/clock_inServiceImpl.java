@@ -5,8 +5,10 @@ import com.IMBA.service.clock_inService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
+
 @Service("clock_inService")
 public class clock_inServiceImpl implements clock_inService {
-    @Autowired
+    @Resource
     clock_inMapper clockInMapper;
 }

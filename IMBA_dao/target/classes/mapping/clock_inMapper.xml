@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.IMBA.dao.clock_inMapper">
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.clock_in">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <result column="clocked_time" jdbcType="TIMESTAMP" property="clockedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, student_id, clocked_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from clock_in
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey">
+    delete from clock_in
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.clock_in">
+    insert into clock_in (id, student_id, clocked_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{clockedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.clock_in">
+    insert into clock_in
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="clockedTime != null">
+        clocked_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null">
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="clockedTime != null">
+        #{clockedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.clock_in">
+    update clock_in
+    <set>
+      <if test="clockedTime != null">
+        clocked_time = #{clockedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.clock_in">
+    update clock_in
+    set clocked_time = #{clockedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.clock_in">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <result column="clocked_time" jdbcType="TIMESTAMP" property="clockedTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, student_id, clocked_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from clock_in
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey">
+    delete from clock_in
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.clock_in">
+    insert into clock_in (id, student_id, clocked_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{clockedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.clock_in">
+    insert into clock_in
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="clockedTime != null">
+        clocked_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null">
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="clockedTime != null">
+        #{clockedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.clock_in">
+    update clock_in
+    <set>
+      <if test="clockedTime != null">
+        clocked_time = #{clockedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.clock_in">
+    update clock_in
+    set clocked_time = #{clockedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+</mapper>

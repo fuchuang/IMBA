@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.electiveMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.elective" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="course_id" property="courseId" jdbcType="INTEGER" />
+    <result column="likes_number" property="likesNumber" jdbcType="INTEGER" />
+    <result column="collectons_number" property="collectonsNumber" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, course_id, likes_number, collectons_number
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.electiveKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from elective
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.electiveKey" >
+    delete from elective
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.elective" >
+    insert into elective (id, course_id, likes_number, 
+      collectons_number)
+    values (#{id,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}, #{likesNumber,jdbcType=INTEGER}, 
+      #{collectonsNumber,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.elective" >
+    insert into elective
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="courseId != null" >
+        course_id,
+      </if>
+      <if test="likesNumber != null" >
+        likes_number,
+      </if>
+      <if test="collectonsNumber != null" >
+        collectons_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="courseId != null" >
+        #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="likesNumber != null" >
+        #{likesNumber,jdbcType=INTEGER},
+      </if>
+      <if test="collectonsNumber != null" >
+        #{collectonsNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.elective" >
+    update elective
+    <set >
+      <if test="likesNumber != null" >
+        likes_number = #{likesNumber,jdbcType=INTEGER},
+      </if>
+      <if test="collectonsNumber != null" >
+        collectons_number = #{collectonsNumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.elective" >
+    update elective
+    set likes_number = #{likesNumber,jdbcType=INTEGER},
+      collectons_number = #{collectonsNumber,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+</mapper>

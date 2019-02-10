@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.live_videoMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.live_video" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="organiger_id" property="organigerId" jdbcType="INTEGER" />
+    <result column="watching_num" property="watchingNum" jdbcType="INTEGER" />
+    <result column="live_title" property="liveTitle" jdbcType="VARCHAR" />
+    <result column="live_path" property="livePath" jdbcType="VARCHAR" />
+    <result column="start_time" property="startTime" jdbcType="TIMESTAMP" />
+    <result column="live_status" property="liveStatus" jdbcType="BIT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, organiger_id, watching_num, live_title, live_path, start_time, live_status
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.live_videoKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from live_video
+    where id = #{id,jdbcType=INTEGER}
+      and organiger_id = #{organigerId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.live_videoKey" >
+    delete from live_video
+    where id = #{id,jdbcType=INTEGER}
+      and organiger_id = #{organigerId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.live_video" >
+    insert into live_video (id, organiger_id, watching_num, 
+      live_title, live_path, start_time, 
+      live_status)
+    values (#{id,jdbcType=INTEGER}, #{organigerId,jdbcType=INTEGER}, #{watchingNum,jdbcType=INTEGER}, 
+      #{liveTitle,jdbcType=VARCHAR}, #{livePath,jdbcType=VARCHAR}, #{startTime,jdbcType=TIMESTAMP}, 
+      #{liveStatus,jdbcType=BIT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.live_video" >
+    insert into live_video
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="organigerId != null" >
+        organiger_id,
+      </if>
+      <if test="watchingNum != null" >
+        watching_num,
+      </if>
+      <if test="liveTitle != null" >
+        live_title,
+      </if>
+      <if test="livePath != null" >
+        live_path,
+      </if>
+      <if test="startTime != null" >
+        start_time,
+      </if>
+      <if test="liveStatus != null" >
+        live_status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="organigerId != null" >
+        #{organigerId,jdbcType=INTEGER},
+      </if>
+      <if test="watchingNum != null" >
+        #{watchingNum,jdbcType=INTEGER},
+      </if>
+      <if test="liveTitle != null" >
+        #{liveTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="livePath != null" >
+        #{livePath,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="liveStatus != null" >
+        #{liveStatus,jdbcType=BIT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.live_video" >
+    update live_video
+    <set >
+      <if test="watchingNum != null" >
+        watching_num = #{watchingNum,jdbcType=INTEGER},
+      </if>
+      <if test="liveTitle != null" >
+        live_title = #{liveTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="livePath != null" >
+        live_path = #{livePath,jdbcType=VARCHAR},
+      </if>
+      <if test="startTime != null" >
+        start_time = #{startTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="liveStatus != null" >
+        live_status = #{liveStatus,jdbcType=BIT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and organiger_id = #{organigerId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.live_video" >
+    update live_video
+    set watching_num = #{watchingNum,jdbcType=INTEGER},
+      live_title = #{liveTitle,jdbcType=VARCHAR},
+      live_path = #{livePath,jdbcType=VARCHAR},
+      start_time = #{startTime,jdbcType=TIMESTAMP},
+      live_status = #{liveStatus,jdbcType=BIT}
+    where id = #{id,jdbcType=INTEGER}
+      and organiger_id = #{organigerId,jdbcType=INTEGER}
+  </update>
+</mapper>

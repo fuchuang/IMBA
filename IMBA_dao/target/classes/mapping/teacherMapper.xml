@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.teacherMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.teacher" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="teacher_name" property="teacherName" jdbcType="VARCHAR" />
+    <result column="avatar_path" property="avatarPath" jdbcType="VARCHAR" />
+    <result column="office" property="office" jdbcType="VARCHAR" />
+    <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
+    <result column="e-mail" property="eMail" jdbcType="VARCHAR" />
+    <result column="likes_number" property="likesNumber" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, teacher_name, avatar_path, office, phone_number, e-mail, likes_number
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from teacher
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from teacher
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.teacher" >
+    insert into teacher (id, teacher_name, avatar_path, 
+      office, phone_number, e-mail, 
+      likes_number)
+    values (#{id,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, #{avatarPath,jdbcType=VARCHAR}, 
+      #{office,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{eMail,jdbcType=VARCHAR}, 
+      #{likesNumber,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.teacher" >
+    insert into teacher
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="teacherName != null" >
+        teacher_name,
+      </if>
+      <if test="avatarPath != null" >
+        avatar_path,
+      </if>
+      <if test="office != null" >
+        office,
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number,
+      </if>
+      <if test="eMail != null" >
+        e-mail,
+      </if>
+      <if test="likesNumber != null" >
+        likes_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="teacherName != null" >
+        #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarPath != null" >
+        #{avatarPath,jdbcType=VARCHAR},
+      </if>
+      <if test="office != null" >
+        #{office,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="likesNumber != null" >
+        #{likesNumber,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.teacher" >
+    update teacher
+    <set >
+      <if test="teacherName != null" >
+        teacher_name = #{teacherName,jdbcType=VARCHAR},
+      </if>
+      <if test="avatarPath != null" >
+        avatar_path = #{avatarPath,jdbcType=VARCHAR},
+      </if>
+      <if test="office != null" >
+        office = #{office,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNumber != null" >
+        phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="eMail != null" >
+        e-mail = #{eMail,jdbcType=VARCHAR},
+      </if>
+      <if test="likesNumber != null" >
+        likes_number = #{likesNumber,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.teacher" >
+    update teacher
+    set teacher_name = #{teacherName,jdbcType=VARCHAR},
+      avatar_path = #{avatarPath,jdbcType=VARCHAR},
+      office = #{office,jdbcType=VARCHAR},
+      phone_number = #{phoneNumber,jdbcType=VARCHAR},
+      e-mail = #{eMail,jdbcType=VARCHAR},
+      likes_number = #{likesNumber,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

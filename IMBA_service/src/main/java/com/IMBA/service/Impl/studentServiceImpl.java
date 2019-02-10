@@ -6,7 +6,7 @@ import com.IMBA.service.studentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("studentService")
+@Service()
 public class studentServiceImpl implements studentService {
     @Autowired
     studentMapper mapper;
@@ -17,6 +17,6 @@ public class studentServiceImpl implements studentService {
 
     public int insertSelective(student record) {
         mapper.insertSelective(record);
-        return 0;
+        return  mapper.insertSelective(record);
     }
 }

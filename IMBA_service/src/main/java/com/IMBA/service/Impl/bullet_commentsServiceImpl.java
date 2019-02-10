@@ -5,10 +5,13 @@ import com.IMBA.service.bullet_commentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("bullet_commentsService")
+import javax.annotation.Resource;
+
+@Service()
 public class bullet_commentsServiceImpl implements bullet_commentsService {
-        @Autowired
+        @Resource
         private bullet_commentsMapper bullet_commentsMapper;
+
 
 
 

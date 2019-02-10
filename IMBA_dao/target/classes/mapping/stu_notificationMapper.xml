@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.stu_notificationMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.stu_notification" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="notification_id" property="notificationId" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="read_status" property="readStatus" jdbcType="BIT" />
+    <result column="is_collect" property="isCollect" jdbcType="TINYINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, notification_id, student_id, read_status, is_collect
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.stu_notificationKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from stu_notification
+    where id = #{id,jdbcType=INTEGER}
+      and notification_id = #{notificationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.stu_notificationKey" >
+    delete from stu_notification
+    where id = #{id,jdbcType=INTEGER}
+      and notification_id = #{notificationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.stu_notification" >
+    insert into stu_notification (id, notification_id, student_id, 
+      read_status, is_collect)
+    values (#{id,jdbcType=INTEGER}, #{notificationId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, 
+      #{readStatus,jdbcType=BIT}, #{isCollect,jdbcType=TINYINT})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.stu_notification" >
+    insert into stu_notification
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="notificationId != null" >
+        notification_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="readStatus != null" >
+        read_status,
+      </if>
+      <if test="isCollect != null" >
+        is_collect,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="notificationId != null" >
+        #{notificationId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="readStatus != null" >
+        #{readStatus,jdbcType=BIT},
+      </if>
+      <if test="isCollect != null" >
+        #{isCollect,jdbcType=TINYINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.stu_notification" >
+    update stu_notification
+    <set >
+      <if test="readStatus != null" >
+        read_status = #{readStatus,jdbcType=BIT},
+      </if>
+      <if test="isCollect != null" >
+        is_collect = #{isCollect,jdbcType=TINYINT},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and notification_id = #{notificationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.stu_notification" >
+    update stu_notification
+    set read_status = #{readStatus,jdbcType=BIT},
+      is_collect = #{isCollect,jdbcType=TINYINT}
+    where id = #{id,jdbcType=INTEGER}
+      and notification_id = #{notificationId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+</mapper>

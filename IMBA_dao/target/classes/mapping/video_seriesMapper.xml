@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.video_seriesMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.video_series" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="course_lecturer" property="courseLecturer" jdbcType="VARCHAR" />
+    <result column="course_title" property="courseTitle" jdbcType="VARCHAR" />
+    <result column="course_type" property="courseType" jdbcType="VARCHAR" />
+    <result column="watching_num" property="watchingNum" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, course_lecturer, course_title, course_type, watching_num
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from video_series
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from video_series
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.video_series" >
+    insert into video_series (id, course_lecturer, course_title, 
+      course_type, watching_num)
+    values (#{id,jdbcType=INTEGER}, #{courseLecturer,jdbcType=VARCHAR}, #{courseTitle,jdbcType=VARCHAR}, 
+      #{courseType,jdbcType=VARCHAR}, #{watchingNum,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.video_series" >
+    insert into video_series
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="courseLecturer != null" >
+        course_lecturer,
+      </if>
+      <if test="courseTitle != null" >
+        course_title,
+      </if>
+      <if test="courseType != null" >
+        course_type,
+      </if>
+      <if test="watchingNum != null" >
+        watching_num,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="courseLecturer != null" >
+        #{courseLecturer,jdbcType=VARCHAR},
+      </if>
+      <if test="courseTitle != null" >
+        #{courseTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="courseType != null" >
+        #{courseType,jdbcType=VARCHAR},
+      </if>
+      <if test="watchingNum != null" >
+        #{watchingNum,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.video_series" >
+    update video_series
+    <set >
+      <if test="courseLecturer != null" >
+        course_lecturer = #{courseLecturer,jdbcType=VARCHAR},
+      </if>
+      <if test="courseTitle != null" >
+        course_title = #{courseTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="courseType != null" >
+        course_type = #{courseType,jdbcType=VARCHAR},
+      </if>
+      <if test="watchingNum != null" >
+        watching_num = #{watchingNum,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.video_series" >
+    update video_series
+    set course_lecturer = #{courseLecturer,jdbcType=VARCHAR},
+      course_title = #{courseTitle,jdbcType=VARCHAR},
+      course_type = #{courseType,jdbcType=VARCHAR},
+      watching_num = #{watchingNum,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
