@@ -14,6 +14,8 @@
         <module>Ssm01-dao</module>
         <module>Ssm01-service</module>
         <module>Ssm01-webui</module>
+        <module>Ssm01-shiro</module>
+        <module>Ssm01-redis</module>
     </modules>
 
     <properties>

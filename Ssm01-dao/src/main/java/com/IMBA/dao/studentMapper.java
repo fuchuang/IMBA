@@ -2,10 +2,17 @@ package com.IMBA.dao;
 
 import com.IMBA.entity.student;
 import com.IMBA.entity.studentKey;
+import org.springframework.stereotype.Repository;
 
+import java.util.List;
+@Repository
 public interface studentMapper {
-    //登陆
-//    public student findbystuid(int stuid);
+
+
+    public student findstudentBystuid(String stuid);
+    public List<student>selectall();
+
+
 
     int deleteByPrimaryKey(studentKey key);
 

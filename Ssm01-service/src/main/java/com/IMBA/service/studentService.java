@@ -2,8 +2,12 @@ package com.IMBA.service;
 
 import com.IMBA.entity.student;
 
+import java.util.List;
+
 public interface studentService {
-    public student findbystuid(int stuid);
-    int insertSelective(student record);
+    public student findstudentBystuid(String stuid);
+    public List<student> selectall();
+
+
 
 }

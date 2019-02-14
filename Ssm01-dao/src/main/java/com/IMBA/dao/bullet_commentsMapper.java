@@ -2,9 +2,10 @@ package com.IMBA.dao;
 
 import com.IMBA.entity.bullet_comments;
 import com.IMBA.entity.bullet_commentsKey;
+import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
-@Transactional
+@Repository
 public interface bullet_commentsMapper {
     int deleteByPrimaryKey(bullet_commentsKey key);
 

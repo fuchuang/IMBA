@@ -18,6 +18,14 @@
     sex
   </sql>
 
+
+  <select id="findstudentBystuid" parameterType="String" resultMap="BaseResultMap">
+    select * from student where stu_id=#{stuid}
+  </select>
+  <select id="selectall" resultMap="BaseResultMap">
+    select * from student
+  </select>
+
   <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.studentKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
@@ -141,5 +149,7 @@
     where id = #{id,jdbcType=INTEGER}
       and major_id = #{majorId,jdbcType=INTEGER}
   </update>
+
+
 
 </mapper>
