@@ -4,6 +4,9 @@ import com.IMBA.entity.register;
 import com.IMBA.entity.registerKey;
 
 public interface registerMapper {
+    int findbystatus(String status,int id);
+
+
     int deleteByPrimaryKey(registerKey key);
 
     int insert(register record);

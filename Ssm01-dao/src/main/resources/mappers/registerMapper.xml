@@ -12,6 +12,9 @@
     id, student_id, course_id, register_status, register_time
   </sql>
 
+  <select id="findbystatus" parameterType="string" resultType="int">
+    select count(*) from register where  register_status=#{0} and student_id=#{1}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.registerKey" >
     select 
     <include refid="Base_Column_List" />

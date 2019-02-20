@@ -1,8 +1,10 @@
 package com.IMBA.weui.controller.communitycontroller;
 
 import com.IMBA.entity.course_files;
+import com.IMBA.entity.register;
 import com.IMBA.service.course_filesService;
 
+import com.IMBA.service.registerService;
 import com.fasterxml.jackson.databind.util.JSONPObject;
 import net.sf.ehcache.util.TimeUtil;
 import net.sf.json.JSONArray;
@@ -43,6 +45,8 @@ public class teacherController {
 
     @Autowired
     course_filesService courseFilesService;
+    @Autowired
+    registerService registerservice;
 
     //文件上传
     @RequiresRoles("teacher")
@@ -89,5 +93,26 @@ public class teacherController {
     }
     //点名列表
     //点名
+    @RequestMapping(value = "/teacher/reggisterid")
+    @ResponseBody()
+    JSONObject reggisterid(@RequestParam("register_status")String register_status,
+                           @RequestParam ("student_id")int student_id,
+                           @RequestParam("course_id")int course_id){
+        register record=new register();
+        record.setRegisterStatus(register_status);
+        record.setRegisterTime(new Date());
+        record.setCourseId(course_id);
+        record.setStudentId(student_id);
+
+        registerservice.insert(record);
+        Map<String,Object> msg=new HashMap<>();
+        msg.put("msg","success");
+        return  JSONObject.fromObject(msg);
+
+
+    }
+
+
+
 
 }
