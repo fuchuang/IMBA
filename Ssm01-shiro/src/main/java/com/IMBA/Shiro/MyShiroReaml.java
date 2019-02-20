@@ -20,7 +20,11 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 
@@ -32,19 +36,24 @@ public class MyShiroReaml extends AuthorizingRealm {
 
 
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
+        System.out.println("ddd");
         //授权
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
         Object principal = principalCollection.getPrimaryPrincipal();//获取登录的用户名
         String studentjson=(String) redisUtil.get(principal);
         student s=JsonUtil.toBean(student.class,studentjson);
-        if (s.getIsadmin().equals("0")){
+        System.out.println("isamin:"+s.getIsadmin());
+
+        if (!s.getIsadmin()){
             //学生
+            System.out.println("false");
             info.addRole("student");
 
         }
-        if (s.getIsadmin().equals("1")){
+        if (s.getIsadmin()){
             //老师
-            info.addRole("admin");
+            System.out.println("老师");
+            info.addRole("teacher");
         }
 
         return info;
@@ -53,7 +62,8 @@ public class MyShiroReaml extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
 
         Object principal = authenticationToken.getPrincipal();
-
+        HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
+        HttpSession session=request.getSession();
 
         String pass=null;
 //        System.out.println("namexxxx: "+principal);
@@ -66,6 +76,10 @@ public class MyShiroReaml extends AuthorizingRealm {
             String studentjson=(String) redisUtil.get(principal);
             student s=JsonUtil.toBean(student.class,studentjson);
             pass=s.getPassword();
+
+            session.setAttribute("username",s.getStuName());
+            session.setAttribute("stu_id",s.getStuId());
+            session.setAttribute("id",s.getId());
 //            System.out.println("pass: "+pass);
 
         }else {
@@ -87,6 +101,8 @@ public class MyShiroReaml extends AuthorizingRealm {
 
                     redisUtil.put(stus.getStuId(), JsonUtil.toJson(stus));
                 }
+                session.setAttribute("username",stu.getStuName());
+                session.setAttribute("id",stu.getStuId());
 
                 pass= stu.getPassword();
                 System.out.println("pass: "+pass);
@@ -107,6 +123,8 @@ public class MyShiroReaml extends AuthorizingRealm {
 //                new SimpleAuthenticationInfo(principal, credentials,
 //                        credentialsSalt, realmName);
 
+
+
        SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, pass, getName());
 
         return info;
@@ -117,15 +135,15 @@ public class MyShiroReaml extends AuthorizingRealm {
 //        credentialsMatcher.setHashIterations(1024);//1024次循环加密
 //        setCredentialsMatcher(credentialsMatcher);
 //    }
-    public static void main(String[] args) {
-        String saltSource = "abcdef";
-        String hashAlgorithmName = "MD5";
-        String credentials = "passwor";
-        Object salt = new Md5Hash(saltSource);
-        int hashIterations = 1024;
-        Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
-        System.out.println(result);
-    }
+//    public static void main(String[] args) {
+//        String saltSource = "abcdef";
+//        String hashAlgorithmName = "MD5";
+//        String credentials = "passwor";
+//        Object salt = new Md5Hash(saltSource);
+//        int hashIterations = 1024;
+//        Object result = new SimpleHash(hashAlgorithmName, credentials, salt, hashIterations);
+//        System.out.println(result);
+//    }
 
     private studentService shiroService;
 

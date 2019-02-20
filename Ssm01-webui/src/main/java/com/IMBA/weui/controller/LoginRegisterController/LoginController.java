@@ -15,7 +15,7 @@ public class LoginController {
     @Autowired
     clock_inService clockIn;
     //登陆界面
-    @RequestMapping("/Login")
+    @RequestMapping("/user/login")
     public String Login(){
 
 
@@ -24,7 +24,7 @@ public class LoginController {
 
 
     //确认登陆界面
-    @RequestMapping("/CheckLogin")
+    @RequestMapping("/user/CheckLogin")
     public String CheckLoginLogin(@RequestParam(name = "stuId")String stuId, @RequestParam(name = "password")String password){
 
         Subject subject = SecurityUtils.getSubject();

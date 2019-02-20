@@ -6,6 +6,9 @@
     <id column="posts_id" property="postsId" jdbcType="INTEGER" />
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
   </resultMap>
+  <select id="findbypostid" resultMap="BaseResultMap" parameterType="int">
+    select * from  recently_read where posts_id=#{0} and student_id=#{1}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.recently_readKey" >
     delete from recently_read
     where id = #{id,jdbcType=INTEGER}

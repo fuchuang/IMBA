@@ -10,6 +10,7 @@
       <module fileurl="file://$PROJECT_DIR$/Ssm01-webui/Ssm01-webui.iml" filepath="$PROJECT_DIR$/Ssm01-webui/Ssm01-webui.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ssm01-redis/Ssm01redis.iml" filepath="$PROJECT_DIR$/Ssm01-redis/Ssm01redis.iml" />
       <module fileurl="file://$PROJECT_DIR$/Ssm01-shiro/Ssm01shiro.iml" filepath="$PROJECT_DIR$/Ssm01-shiro/Ssm01shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Ssm01-solr/Ssm01solr.iml" filepath="$PROJECT_DIR$/Ssm01-solr/Ssm01solr.iml" />
     </modules>
   </component>
 </project>

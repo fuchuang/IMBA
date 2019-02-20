@@ -25,5 +25,9 @@ public class studentServiceImpl implements studentService {
 
     }
 
+    public student findstudentByid(int id) {
+        return mapper.findstudentByid(id);
+    }
+
 
 }

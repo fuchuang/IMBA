@@ -18,6 +18,10 @@
   <sql id="Blob_Column_List" >
     posts_content
   </sql>
+  <select id="findbypostid" resultMap="ResultMapWithBLOBs" parameterType="int">
+
+    select * from posts where id=#{id}
+  </select>
   <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.IMBA.entity.postsKey" >
     select 
     <include refid="Base_Column_List" />

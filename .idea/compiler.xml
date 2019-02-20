@@ -13,6 +13,7 @@
         <module name="Ssm01-webui" />
         <module name="Ssm01redis" />
         <module name="Ssm01shiro" />
+        <module name="Ssm01solr" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -22,8 +23,10 @@
       <module name="Ssm01-entity" target="1.5" />
       <module name="Ssm01-service" target="1.5" />
       <module name="Ssm01-webui" target="1.7" />
+      <module name="Ssm01elasticsearch" target="1.5" />
       <module name="Ssm01redis" target="8" />
       <module name="Ssm01shiro" target="1.5" />
+      <module name="Ssm01solr" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

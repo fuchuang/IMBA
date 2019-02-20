@@ -12,6 +12,13 @@
   <sql id="Base_Column_List" >
     id, uploader_id, course_id1, files_title, files_path, upload_time
   </sql>
+
+  <select id="findbycouser_id" resultMap="BaseResultMap" parameterType="int" >
+    select * from course_files where course_id1=#{id}
+  </select>
+  <select id="fingbyid" resultMap="BaseResultMap" parameterType="int">
+    select * from course_files where id=#{id}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.course_filesKey" >
     select 
     <include refid="Base_Column_List" />

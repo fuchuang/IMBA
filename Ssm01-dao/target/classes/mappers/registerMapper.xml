@@ -11,6 +11,7 @@
   <sql id="Base_Column_List" >
     id, student_id, course_id, register_status, register_time
   </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.registerKey" >
     select 
     <include refid="Base_Column_List" />

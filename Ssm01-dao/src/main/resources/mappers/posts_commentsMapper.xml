@@ -12,6 +12,13 @@
   <sql id="Base_Column_List" >
     id, posts_id, student_id, sub_comment_id, comments_content, comments_time
   </sql>
+  <select id="findrowsbypostid" resultType="int" parameterType="int">
+    select  count(*) from posts_comments where posts_id=#{id}
+  </select>
+  <select id="findbypostid" resultMap="BaseResultMap" parameterType="int">
+    select * from posts_comments where posts_id=#{id}
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.posts_commentsKey" >
     select 
     <include refid="Base_Column_List" />

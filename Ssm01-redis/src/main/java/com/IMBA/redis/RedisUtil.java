@@ -43,6 +43,10 @@ public class RedisUtil {
 
 
     }
+    public void lpush(String key,String Object){
+        clusterRedisTemplate.opsForList().leftPush(key,Object);
+    }
+    
     public  boolean hasKey(Object key){
 
         return clusterRedisTemplate.hasKey((String) key);

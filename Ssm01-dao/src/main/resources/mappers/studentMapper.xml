@@ -18,7 +18,9 @@
     sex
   </sql>
 
-
+  <select id="findstudentByid" parameterType="int" resultMap="BaseResultMap">
+    select * from student where id=#{id}
+  </select>
   <select id="findstudentBystuid" parameterType="String" resultMap="BaseResultMap">
     select * from student where stu_id=#{stuid}
   </select>

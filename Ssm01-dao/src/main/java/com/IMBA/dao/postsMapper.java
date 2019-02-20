@@ -4,6 +4,7 @@ import com.IMBA.entity.posts;
 import com.IMBA.entity.postsKey;
 
 public interface postsMapper {
+    posts findbypostid(int id);
     int deleteByPrimaryKey(postsKey key);
 
     int insert(posts record);

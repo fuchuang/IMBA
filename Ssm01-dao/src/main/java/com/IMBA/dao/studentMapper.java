@@ -10,6 +10,7 @@ public interface studentMapper {
 
 
     public student findstudentBystuid(String stuid);
+    public student findstudentByid(int id);
     public List<student>selectall();
 
 

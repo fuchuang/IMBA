@@ -6,6 +6,10 @@
     <id column="posts_id" property="postsId" jdbcType="INTEGER" />
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
   </resultMap>
+
+  <select id="findbypostidandstuid" resultMap="BaseResultMap" parameterType="int">
+    select * from posts_collection where posts_id=#{0} and student_id=#{1}
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.posts_collectionKey" >
     delete from posts_collection
     where id = #{id,jdbcType=INTEGER}
