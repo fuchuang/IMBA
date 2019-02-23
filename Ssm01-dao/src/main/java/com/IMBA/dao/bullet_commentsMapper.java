@@ -2,7 +2,10 @@ package com.IMBA.dao;
 
 import com.IMBA.entity.bullet_comments;
 import com.IMBA.entity.bullet_commentsKey;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.List;
 
 @Transactional
 public interface bullet_commentsMapper {
@@ -17,4 +20,6 @@ public interface bullet_commentsMapper {
     int updateByPrimaryKeySelective(bullet_comments record);
 
     int updateByPrimaryKey(bullet_comments record);
+
+    List<bullet_comments> selectByWeek(@Param("majorId") Integer majorId,@Param("year") String year,@Param("week") Byte week);
 }

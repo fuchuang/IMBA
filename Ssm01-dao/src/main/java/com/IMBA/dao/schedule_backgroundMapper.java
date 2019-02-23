@@ -15,4 +15,10 @@ public interface schedule_backgroundMapper {
     int updateByPrimaryKeySelective(schedule_background record);
 
     int updateByPrimaryKey(schedule_background record);
+
+    schedule_background selectByStuId(Integer studentId);
+
+    int updateByStuId(schedule_background record);
+
+   // schedule_background findByStuId(Integer stuId);
 }

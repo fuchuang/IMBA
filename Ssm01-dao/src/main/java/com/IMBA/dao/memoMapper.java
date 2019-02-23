@@ -15,4 +15,12 @@ public interface memoMapper {
     int updateByPrimaryKeySelective(memo record);
 
     int updateByPrimaryKey(memo record);
+
+    int insertMemo(memo record);
+
+    memo findById(int memoId);
+
+    int deleteById(int memoId);
+
+
 }

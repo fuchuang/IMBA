@@ -141,5 +141,14 @@
     where id = #{id,jdbcType=INTEGER}
       and major_id = #{majorId,jdbcType=INTEGER}
   </update>
-
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.student">
+    insert into student ( major_id, stu_id,
+      stu_name, password, avatar_path,
+      personalized_signatures, isAdmin, sex
+      )
+    values ( #{majorId,jdbcType=INTEGER}, #{stuId,jdbcType=VARCHAR},
+      #{stuName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{avatarPath,jdbcType=VARCHAR},
+      #{personalizedSignatures,jdbcType=VARCHAR}, #{isadmin,jdbcType=BIT}, #{sex,jdbcType=CHAR}
+      )
+  </insert>
 </mapper>

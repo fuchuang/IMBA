@@ -66,8 +66,11 @@
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
     <!--6 容器自动扫描IOC组件  -->
-    <context:component-scan base-package="com.IMBA.dao"></context:component-scan>
+    <context:component-scan base-package="com.IMBA.**"></context:component-scan>
+
 
     <!--7 aspectj支持自动代理实现AOP功能 -->
     <aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>
+
+
 </beans>

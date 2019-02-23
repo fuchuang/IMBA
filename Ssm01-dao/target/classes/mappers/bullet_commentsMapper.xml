@@ -6,13 +6,14 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <id column="major_id" jdbcType="INTEGER" property="majorId" />
     <result column="week_of_semester" jdbcType="TINYINT" property="weekOfSemester" />
+    <result column="academic_year" jdbcType="VARCHAR" property="academicYear" />
     <result column="content" jdbcType="VARCHAR" property="content" />
   </resultMap>
   <sql id="Base_Column_List">
-    student_id, id, major_id, week_of_semester, content
+    student_id, id, major_id, week_of_semester, academic_year,content
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.bullet_commentsKey" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from bullet_comments
     where student_id = #{studentId,jdbcType=INTEGER}
@@ -25,11 +26,11 @@
       and id = #{id,jdbcType=INTEGER}
       and major_id = #{majorId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.IMBA.entity.bullet_comments">
-    insert into bullet_comments (student_id, id, major_id, 
-      week_of_semester, content)
-    values (#{studentId,jdbcType=INTEGER}, #{id,jdbcType=INTEGER}, #{majorId,jdbcType=INTEGER}, 
-      #{weekOfSemester,jdbcType=TINYINT}, #{content,jdbcType=VARCHAR})
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.bullet_comments" >
+    insert into bullet_comments (student_id,  major_id,
+      week_of_semester, academic_year,content)
+    values (#{studentId,jdbcType=INTEGER}, #{majorId,jdbcType=INTEGER},
+      #{weekOfSemester,jdbcType=TINYINT}, #{academicYear,jdbcType=VARCHAR},#{content,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.IMBA.entity.bullet_comments">
     insert into bullet_comments
@@ -90,6 +91,14 @@
       and id = #{id,jdbcType=INTEGER}
       and major_id = #{majorId,jdbcType=INTEGER}
   </update>
+  <select id="selectByWeek"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from bullet_comments
+    where  major_id = #{majorId,jdbcType=INTEGER}
+    and academic_year=#{year,jdbcType=VARCHAR}
+    and week_of_semester = #{week,jdbcType=TINYINT}
+  </select>
 
 
 </mapper>

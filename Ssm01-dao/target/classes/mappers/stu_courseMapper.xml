@@ -6,6 +6,24 @@
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
     <id column="course_id" property="courseId" jdbcType="INTEGER" />
   </resultMap>
+  <resultMap id="CourseResultMap" type="com.IMBA.entity.course" >
+    <id column="cou.id" property="id" jdbcType="INTEGER" />
+    <result column="cou.course_name" property="courseName" jdbcType="VARCHAR" />
+    <result column="cou.classroom" property="classroom" jdbcType="VARCHAR" />
+    <result column="cou.course_credit" property="courseCredit" jdbcType="REAL" />
+    <result column="cou.course_hour" property="courseHour" jdbcType="INTEGER" />
+    <result column="cou.course_quota" property="courseQuota" jdbcType="INTEGER" />
+    <result column="cou.day_of_week" property="dayOfWeek" jdbcType="TINYINT" />
+    <result column="cou.week_of_semester" property="weekOfSemester" jdbcType="TINYINT" />
+    <result column="cou.lesson_of_day" property="lessonOfDay" jdbcType="TINYINT" />
+    <result column="cou.course_year" property="courseYear" jdbcType="VARCHAR" />
+    <result column="cou.course_type" property="courseType" jdbcType="CHAR" />
+    <result column="cou.course_time" property="courseTime" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Course_Result_List" >
+   cou.id,cou.course_name, cou.classroom, cou.course_credit, cou.course_hour, cou.course_quota, cou.day_of_week,
+    cou.week_of_semester, cou.lesson_of_day, cou.course_year, cou.course_type, cou.course_time
+  </sql>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.stu_courseKey" >
     delete from stu_course
     where id = #{id,jdbcType=INTEGER}
@@ -43,4 +61,17 @@
       </if>
     </trim>
   </insert>
+  <select id="findCoursesOfWeek" resultMap="CourseResultMap"  >
+    select
+    <include refid="Course_Result_List" />
+    from stu_course as sc
+    inner join course as cou on cou.id=sc.course_id
+                                and cou.course_year=#{year,jdbcType=VARCHAR}
+                                and cou.week_of_semester=#{week,jdbcType=TINYINT}
+                                and sc.student_id in (
+                                  select student_id
+                                  from stu_course
+                                  where  student_id = #{stuId,jdbcType=INTEGER} )
+  </select>
+
 </mapper>

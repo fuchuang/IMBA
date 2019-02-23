@@ -14,4 +14,6 @@ public interface majorMapper {
     int updateByPrimaryKeySelective(major record);
 
     int updateByPrimaryKey(major record);
+
+    int insertAndGetId(major record);
 }

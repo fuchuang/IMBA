@@ -30,4 +30,7 @@ public class bullet_commentsKey {
     public void setMajorId(Integer majorId) {
         this.majorId = majorId;
     }
+
+    //bullet_commentsKey(Integer studentId,)
+
 }

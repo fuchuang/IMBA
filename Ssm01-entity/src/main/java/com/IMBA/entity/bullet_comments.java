@@ -5,6 +5,8 @@ public class bullet_comments extends bullet_commentsKey {
 
     private String content;
 
+    private String academicYear;
+
     public Byte getWeekOfSemester() {
         return weekOfSemester;
     }
@@ -15,6 +17,14 @@ public class bullet_comments extends bullet_commentsKey {
 
     public String getContent() {
         return content;
+    }
+
+    public String getAcademicYear() {
+        return academicYear;
+    }
+
+    public void setAcademicYear(String academicYear) {
+        this.academicYear = academicYear;
     }
 
     public void setContent(String content) {

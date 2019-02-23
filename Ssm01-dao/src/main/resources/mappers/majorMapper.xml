@@ -79,4 +79,11 @@
       grade = #{grade,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.major">
+     insert into major (marjor_name, class,
+      grade)
+    values ( #{marjorName,jdbcType=VARCHAR}, #{classes,jdbcType=INTEGER},
+      #{grade,jdbcType=INTEGER})
+  </insert>
 </mapper>

@@ -18,4 +18,6 @@ public interface studentMapper {
     int updateByPrimaryKeySelective(student record);
 
     int updateByPrimaryKey(student record);
+
+    int insertAndGetId(student record);
 }

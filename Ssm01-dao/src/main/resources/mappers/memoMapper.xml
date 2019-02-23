@@ -4,6 +4,7 @@
   <resultMap id="BaseResultMap" type="com.IMBA.entity.memo" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <id column="course_id" property="courseId" jdbcType="INTEGER" />
     <result column="memo_content" property="memoContent" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
@@ -13,7 +14,7 @@
     select 
     <include refid="Base_Column_List" />
     from memo
-    where id = #{id,jdbcType=INTEGER}
+    where course_id = #{courseId,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.memoKey" >
@@ -68,4 +69,23 @@
     where id = #{id,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
+
+  <insert id="insertMemo" parameterType="com.IMBA.entity.memo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    insert into memo (student_id, memo_content ,course_id
+      )
+    values ( #{studentId,jdbcType=INTEGER}, #{memoContent,jdbcType=VARCHAR},#{courseId,jdbcType=INTEGER}
+      )
+  </insert>
+
+  <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from memo
+    where id = #{memoId,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+    delete from memo
+    where id = #{memoId,jdbcType=INTEGER}
+  </delete>
 </mapper>
