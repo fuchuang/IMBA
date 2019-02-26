@@ -5,6 +5,16 @@ public class clock_inKey {
 
     private Integer studentId;
 
+    private Integer courseId;
+
+    public Integer getCourseId() {
+        return courseId;
+    }
+
+    public void setCourseId(Integer courseId) {
+        this.courseId = courseId;
+    }
+
     public Integer getId() {
         return id;
     }

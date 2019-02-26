@@ -4,10 +4,18 @@
   <resultMap id="BaseResultMap" type="com.IMBA.entity.clock_in">
     <id column="id" jdbcType="INTEGER" property="id" />
     <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <id column="course_id" jdbcType="INTEGER" property="courseId" />
     <result column="clocked_time" jdbcType="TIMESTAMP" property="clockedTime" />
   </resultMap>
+
+  <resultMap id="AttendancResultMap" type="com.IMBA.dto.attendanceRecordDto">
+    <id column="course_id" jdbcType="INTEGER" property="stuCourseId"/>
+    <result column="course_name" jdbcType="VARCHAR" property="courseName"/>
+    <result column="week_of_semester" jdbcType="INTEGER" property="week"/>
+    <result column="status" jdbcType="VARCHAR" property="status"/>
+  </resultMap>
   <sql id="Base_Column_List">
-    id, student_id, clocked_time
+    id, student_id, clocked_time,course_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey" resultMap="BaseResultMap">
     select 
@@ -68,5 +76,17 @@
     where id = #{id,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectAttendanceRecordByYear" resultMap="AttendancResultMap">
+    select
+        sc.course_id,c.course_name,c.week_of_semester,ci.status
+      from clock_in as ci inner join  stu_course as sc
+                                on ci.course_id=sc.course_id
+                                and ci.student_id=#{stuId,jdbcType=INTEGER}
+                                and sc.student_id=#{stuId,jdbcType=INTEGER}
+                          inner join course as c
+                                on c.id=sc.course_id
+                                and c.course_year=#{year,jdbcType=VARCHAR}
+  </select>
 
 </mapper>

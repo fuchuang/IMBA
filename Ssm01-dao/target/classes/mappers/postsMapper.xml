@@ -130,4 +130,31 @@
     where id = #{id,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
+
+  <!--查找已看的帖子 -->
+  <select id="selectViewd" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    id, student_id, isAnonymity, posts_title, posts_tags, posts_time,posts_content
+    from posts as p inner join recently_read as rr
+                            on rr.student_id=#{stuId,jdbcType=INTEGER}
+                            and p.id=rr.posts_id
+  </select>
+
+  <!--查找喜欢的帖子 -->
+  <select id="selectLiked" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    id, student_id, isAnonymity, posts_title, posts_tags, posts_time,posts_content
+    from posts as p inner join posts_collection as pc
+                            on pc.student_id=#{stuId,jdbcType=INTEGER}
+                            and p.id=pc.posts_id
+  </select>
+
+  <!--查找已发的帖子 -->
+  <select id="selectPosted" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from posts on student_id=#{stuId,jdbcType=INTEGER}
+  </select>
 </mapper>

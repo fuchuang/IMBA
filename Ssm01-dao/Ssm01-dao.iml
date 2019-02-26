@@ -25,6 +25,7 @@
     <orderEntry type="library" name="Maven: com.google.zxing:javase:3.3.3" level="project" />
     <orderEntry type="library" name="Maven: com.beust:jcommander:1.72" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: com.github.jai-imageio:jai-imageio-core:1.4.0" level="project" />
+    <orderEntry type="library" name="Maven: javax.servlet:javax.servlet-api:3.0.1" level="project" />
     <orderEntry type="module" module-name="Ssm01-entity" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-core:2.6.1" level="project" />
     <orderEntry type="library" name="Maven: org.apache.logging.log4j:log4j-api:2.6.1" level="project" />

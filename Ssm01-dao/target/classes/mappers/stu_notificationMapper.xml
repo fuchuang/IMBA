@@ -6,7 +6,7 @@
     <id column="notification_id" property="notificationId" jdbcType="INTEGER" />
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
     <result column="read_status" property="readStatus" jdbcType="BIT" />
-    <result column="is_collect" property="isCollect" jdbcType="TINYINT" />
+    <result column="is_collect" property="isCollect" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
     id, notification_id, student_id, read_status, is_collect
@@ -29,7 +29,7 @@
     insert into stu_notification (id, notification_id, student_id, 
       read_status, is_collect)
     values (#{id,jdbcType=INTEGER}, #{notificationId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, 
-      #{readStatus,jdbcType=BIT}, #{isCollect,jdbcType=TINYINT})
+      #{readStatus,jdbcType=BIT}, #{isCollect,jdbcType=BIT})
   </insert>
   <insert id="insertSelective" parameterType="com.IMBA.entity.stu_notification" >
     insert into stu_notification
@@ -64,7 +64,7 @@
         #{readStatus,jdbcType=BIT},
       </if>
       <if test="isCollect != null" >
-        #{isCollect,jdbcType=TINYINT},
+        #{isCollect,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -75,7 +75,7 @@
         read_status = #{readStatus,jdbcType=BIT},
       </if>
       <if test="isCollect != null" >
-        is_collect = #{isCollect,jdbcType=TINYINT},
+        is_collect = #{isCollect,jdbcType=BIT},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}

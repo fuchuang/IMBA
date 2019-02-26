@@ -4,8 +4,8 @@ import com.IMBA.entity.student;
 import com.IMBA.entity.studentKey;
 
 public interface studentMapper {
-    //登陆
-//    public student findbystuid(int stuid);
+
+    student findByStuId(Integer stuId);
 
     int deleteByPrimaryKey(studentKey key);
 

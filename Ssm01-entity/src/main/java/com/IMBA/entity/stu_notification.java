@@ -3,7 +3,7 @@ package com.IMBA.entity;
 public class stu_notification extends stu_notificationKey {
     private Boolean readStatus;
 
-    private Byte isCollect;
+    private Boolean isCollect;
 
     public Boolean getReadStatus() {
         return readStatus;
@@ -13,11 +13,11 @@ public class stu_notification extends stu_notificationKey {
         this.readStatus = readStatus;
     }
 
-    public Byte getIsCollect() {
+    public Boolean getIsCollect() {
         return isCollect;
     }
 
-    public void setIsCollect(Byte isCollect) {
+    public void setIsCollect(Boolean isCollect) {
         this.isCollect = isCollect;
     }
 }

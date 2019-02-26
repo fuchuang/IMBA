@@ -79,4 +79,13 @@
     where id = #{id,jdbcType=INTEGER}
       and course_id = #{courseId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectCollection" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    el.id, course_id, likes_number, collectons_number
+    from elective as el inner join elective_collections as ec
+                              on ec.student_id=#{stuId,jdbcType=INTEGER}
+                              and el.id=ec.elective_id;
+  </select>
+
 </mapper>

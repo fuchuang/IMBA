@@ -6,131 +6,79 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="60d2b202-822e-4b94-beb9-6504827bc9bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/BackgroundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Ssm01_webui_war.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Ssm01_webui_war_exploded.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__c3p0_c3p0_0_9_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__cglib_cglib_3_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_classmate_1_1_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_annotations_2_7_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_core_2_7_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_core_jackson_databind_2_7_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_fileupload_commons_fileupload_1_3_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_javax_servlet_api_3_0_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jsp_jsp_api_2_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__javax_validation_validation_api_1_1_0_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__junit_junit_4_12.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_5_1_38.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_1_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_ant_ant_launcher_1_9_6.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_4.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_api_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_logging_log4j_log4j_core_2_6_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_freemarker_freemarker_2_3_23.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hibernate_hibernate_validator_5_2_2_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_jboss_logging_jboss_logging_3_2_1_Final.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_3_4_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_mybatis_mybatis_spring_1_3_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_ow2_asm_asm_5_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_18_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_18_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_0_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="60d2b202-822e-4b94-beb9-6504827bc9bf" name="Default Changelist" comment="个人页面">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SSM01.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SSM01.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-common/Ssm01-common.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-common/Ssm01-common.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-common/Ssm01-common.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/R.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/R.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-common/target/classes/com/IMBA/utils/R.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-common/target/classes/com/IMBA/utils/R.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/Ssm01-dao.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/bullet_commentsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/bullet_commentsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/courseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/courseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/majorMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/majorMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/memoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/memoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/schedule_backgroundMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/schedule_backgroundMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/stu_courseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/stu_courseMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/Ssm01-dao.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/Ssm01-dao.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/clock_inMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/clock_inMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/electiveMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/electiveMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/notificationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/notificationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/postsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/postsMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/studentMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/studentMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/bullet_commentsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/bullet_commentsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/courseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/courseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/majorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/majorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/memoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/memoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/schedule_backgroundMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/schedule_backgroundMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/videoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/videoMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/video_seriesMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/video_seriesMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/clock_inMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/clock_inMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/electiveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/electiveMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/notificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/notificationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/postsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/postsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_notificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_notificationMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/studentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/studentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/applicationContext.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/applicationContext.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/bullet_commentsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/bullet_commentsMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/courseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/courseMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/majorMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/majorMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/memoMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/memoMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/schedule_backgroundMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/schedule_backgroundMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/stu_courseMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/stu_courseMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/videoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/video_seriesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/video_seriesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/clock_inMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/clock_inMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/electiveMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/electiveMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/notificationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/notificationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/postsMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/postsMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/studentMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/studentMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/db.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/db.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/bullet_commentsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/bullet_commentsMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/courseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/courseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/majorMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/majorMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/memoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/memoMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/schedule_backgroundMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/schedule_backgroundMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/stu_courseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/stu_courseMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/video_seriesMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/com/IMBA/dao/video_seriesMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/clock_inMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/clock_inMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/electiveMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/electiveMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/notificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/notificationMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/postsMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/postsMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/stu_notificationMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/stu_notificationMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/studentMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/studentMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-entity/Ssm01-entity.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/bullet_comments.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/bullet_comments.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/bullet_commentsKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/bullet_commentsKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/memoKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/memoKey.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/bullet_comments.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/bullet_comments.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/memoKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/memoKey.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/Ssm01-service.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/bullet_commentsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/bullet_commentsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/courseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/courseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/bullet_commentsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/bullet_commentsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/courseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/courseServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/majorServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/majorServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/memoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/memoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/schedule_backgroundServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_courseServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_courseServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/videoMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/videoMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/video_seriesMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-dao/target/classes/mappers/video_seriesMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_in.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_in.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_inKey.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_inKey.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/stu_notification.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/stu_notification.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/clock_in.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/clock_in.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/clock_inKey.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/clock_inKey.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/stu_notification.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-entity/target/classes/com/IMBA/entity/stu_notification.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/clock_inService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/clock_inService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/electiveService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/electiveService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/clock_inServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/clock_inServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/notificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/notificationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/postsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/postsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_notificationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_notificationServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/majorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/majorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/memoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/memoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/schedule_backgroundService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_courseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_courseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/videoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/videoServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_seriesServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_seriesServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/notificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/notificationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/postsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/postsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_notificationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_notificationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/studentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/studentService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/bullet_commentsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/bullet_commentsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/courseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/courseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/bullet_commentsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/bullet_commentsServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/courseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/courseServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/majorServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/majorServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/memoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/memoServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/schedule_backgroundServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/stu_courseServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/stu_courseServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/videoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/videoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/video_seriesService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/video_seriesService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/clock_inService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/clock_inService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/electiveService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/electiveService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/clock_inServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/clock_inServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/electiveServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/electiveServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/notificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/notificationServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/postsServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/postsServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/stu_notificationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/stu_notificationServiceImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/studentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/studentServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/majorService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/majorService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/memoService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/memoService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/schedule_backgroundService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/stu_courseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/stu_courseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/videoServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/videoServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/video_seriesServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/impl/video_seriesServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/notificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/notificationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/postsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/postsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/stu_notificationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/stu_notificationService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/studentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/studentService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-webui/Ssm01-webui.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Ssm01-webui/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-webui/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/video_seriesService.class" beforeDir="false" afterPath="$PROJECT_DIR$/Ssm01-service/target/classes/com/IMBA/service/video_seriesService.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/Ssm01-entity/target/" />
@@ -230,13 +178,13 @@
         <counts>
           <entry key="0-SNAPSHOT" value="2" />
           <entry key="bullet_comments" value="2" />
-          <entry key="class" value="4" />
+          <entry key="class" value="5" />
           <entry key="clock_in" value="2" />
           <entry key="course" value="3" />
           <entry key="course_files" value="2" />
           <entry key="download_files" value="1" />
           <entry key="iml" value="1" />
-          <entry key="java" value="164" />
+          <entry key="java" value="271" />
           <entry key="jpg" value="2" />
           <entry key="major" value="2" />
           <entry key="major_id" value="1" />
@@ -248,21 +196,23 @@
           <entry key="stu_exam" value="1" />
           <entry key="stu_notification" value="1" />
           <entry key="student" value="1" />
-          <entry key="xml" value="81" />
+          <entry key="txt" value="3" />
+          <entry key="xml" value="115" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="4" />
+          <entry key="CLASS" value="5" />
           <entry key="Database Element" value="18" />
           <entry key="IDEA_MODULE" value="1" />
           <entry key="Image" value="2" />
-          <entry key="JAVA" value="164" />
+          <entry key="JAVA" value="271" />
+          <entry key="PLAIN_TEXT" value="3" />
           <entry key="Properties" value="8" />
           <entry key="SQL" value="10" />
           <entry key="Scratch" value="4" />
           <entry key="UML" value="2" />
-          <entry key="XML" value="82" />
+          <entry key="XML" value="116" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.core.usages.trigger">
@@ -272,35 +222,37 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="10" />
-          <entry key="java" value="12712" />
+          <entry key="dummy" value="11" />
+          <entry key="java" value="18199" />
           <entry key="properties" value="10" />
-          <entry key="txt" value="2" />
-          <entry key="xml" value="617" />
+          <entry key="txt" value="55" />
+          <entry key="xml" value="1768" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="12712" />
-          <entry key="PLAIN_TEXT" value="12" />
+          <entry key="JAVA" value="18199" />
+          <entry key="PLAIN_TEXT" value="66" />
           <entry key="Properties" value="10" />
-          <entry key="SQL" value="43" />
-          <entry key="XML" value="574" />
+          <entry key="SQL" value="243" />
+          <entry key="XML" value="1525" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="10" />
+          <entry key="project.closed" value="13" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.19" value="1" />
           <entry key="project.open.time.21" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.24" value="1" />
+          <entry key="project.open.time.25" value="1" />
           <entry key="project.open.time.26" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.42" value="1" />
+          <entry key="project.open.time.5" value="2" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="10" />
+          <entry key="project.opened" value="13" />
         </counts>
       </usages-collector>
     </session>
@@ -308,10 +260,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ScheduleController.java">
+        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/InfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="19" selection-start-column="19" selection-end-column="19" />
+            <state relative-caret-position="1197">
+              <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ProfileController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="387">
+              <caret line="141" column="68" selection-start-line="141" selection-start-column="68" selection-end-line="141" selection-end-column="68" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -320,19 +281,64 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ProfileController.java">
+        <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/postsServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="377">
+              <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/videoServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="152">
-              <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/videoMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/electiveMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_notificationMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="197">
+              <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/notificationMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="242">
+              <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/webapp/WEB-INF/web.xml">
+        <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/video_seriesMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="76">
-              <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+            <state relative-caret-position="189">
+              <caret line="72" column="11" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
             </state>
           </provider>
         </entry>
@@ -357,14 +363,16 @@
       <find>dispatcherServlet</find>
       <find>springmvc</find>
       <find>selectByPrimaryKey</find>
-      <find>BaseResultMap</find>
       <find>spring</find>
       <find>core</find>
       <find>org.springframework.version</find>
       <find>assertj.version</find>
-      <find>spring</find>
       <find>jackson</find>
       <find>addSchedule</find>
+      <find>stuid</find>
+      <find>BaseResultMap</find>
+      <find>read_status</find>
+      <find>week_of_semester</find>
     </findStrings>
     <dirStrings>
       <dir>D:\Documents\Downloads\SSM01-master</dir>
@@ -376,57 +384,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Ssm01-entity/pom.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/db.properties" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/ScheduleServiceImp.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/studentMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/studentMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/studentService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/majorService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/majorMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/majorServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/major.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/dto/bulletCommentDto.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/memoKey.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/applicationContext.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/majorMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/schedule_backgroundService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/schedule_backgroundServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/R.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/bullet_commentsService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/bullet_commentsKey.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/bullet_comments.java" />
-        <option value="$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/SnowflakeIdWorker.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/bullet_commentsMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/bullet_commentsMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/bullet_commentsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/courseMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/stu_courseMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/BaseController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/memoService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/memoServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/memoMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/memoMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/schedule_backgroundMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/schedule_backgroundMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/BackgroundService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_courseService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/courseService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/courseMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_courseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/courseServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/test/scheduleServiceTest.java" />
-        <option value="$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/CreateQRCode.java" />
-        <option value="$PROJECT_DIR$/Ssm01-common/pom.xml" />
         <option value="$PROJECT_DIR$/Ssm01-webui/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/test/ScheduleCtrTest.java" />
         <option value="$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/QRCodeUtil.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/studentService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/studentMapper.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/studentMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/dto/noticesDto.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/notificationService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/notificationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/notification.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/notificationMapper.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/notificationMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/videoMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/videoMapper.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/videoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/videoService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_notificationService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/stu_notification.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_notificationMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_notificationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/electiveService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/electiveMapper.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/electiveMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/postsService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/postsMapper.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/postsMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/postsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/dto/WatchedVideoDto.java" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/dto/watchedVideoDto.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/video_seriesService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/video_seriesMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/video_seriesMapper.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_seriesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_inKey.java" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_in.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/clock_inMapper.java" />
+        <option value="$PROJECT_DIR$/Ssm01-webui/target/test-classes/upload/test.txt" />
+        <option value="$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/DownloadFile.java" />
         <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ScheduleController.java" />
+        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/test/ScheduleCtrTest.java" />
+        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/dto/attendanceRecordDto.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/clock_inMapper.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/clock_inService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/test/scheduleServiceTest.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/clock_inServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/BaseController.java" />
         <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ProfileController.java" />
+        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/InfoController.java" />
       </list>
     </option>
   </component>
@@ -460,9 +468,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2319" />
+    <option name="x" value="1815" />
     <option name="y" value="-87" />
-    <option name="width" value="974" />
+    <option name="width" value="1478" />
     <option name="height" value="1047" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
@@ -474,6 +482,11 @@
             <id>SQL</id>
           </State>
         </expanded-state>
+        <selected-state>
+          <State>
+            <id>Android</id>
+          </State>
+        </selected-state>
       </profile-state>
     </entry>
   </component>
@@ -485,6 +498,193 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="mappers" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Problems'; set:Problems; class com.intellij.psi.search.scope.ProblemsScope">
           <expand>
@@ -522,84 +722,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
-    <property name="SearchEverywhereHistoryKey" value="uuid&#9;PSI&#9;JAVA://java.util.UUID&#10;scheb&#9;FILE&#9;file://F:/作业/项目/服创-小程序项目/fuchuang/IMBA/Ssm01-service/src/main/java/com/IMBA/service/impl/schedule_backgroundServiceImpl.java&#10;mockito&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="redis&#9;null&#9;null&#10;uuid&#9;PSI&#9;JAVA://java.util.UUID&#10;scheb&#9;FILE&#9;file://F:/作业/项目/服创-小程序项目/fuchuang/IMBA/Ssm01-service/src/main/java/com/IMBA/service/impl/schedule_backgroundServiceImpl.java&#10;mockito&#9;null&#9;null" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550854257206" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551147394021" />
     <property name="database.console.LAST_STATE" value="false" />
-    <property name="last_opened_file_path" value="D:/微信文件/WeChat Files/guanguan136136/Files/cmccdev-CMCC-NEWContractMS-master" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.47471264" />
-    <property name="settings.editor.selected.configurable" value="vcs.Git" />
+    <property name="settings.editor.selected.configurable" value="vcs.CVS" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -631,7 +767,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ScheduleCtrTest.testQRCode">
+  <component name="RunManager" selected="JUnit.scheduleServiceTest.testAttendanceRecord">
     <configuration name="ScheduleCtrTest.BgImgTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ssm01-webui" />
       <option name="PACKAGE_NAME" value="" />
@@ -642,41 +778,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScheduleCtrTest.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ScheduleCtrTest.testDonwloadFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ssm01-webui" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ScheduleCtrTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="METHOD_NAME" value="testDonwloadFile" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ScheduleCtrTest.testQRCode" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ssm01-webui" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ScheduleCtrTest" />
-      <option name="METHOD_NAME" value="testQRCode" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="scheduleServiceTest.testAddCourse" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="scheduleServiceTest.editSignature" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ssm01-service" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="scheduleServiceTest" />
-      <option name="METHOD_NAME" value="testAddCourse" />
+      <option name="METHOD_NAME" value="editSignature" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="scheduleServiceTest.testMemo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="scheduleServiceTest.testAttendanceRecord" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ssm01-service" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="scheduleServiceTest" />
-      <option name="METHOD_NAME" value="testMemo" />
+      <option name="METHOD_NAME" value="testAttendanceRecord" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="scheduleServiceTest.testVideo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ssm01-service" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="scheduleServiceTest" />
+      <option name="METHOD_NAME" value="testVideo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -818,19 +954,19 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.Unnamed" />
+      <item itemvalue="JUnit.scheduleServiceTest.editSignature" />
+      <item itemvalue="JUnit.scheduleServiceTest.testVideo" />
+      <item itemvalue="JUnit.scheduleServiceTest.testAttendanceRecord" />
       <item itemvalue="JUnit.ScheduleCtrTest.BgImgTest" />
-      <item itemvalue="JUnit.scheduleServiceTest.testMemo" />
-      <item itemvalue="JUnit.scheduleServiceTest.testAddCourse" />
-      <item itemvalue="JUnit.ScheduleCtrTest.testQRCode" />
-      <item itemvalue="JUnit.ScheduleCtrTest.test" />
+      <item itemvalue="JUnit.ScheduleCtrTest.testDonwloadFile" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ScheduleCtrTest.testQRCode" />
-        <item itemvalue="JUnit.ScheduleCtrTest.test" />
+        <item itemvalue="JUnit.scheduleServiceTest.testAttendanceRecord" />
+        <item itemvalue="JUnit.ScheduleCtrTest.testDonwloadFile" />
         <item itemvalue="JUnit.ScheduleCtrTest.BgImgTest" />
-        <item itemvalue="JUnit.scheduleServiceTest.testAddCourse" />
-        <item itemvalue="JUnit.scheduleServiceTest.testMemo" />
+        <item itemvalue="JUnit.scheduleServiceTest.testVideo" />
+        <item itemvalue="JUnit.scheduleServiceTest.editSignature" />
       </list>
     </recent_temporary>
   </component>
@@ -855,44 +991,55 @@
       <workItem from="1550644261128" duration="4141000" />
       <workItem from="1550714423943" duration="31527000" />
       <workItem from="1550803041394" duration="24548000" />
-      <workItem from="1550890173357" duration="1482000" />
+      <workItem from="1550890173357" duration="32104000" />
+      <workItem from="1550995220703" duration="8445000" />
+      <workItem from="1551079255530" duration="14969000" />
+      <workItem from="1551146586354" duration="926000" />
     </task>
+    <task id="LOCAL-00001" summary="课程表">
+      <created>1550896884574</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1550896884574</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ScheduleCtrTest_test - 2019.02.22 at 18h 08m 52s.xml">
-      <configuration name="ScheduleCtrTest.test" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 19h 32m 23s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 18h 16m 35s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 19h 42m 33s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_test - 2019.02.22 at 18h 17m 47s.xml">
-      <configuration name="ScheduleCtrTest.test" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 19h 43m 42s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 18h 20m 41s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 19h 45m 26s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 19h 01m 53s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 19h 47m 52s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 19h 06m 58s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 19h 49m 10s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 19h 15m 04s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 20h 00m 38s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 19h 15m 54s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 20h 01m 19s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 19h 20m 13s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 20h 17m 21s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="ScheduleCtrTest_testQRCode - 2019.02.22 at 19h 22m 17s.xml">
-      <configuration name="ScheduleCtrTest.testQRCode" configurationId="JUnit" />
+    <history-entry file="scheduleServiceTest_testAttendanceRecord - 2019.02.25 at 20h 17m 39s.xml">
+      <configuration name="scheduleServiceTest.testAttendanceRecord" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143403000" />
+    <option name="totallyTimeSpent" value="198365000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -904,10 +1051,47 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2319" y="-87" width="974" height="1047" extended-state="0" />
+    <frame x="1815" y="-87" width="1478" height="1047" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.309628" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1777151" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Web" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.58784896" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3015351" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.098684214" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.13267544" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.3125" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.32894737" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.15852335" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32899022" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3234649" />
+      <window_info anchor="bottom" id="Java Enterprise" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32894737" />
+      <window_info anchor="bottom" id="Database Console" order="15" weight="0.32899022" />
+      <window_info anchor="bottom" id="SQL Generator" order="16" weight="0.32899022" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Maven Projects" order="5" weight="0.32995737" />
+      <window_info anchor="right" id="Bean Validation" order="6" weight="0.32958537" />
+      <window_info anchor="right" id="Database" order="7" weight="0.35995623" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19349681" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -924,12 +1108,12 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.25219297" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.31270358" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.15852335" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32899022" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32356134" />
       <window_info anchor="bottom" id="Java Enterprise" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" />
-      <window_info anchor="bottom" id="Version Control" order="14" />
+      <window_info anchor="bottom" id="Version Control" order="14" weight="0.32894737" />
       <window_info anchor="bottom" id="Database Console" order="15" weight="0.32899022" />
       <window_info anchor="bottom" id="SQL Generator" order="16" weight="0.32899022" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -942,7 +1126,7 @@
       <window_info anchor="right" id="Database" order="7" weight="0.35995623" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -950,348 +1134,394 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="课程表" />
+    <MESSAGE value="个人页面" />
+    <option name="LAST_COMMIT_MESSAGE" value="个人页面" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/util/UUID.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="69" column="19" selection-start-line="69" selection-start-column="19" selection-end-line="69" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/SnowflakeIdWorker.java" />
-    <entry file="file://$PROJECT_DIR$/Ssm01-common/doc/sql3.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/course.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="15" column="16" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/bullet_commentsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="21" column="51" lean-forward="true" selection-start-line="21" selection-start-column="51" selection-end-line="21" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/bullet_commentsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="33" selection-start-line="7" selection-start-column="33" selection-end-line="7" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/bullet_commentsMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1407">
-          <caret line="99" column="24" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/bullet_comments.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="20" lean-forward="true" selection-start-line="3" selection-start-column="20" selection-end-line="3" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/bullet_commentsServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_161/src.zip!/java/lang/Object.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="234" column="18" selection-start-line="234" selection-start-column="18" selection-end-line="234" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/memoKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="28" selection-start-line="7" selection-start-column="20" selection-end-line="7" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/memo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="30" selection-start-line="2" selection-start-column="30" selection-end-line="2" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/stu_courseKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/courseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/majorMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="18" column="66" lean-forward="true" selection-start-line="18" selection-start-column="49" selection-end-line="18" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/memoService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="7" column="22" lean-forward="true" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/memoServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="36" column="17" selection-start-line="36" selection-start-column="17" selection-end-line="36" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/memoMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="22" column="29" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/memoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="88" column="41" lean-forward="true" selection-start-line="88" selection-start-column="41" selection-end-line="88" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/R.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="21">
-          <caret line="17" column="20" selection-start-line="17" selection-start-column="20" selection-end-line="17" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/target/test-classes/bdd62278-1082-408f-a8d9-4f9bd5586750.jpg" />
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/schedule_backgroundMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="70" column="27" selection-start-line="70" selection-start-column="14" selection-end-line="70" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/ScheduleService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/schedule_backgroundMapper.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/electiveMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="37" />
+          <caret line="20" column="51" selection-start-line="20" selection-start-column="51" selection-end-line="20" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/BackgroundService.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="171">
+          <caret line="15" column="48" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/postsMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="45" column="14" selection-start-line="45" selection-start-column="14" selection-end-line="45" selection-end-column="14" />
+        <state relative-caret-position="95">
+          <caret line="8" column="41" lean-forward="true" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/stu_courseMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/courseMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="43" column="72" selection-start-line="43" selection-start-column="72" selection-end-line="43" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="665">
-          <caret line="35" column="17" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/courseService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_courseService.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/postsService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+          <caret line="6" column="23" lean-forward="true" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/courseServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/postsMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="41" selection-start-line="22" selection-start-column="41" selection-end-line="22" selection-end-column="41" />
+        <state relative-caret-position="417">
+          <caret line="147" column="70" lean-forward="true" selection-start-line="147" selection-start-column="45" selection-end-line="147" selection-end-column="70" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_courseServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/video_series.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="209">
+          <caret line="11" column="32" lean-forward="true" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/target/test-classes/dfcec8cc-2cb9-460d-8877-de2eeb7efa24.jpg" />
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/test/scheduleServiceTest.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/video.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="16" column="34" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="34" />
+        <state relative-caret-position="57">
+          <caret line="3" column="29" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="uml://MAVEN/com.zhangguo.ssm01:SSM01:1.0-SNAPSHOT">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MAVEN</ID>
-          <OriginalElement>com.zhangguo.ssm01:SSM01:1.0-SNAPSHOT</OriginalElement>
-          <nodes>
-            <node x="" y="">com.zhangguo.ssm01:SSM01:1.0-SNAPSHOT</node>
-          </nodes>
-          <notes />
-          <edges />
-          <settings layout="Hierarchic Group" zoom="1.0" x="36.0" y="15.0" />
-          <SelectedNodes />
-          <Categories />
-          <SCOPE>All</SCOPE>
-          <VISIBILITY>All</VISIBILITY>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.3.RELEASE/spring-web-5.1.3.RELEASE.jar!/org/springframework/http/HttpLogging.class">
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/video_record.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="114">
+          <caret line="6" column="29" lean-forward="true" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-common/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/dto/watchedVideoDto.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+        <state relative-caret-position="114">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.0.RELEASE/spring-context-4.3.0.RELEASE.pom">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/video_seriesService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="21" column="38" selection-start-line="21" selection-start-column="38" selection-end-line="21" selection-end-column="38" />
+        <state relative-caret-position="266">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/applicationContext.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/video_seriesMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state relative-caret-position="437">
+          <caret line="23" column="24" selection-start-line="23" selection-start-column="24" selection-end-line="23" selection-end-column="24" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_seriesServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-190">
-          <caret line="40" column="32" selection-start-line="40" selection-start-column="32" selection-end-line="40" selection-end-column="32" />
+        <state relative-caret-position="95">
+          <caret line="12" column="67" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="67" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/pom.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/video_recordMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="50" column="54" selection-start-line="50" selection-start-column="54" selection-end-line="50" selection-end-column="54" />
+        <state relative-caret-position="133">
+          <caret line="7" column="75" selection-start-line="7" selection-start-column="71" selection-end-line="7" selection-end-column="75" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/test/ScheduleCtrTest.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/StringUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="93" column="58" lean-forward="true" selection-start-line="93" selection-start-column="58" selection-end-line="93" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="171">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/SerializeUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/PageData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/MD5Util.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/DateUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/ByteToInputStream.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-601">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/QRCodeUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="28" column="64" lean-forward="true" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ScheduleController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="19" selection-start-column="19" selection-end-column="19" />
+        <state relative-caret-position="283">
+          <caret line="28" column="64" selection-start-line="28" selection-start-column="64" selection-end-line="28" selection-end-column="64" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ProfileController.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/studentMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        <state relative-caret-position="-2280">
+          <caret line="3" column="58" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/stu_courseMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="18" column="50" lean-forward="true" selection-start-line="18" selection-start-column="35" selection-end-line="18" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/student.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="23" lean-forward="true" selection-start-line="15" selection-start-column="23" selection-end-line="15" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_in.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <element signature="e#183#184#0" expanded="true" />
+            <element signature="e#212#213#0" expanded="true" />
+            <element signature="e#256#257#0" expanded="true" />
+            <element signature="e#292#293#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/studentMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="25" column="23" selection-start-line="25" selection-start-column="23" selection-end-line="25" selection-end-column="23" />
+          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/clock_inKey.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="38">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+          <folding>
+            <element signature="e#178#179#0" expanded="true" />
+            <element signature="e#209#210#0" expanded="true" />
+            <element signature="e#258#259#0" expanded="true" />
+            <element signature="e#298#299#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/clock_inMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/target/test-classes/ScheduleCtrTest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-866" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/target/test-classes/upload/test.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/clock_inMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="518">
+          <caret line="81" column="53" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/DownloadFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="13" column="59" lean-forward="true" selection-start-line="13" selection-start-column="59" selection-end-line="13" selection-end-column="59" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/test/scheduleServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3154">
+          <caret line="180" column="46" selection-start-line="180" selection-start-column="46" selection-end-line="180" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/BaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="63" column="14" selection-start-line="63" selection-start-column="14" selection-end-line="63" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/clock_inServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/dto/attendanceRecordDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ScheduleController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3762">
+          <caret line="211" column="16" selection-start-line="211" selection-start-column="16" selection-end-line="211" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/clock_inService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/test/ScheduleCtrTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="836">
+          <caret line="69" column="42" selection-start-line="69" selection-start-column="42" selection-end-line="69" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-common/src/main/java/com/IMBA/utils/JsonUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="15" column="79" lean-forward="true" selection-start-line="15" selection-start-column="79" selection-end-line="15" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/BackgroundService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="7" column="29" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="23" column="89" selection-start-line="23" selection-start-column="25" selection-end-line="23" selection-end-column="89" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/InfoController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1197">
+          <caret line="69" column="11" selection-start-line="69" selection-start-column="11" selection-end-line="69" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/controller/ProfileController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="141" column="68" selection-start-line="141" selection-start-column="68" selection-end-line="141" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/postsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="377">
+          <caret line="26" column="20" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/videoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/videoMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="102" selection-start-line="12" selection-start-column="102" selection-end-line="12" selection-end-column="102" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/electiveMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="24" column="64" selection-start-line="24" selection-start-column="64" selection-end-line="24" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_notificationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="68" column="11" selection-start-line="68" selection-start-column="11" selection-end-line="68" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/notificationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="40" column="29" selection-start-line="40" selection-start-column="29" selection-end-line="40" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/video_seriesMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="72" column="11" selection-start-line="72" selection-start-column="11" selection-end-line="72" selection-end-column="11" />
         </state>
       </provider>
     </entry>

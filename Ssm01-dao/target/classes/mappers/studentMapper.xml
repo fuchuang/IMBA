@@ -151,4 +151,11 @@
       #{personalizedSignatures,jdbcType=VARCHAR}, #{isadmin,jdbcType=BIT}, #{sex,jdbcType=CHAR}
       )
   </insert>
+
+  <select id="findByStuId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from student
+    where id = #{stuId,jdbcType=INTEGER}
+  </select>
 </mapper>

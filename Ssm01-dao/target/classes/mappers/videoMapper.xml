@@ -79,4 +79,5 @@
     where id = #{id,jdbcType=INTEGER}
       and video_series_id = #{videoSeriesId,jdbcType=INTEGER}
   </update>
+
 </mapper>

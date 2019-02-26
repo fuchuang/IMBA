@@ -3,6 +3,8 @@ package com.IMBA.dao;
 import com.IMBA.entity.video;
 import com.IMBA.entity.videoKey;
 
+import java.util.List;
+
 public interface videoMapper {
     int deleteByPrimaryKey(videoKey key);
 
@@ -15,4 +17,5 @@ public interface videoMapper {
     int updateByPrimaryKeySelective(video record);
 
     int updateByPrimaryKey(video record);
+
 }

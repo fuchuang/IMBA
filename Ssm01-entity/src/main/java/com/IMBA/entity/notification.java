@@ -13,6 +13,8 @@ public class notification {
 
     private String notiContent;
 
+    private String attachedFilePath;
+
     public Integer getId() {
         return id;
     }
@@ -51,5 +53,12 @@ public class notification {
 
     public void setNotiContent(String notiContent) {
         this.notiContent = notiContent == null ? null : notiContent.trim();
+    }
+    public String getAttachedFilePath() {
+        return attachedFilePath;
+    }
+
+    public void setAttachedFilePath(String attachedFilePath) {
+        this.attachedFilePath = attachedFilePath;
     }
 }

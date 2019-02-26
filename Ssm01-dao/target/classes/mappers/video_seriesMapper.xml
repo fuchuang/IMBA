@@ -8,6 +8,15 @@
     <result column="course_type" property="courseType" jdbcType="VARCHAR" />
     <result column="watching_num" property="watchingNum" jdbcType="INTEGER" />
   </resultMap>
+
+  <resultMap id="WatchedResultMap" type="com.IMBA.dto.watchedVideoDto" >
+    <result column="course_lecturer" property="courseLecturer" jdbcType="VARCHAR" />
+    <result column="course_title" property="courseTitle" jdbcType="VARCHAR" />
+    <result column="video_path" property="videoPath" jdbcType="VARCHAR" />
+    <result column="watching_num" property="watchingNum" jdbcType="INTEGER" />
+    <result column="watch_progress" property="watchProgress" jdbcType="REAL" />
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, course_lecturer, course_title, course_type, watching_num
   </sql>
@@ -90,4 +99,24 @@
       watching_num = #{watchingNum,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectCollection" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    vs.id, course_lecturer, course_title, course_type, watching_num
+    from video_series as vs inner join video_collections as vc
+                                  on vc.student_id=#{stuId,jdbcType=INTEGER}
+                                  and vs.id=vc.video_series_id;
+  </select>
+
+  <!--视频浏览记录-->
+  <select id="selectWatchedVideo" resultMap="WatchedResultMap" parameterType="java.lang.Integer" >
+    select
+     course_lecturer, course_title, watching_num ,video_path ,watch_progress
+    from video_series as vs inner join video_record as vr
+                                    on vr.student_id=#{stuId,jdbcType=INTEGER}
+                            inner join video as v
+                                    on vr.video_id=v.id
+                                    and v.video_series_id=vs.id
+  </select>
+
 </mapper>

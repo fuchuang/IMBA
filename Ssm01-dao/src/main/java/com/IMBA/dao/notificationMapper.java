@@ -1,6 +1,9 @@
 package com.IMBA.dao;
 
+import com.IMBA.dto.noticesDto;
 import com.IMBA.entity.notification;
+
+import java.util.List;
 
 public interface notificationMapper {
     int deleteByPrimaryKey(Integer id);
@@ -16,4 +19,12 @@ public interface notificationMapper {
     int updateByPrimaryKeyWithBLOBs(notification record);
 
     int updateByPrimaryKey(notification record);
+
+    List<noticesDto> selectByStuId(Integer stuId);
+
+    List<noticesDto> selectCollection(Integer stuId);
+
+    notification selectById(Integer id);
+
+    int insertAndGetId(notification record);
 }

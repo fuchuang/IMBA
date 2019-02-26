@@ -14,6 +14,10 @@ public class studentServiceImpl implements studentService {
 
 
     public student findbystuid(int stuid) {
+        student s=StuMapper.findByStuId(stuid);
+        if(s!=null){
+            return s;
+        }
         return null;
     }
 
@@ -25,5 +29,16 @@ public class studentServiceImpl implements studentService {
     public int insertAndGetId(student record){
         StuMapper.insertAndGetId(record);
         return record.getId();
+    }
+
+    public boolean updateSignature(int stuId, String content) {
+        student s=findbystuid(stuId);
+        if(s!=null && !(content.trim()).equals("")){
+            s.setPersonalizedSignatures(content);
+            StuMapper.updateByPrimaryKeySelective(s);
+            return true;
+        }else {
+            return false;
+        }
     }
 }
