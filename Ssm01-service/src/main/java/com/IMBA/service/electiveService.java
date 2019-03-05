@@ -14,4 +14,16 @@ public interface electiveService {
 
     //通过关键字检索选课表
     List<electiveResultDto> searchByKeyWord(int stuId,String keyWord);
+
+    //点赞选修
+    boolean addLike(int stuId,int electiveId);
+
+    //取消点赞
+    boolean cancelLike(int stuId,int electiveId);
+
+    //收藏选修
+    boolean addCollect(int stuId,int electiveId,Date date);
+
+    //取消收藏选修
+    boolean cancelCollect(int stuId,int electiveId);
 }

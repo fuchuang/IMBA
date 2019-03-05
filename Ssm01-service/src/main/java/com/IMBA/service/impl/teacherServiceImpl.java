@@ -1,8 +1,10 @@
 package com.IMBA.service.impl;
 
+import com.IMBA.dao.stu_teacher_likesMapper;
 import com.IMBA.dao.teacherMapper;
 import com.IMBA.dto.stuCourseDto;
 import com.IMBA.dto.teachInfoDto;
+import com.IMBA.entity.stu_teacher_likes;
 import com.IMBA.entity.teacher;
 import com.IMBA.service.stu_courseService;
 import com.IMBA.service.teacherService;
@@ -19,6 +21,8 @@ public class teacherServiceImpl implements teacherService {
     teacherMapper mapper;
     @Autowired
     stu_courseService stuCourseService;
+    @Autowired
+    stu_teacher_likesMapper teacherLikesMapper;
 
     public List<teachInfoDto> getTeachersInfo(int stuId) {
         //还要返回学生是否已点赞老师 一个老师任教的课程可能有多门
@@ -49,10 +53,24 @@ public class teacherServiceImpl implements teacherService {
     }
 
     public boolean addLikes(int stuId, int teacherId) {
+        stu_teacher_likes like=new stu_teacher_likes();
+        like.setStudentId(stuId);
+        like.setTeacherId(teacherId);
+        int n=teacherLikesMapper.insert(like);
+        if (n!=0){
+            return true;
+        }
         return false;
     }
 
     public boolean cancelLikes(int stuId, int teacherId) {
+        stu_teacher_likes like=new stu_teacher_likes();
+        like.setTeacherId(teacherId);
+        like.setStudentId(stuId);
+        int n=teacherLikesMapper.deleteByPrimaryKey(like);
+        if (n!=0){
+            return true;
+        }
         return false;
     }
 

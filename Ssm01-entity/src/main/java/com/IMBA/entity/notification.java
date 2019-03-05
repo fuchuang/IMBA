@@ -15,6 +15,16 @@ public class notification {
 
     private String attachedFilePath;
 
+    private boolean isCollect;
+
+    public boolean isCollect() {
+        return isCollect;
+    }
+
+    public void setCollect(boolean collect) {
+        isCollect = collect;
+    }
+
     public Integer getId() {
         return id;
     }

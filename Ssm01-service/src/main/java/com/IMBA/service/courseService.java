@@ -9,7 +9,7 @@ import java.util.Map;
 public interface courseService {
 
     //通过课程id查找课程
-    public course findCourseById(int stuId,int courseId);
+    public course findCourseById(int courseId);
 
     //添加课程
     public int addCourse(course course);

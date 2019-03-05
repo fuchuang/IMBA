@@ -23,7 +23,7 @@ public interface courseMapper {
 
     int insertAndGetId(course record);
 
-    course selectByCouseId( @Param("stuId") Integer stuId, @Param("course_id")Integer id);
+    course selectByCouseId( Integer id);
 
 
 

@@ -25,4 +25,14 @@ public class stu_notificationServiceImpl implements stu_notificationService {
         }
         return true;
     }
+
+    public boolean updateItem(stu_notification record) {
+        int n=mapper.updateByPrimaryKeySelective(record);
+        if (n==1)return true;
+        return false;
+    }
+
+    public stu_notification getById(int stuId, int noticeId) {
+        return mapper.selectBystuIdAndNoticeId(stuId,noticeId);
+    }
 }

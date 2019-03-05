@@ -27,4 +27,6 @@ public interface notificationMapper {
     notification selectById(Integer id);
 
     int insertAndGetId(notification record);
+
+    List<noticesDto> selectBYTime(Integer stuId);
 }

@@ -174,4 +174,15 @@
     </trim>
   </insert>
 
+  <select id="selectBYTime" resultMap="ResultMapWithBLOBs">
+    select
+    <include refid="Base_Column_List" />
+    from notification as n inner join stu_notification as sn
+                              on sn.notification_id=n.id
+                           inner join student as st
+                              on st.id=sn.student_id
+                           order by sn.read_time desc
+                           limit 10
+  </select>
+
 </mapper>

@@ -23,9 +23,9 @@ public class courseServiceImpl implements courseService {
     @Autowired
     majorService majorservice;
     //得到课程的详细信息
-    public course findCourseById(int stuId,int courseId) {
+    public course findCourseById(int courseId) {
         //返回的数据包括 课程名称 上课地点 上课时间 上课老师 上此课的班级
-        course result=coursemapper.selectByCouseId(stuId,courseId);
+        course result=coursemapper.selectByCouseId(courseId);
         List<Integer> majors=stuCourseService.findMajorByCourseId(courseId);
         for (int i=0;i<majors.size();i++){
             major record= majorservice.findById(majors.get(i));

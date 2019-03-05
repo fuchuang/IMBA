@@ -20,6 +20,7 @@ public class electiveServiceImpl implements electiveService {
     @Autowired
     electiveLikeService electiveLikeservice;
 
+
     public List<electiveResultDto> findCollectionsByStuId(int stuId) {
         List<electiveResultDto> list=electivemapper.selectCollection(stuId);
         for (electiveResultDto record:list){
@@ -54,6 +55,30 @@ public class electiveServiceImpl implements electiveService {
 
         }
         return result;
+    }
+
+    public boolean addLike(int stuId, int electiveId) {
+        boolean result=electiveLikeservice.addLkie(stuId,electiveId);
+        if (result)return true;
+        return false;
+    }
+
+    public boolean cancelLike(int stuId, int electiveId) {
+        boolean result= electiveLikeservice.deleteLike(stuId,electiveId);
+        if (result)return true;
+        return false;
+    }
+
+    public boolean addCollect(int stuId, int electiveId,Date date) {
+        boolean result=electiveCollectionsService.collectElective(stuId,electiveId,date);
+        if (result)return true;
+        return false;
+    }
+
+    public boolean cancelCollect(int stuId, int electiveId) {
+        boolean result=electiveCollectionsService.cancelCollect(stuId,electiveId);
+        if (result)return true;
+        return false;
     }
 
     public boolean addLike(int id) {

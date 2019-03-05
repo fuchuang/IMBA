@@ -2,7 +2,10 @@ package com.IMBA.service.impl;
 
 import com.IMBA.dao.schedule_backgroundMapper;
 import com.IMBA.dao.studentMapper;
+import com.IMBA.dto.studentInfo;
+import com.IMBA.entity.major;
 import com.IMBA.entity.student;
+import com.IMBA.service.majorService;
 import com.IMBA.service.studentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,14 +14,13 @@ import org.springframework.stereotype.Service;
 public class studentServiceImpl implements studentService {
     @Autowired
     studentMapper StuMapper;
+    @Autowired
+    majorService majorService;
 
 
     public student findbystuid(int stuid) {
         student s=StuMapper.findByStuId(stuid);
-        if(s!=null){
-            return s;
-        }
-        return null;
+        return s;
     }
 
     public int insertSelective(student record) {
@@ -40,5 +42,14 @@ public class studentServiceImpl implements studentService {
         }else {
             return false;
         }
+    }
+
+    public studentInfo getStuInfoById(int stuId) {
+        student s=StuMapper.findByStuId(stuId);
+        if (s==null)return null;
+        major m=majorService.findById(s.getMajorId());
+        studentInfo info=new studentInfo();
+        info.setInfo(s,m);
+        return info;
     }
 }

@@ -2,6 +2,7 @@ package com.IMBA.dao;
 
 import com.IMBA.entity.stu_notification;
 import com.IMBA.entity.stu_notificationKey;
+import org.apache.ibatis.annotations.Param;
 
 public interface stu_notificationMapper {
     int deleteByPrimaryKey(stu_notificationKey key);
@@ -15,4 +16,6 @@ public interface stu_notificationMapper {
     int updateByPrimaryKeySelective(stu_notification record);
 
     int updateByPrimaryKey(stu_notification record);
+
+    stu_notification selectBystuIdAndNoticeId(@Param("stuId")Integer studentId,@Param("noticeId")Integer notificationId);
 }
