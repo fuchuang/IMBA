@@ -7,7 +7,7 @@ public class match {
 
     private String matchTitle;
 
-    private String matchType;
+    private Integer matchType;
 
     private String matchContent;
 
@@ -35,12 +35,12 @@ public class match {
         this.matchTitle = matchTitle == null ? null : matchTitle.trim();
     }
 
-    public String getMatchType() {
+    public Integer getMatchType() {
         return matchType;
     }
 
-    public void setMatchType(String matchType) {
-        this.matchType = matchType == null ? null : matchType.trim();
+    public void setMatchType(Integer matchType) {
+        this.matchType = matchType ;
     }
 
     public String getMatchContent() {

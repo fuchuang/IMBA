@@ -20,4 +20,10 @@ public class elective extends electiveKey {
     public void setCollectonsNumber(Integer collectonsNumber) {
         this.collectonsNumber = collectonsNumber;
     }
+
+    public void addLikesNumber(){
+        if (likesNumber!=null){
+            likesNumber++;
+    }
+    }
 }

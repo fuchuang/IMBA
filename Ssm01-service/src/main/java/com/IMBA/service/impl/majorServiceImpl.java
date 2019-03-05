@@ -16,4 +16,9 @@ public class majorServiceImpl implements majorService {
         majormapper.insertAndGetId(record);
         return record.getId();
     }
+
+    public major findById(int id) {
+        major result=majormapper.selectByPrimaryKey(id);
+        return result;
+    }
 }

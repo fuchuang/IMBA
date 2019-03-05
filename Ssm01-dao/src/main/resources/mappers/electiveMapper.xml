@@ -7,6 +7,15 @@
     <result column="likes_number" property="likesNumber" jdbcType="INTEGER" />
     <result column="collectons_number" property="collectonsNumber" jdbcType="INTEGER" />
   </resultMap>
+  <resultMap id="TypeResultMap" type="com.IMBA.dto.electiveResultDto">
+    <id column="id" property="id" jdbcType="INTEGER"/>
+    <result column="likes_number" property="likesNumber" jdbcType="INTEGER"/>
+    <result column="course_name" property="courseName" jdbcType="VARCHAR"/>
+    <result column="teacher_name" property="teacher" jdbcType="VARCHAR"/>
+    <result column="course_credit" property="courseCredit" jdbcType="REAL" />
+    <result column="course_hour" property="courseHour" jdbcType="INTEGER" />
+  </resultMap>
+
   <sql id="Base_Column_List" >
     id, course_id, likes_number, collectons_number
   </sql>
@@ -28,7 +37,7 @@
     values (#{id,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}, #{likesNumber,jdbcType=INTEGER}, 
       #{collectonsNumber,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.IMBA.entity.elective" >
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.elective" >
     insert into elective
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -70,7 +79,6 @@
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
-      and course_id = #{courseId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.elective" >
     update elective
@@ -80,12 +88,44 @@
       and course_id = #{courseId,jdbcType=INTEGER}
   </update>
 
-  <select id="selectCollection" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectCollection" resultMap="TypeResultMap" parameterType="java.lang.Integer" >
     select
-    el.id, course_id, likes_number, collectons_number
+    el.id,cin.course_name,el.likes_number,t.teacher_name,cin.course_credit, cin.course_hour
     from elective as el inner join elective_collections as ec
                               on ec.student_id=#{stuId,jdbcType=INTEGER}
-                              and el.id=ec.elective_id;
+                              and el.id=ec.elective_id
+                        inner join course_info as cin
+                              on cin.id=el.course_id
+                        inner join teacher_course as tc
+                              on tc.course_id=cin.id
+                        inner join teacher as t
+                              on t.id=tc.teacher_id;
+  </select>
+
+  <select id="selectByType" resultMap="TypeResultMap">
+    select
+    e.id,cin.course_name, e.likes_number,t.teacher_name,cin.course_credit, cin.course_hour
+    from elective as e inner join course_info as cin
+                              on cin.id=e.course_id
+                              and cin.course_type=#{type,jdbcType=VARCHAR}
+                        inner join teacher_course as tc
+                              on tc.course_id=cin.id
+                        inner join teacher as t
+                              on t.id=tc.teacher_id
+
+  </select>
+  
+  <select id="selectByKeyWord" resultMap="TypeResultMap" >
+    select
+    e.id,cin.course_name,e.likes_number,t.teacher_name,cin.course_credit, cin.course_hour
+    from (elective as e inner join course_info as cin
+                              on cin.id=e.course_id
+                       inner join teacher_course as tc
+                              on tc.course_id=cin.id
+                       inner join teacher as t
+                              on t.id=tc.teacher_id)
+     where cin.course_name like #{keyWord,jdbcType=VARCHAR}
+
   </select>
 
 </mapper>

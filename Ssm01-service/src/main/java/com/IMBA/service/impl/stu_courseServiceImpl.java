@@ -1,6 +1,7 @@
 package com.IMBA.service.impl;
 
 import com.IMBA.dao.stu_courseMapper;
+import com.IMBA.dto.stuCourseDto;
 import com.IMBA.entity.course;
 import com.IMBA.service.stu_courseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class stu_courseServiceImpl implements stu_courseService {
         return courses;
     }
 
-    public List<course> findCoursesOdDay(Integer stuId, String year, Byte week, Byte day) {
+    public List<course> findCoursesOfDay(Integer stuId, String year, Byte week, Byte day) {
         List<course> coursesInWeek=findCoursesOfWeek(stuId,year,week);
         List<course> coursesInDay=new ArrayList<course>();
         if(coursesInWeek!=null){
@@ -33,6 +34,7 @@ public class stu_courseServiceImpl implements stu_courseService {
         return coursesInDay;
     }
 
+    //TODO 待删
     public boolean addStuCourse(int stuId, int courseId) {
         stu_courseKey courseKey=new stu_courseKey();
         courseKey.setStudentId(stuId);
@@ -44,6 +46,16 @@ public class stu_courseServiceImpl implements stu_courseService {
             return false;
         }
         return true;
+    }
+
+    //TODO 哪里调用过？？
+    public List<stuCourseDto> findCoursesList(int stuId) {
+        List<stuCourseDto> list=mapper.findCoursesList(stuId);
+        return list;
+    }
+
+    public List<Integer> findMajorByCourseId(int courseId) {
+        return mapper.selectMajorIdByCourseId(courseId);
     }
 
 }

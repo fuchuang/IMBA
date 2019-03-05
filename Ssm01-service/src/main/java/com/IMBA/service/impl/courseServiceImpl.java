@@ -2,7 +2,10 @@ package com.IMBA.service.impl;
 
 import com.IMBA.dao.courseMapper;
 import com.IMBA.entity.course;
+import com.IMBA.entity.major;
 import com.IMBA.service.courseService;
+import com.IMBA.service.majorService;
+import com.IMBA.service.stu_courseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +18,22 @@ import java.util.Map;
 public class courseServiceImpl implements courseService {
     @Autowired
     courseMapper coursemapper;
-    public course findCourseById(int courseId) {
-        course c=coursemapper.selectByPrimaryKey(courseId);
-        return c;
+    @Autowired
+    stu_courseService stuCourseService;
+    @Autowired
+    majorService majorservice;
+    //得到课程的详细信息
+    public course findCourseById(int stuId,int courseId) {
+        //返回的数据包括 课程名称 上课地点 上课时间 上课老师 上此课的班级
+        course result=coursemapper.selectByCouseId(stuId,courseId);
+        List<Integer> majors=stuCourseService.findMajorByCourseId(courseId);
+        for (int i=0;i<majors.size();i++){
+            major record= majorservice.findById(majors.get(i));
+            if (record!=null){
+                result.addMajor(record);
+            }
+        }
+        return result;
     }
 
     public int addCourse(course course) {

@@ -7,12 +7,24 @@
     <result column="avatar_path" property="avatarPath" jdbcType="VARCHAR" />
     <result column="office" property="office" jdbcType="VARCHAR" />
     <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
-    <result column="e-mail" property="eMail" jdbcType="VARCHAR" />
+    <result column="e_mail" property="eMail" jdbcType="VARCHAR" />
     <result column="likes_number" property="likesNumber" jdbcType="INTEGER" />
   </resultMap>
+
+  <resultMap id="ResultMap" type="com.IMBA.entity.teacher" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="teacher_name" property="teacherName" jdbcType="VARCHAR" />
+    <result column="avatar_path" property="avatarPath" jdbcType="VARCHAR" />
+    <result column="office" property="office" jdbcType="VARCHAR" />
+    <result column="phone_number" property="phoneNumber" jdbcType="VARCHAR" />
+    <result column="e_mail" property="eMail" jdbcType="VARCHAR" />
+    <result column="likes_number" property="likesNumber" jdbcType="INTEGER" />
+  </resultMap>
+
   <sql id="Base_Column_List" >
-    id, teacher_name, avatar_path, office, phone_number, e-mail, likes_number
+    id, teacher_name, avatar_path, office, phone_number, e_mail, likes_number
   </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -25,7 +37,7 @@
   </delete>
   <insert id="insert" parameterType="com.IMBA.entity.teacher" >
     insert into teacher (id, teacher_name, avatar_path, 
-      office, phone_number, e-mail, 
+      office, phone_number, e_mail,
       likes_number)
     values (#{id,jdbcType=INTEGER}, #{teacherName,jdbcType=VARCHAR}, #{avatarPath,jdbcType=VARCHAR}, 
       #{office,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{eMail,jdbcType=VARCHAR}, 
@@ -114,4 +126,22 @@
       likes_number = #{likesNumber,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByCourseId" parameterType="java.lang.Integer" resultMap="ResultMap">
+    select
+    t.id,  t.teacher_name,  t.avatar_path,  t.office,  t.phone_number,  t.e_mail,  t.likes_number
+    from teacher as t inner join  teacher_course as tc
+                            on tc.teacher_id=t.id
+                            and tc.course_id=#{courseId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectIsLike" resultType="java.lang.Integer">
+    select stl.id from teacher as t
+                      inner join stu_teacher_likes as stl
+                              on t.id=stl.teacher_id
+                              and t.id=#{teacherId,jdbcType=INTEGER}
+                      inner join student as s
+                              on s.id=stl.student_id
+                              and s.id=#{stuId,jdbcType=INTEGER}
+  </select>
 </mapper>

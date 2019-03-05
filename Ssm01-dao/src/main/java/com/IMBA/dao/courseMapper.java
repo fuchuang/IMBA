@@ -23,10 +23,8 @@ public interface courseMapper {
 
     int insertAndGetId(course record);
 
-    //TODO 实现查询的sql语句
-    List<course> findCoursesOfDay(@Param("stuId") int stuId,@Param("year") String year,@Param("week") int week,@Param("day") int day);
+    course selectByCouseId( @Param("stuId") Integer stuId, @Param("course_id")Integer id);
 
-    //TODO 通过id查找课程
-    course findCourseById(Integer id);
+
 
 }

@@ -17,7 +17,7 @@
       <module name="SSM01" target="1.5" />
       <module name="Ssm01-common" target="1.5" />
       <module name="Ssm01-dao" target="1.5" />
-      <module name="Ssm01-entity" target="1.5" />
+      <module name="Ssm01-entity" target="6" />
       <module name="Ssm01-service" target="1.5" />
       <module name="Ssm01-webui" target="1.7" />
     </bytecodeTargetLevel>

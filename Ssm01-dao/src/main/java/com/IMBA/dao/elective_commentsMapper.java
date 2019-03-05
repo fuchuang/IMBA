@@ -1,7 +1,10 @@
 package com.IMBA.dao;
 
+import com.IMBA.dto.electiveCommentsDto;
 import com.IMBA.entity.elective_comments;
 import com.IMBA.entity.elective_commentsKey;
+
+import java.util.List;
 
 public interface elective_commentsMapper {
     int deleteByPrimaryKey(elective_commentsKey key);
@@ -15,4 +18,6 @@ public interface elective_commentsMapper {
     int updateByPrimaryKeySelective(elective_comments record);
 
     int updateByPrimaryKey(elective_comments record);
+
+    List<electiveCommentsDto> selectCommentsById(Integer id);
 }

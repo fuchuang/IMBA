@@ -20,9 +20,20 @@
     <result column="cou.course_type" property="courseType" jdbcType="CHAR" />
     <result column="cou.course_time" property="courseTime" jdbcType="VARCHAR" />
   </resultMap>
+
+
+
+  <resultMap id="CourseListResultMap" type="com.IMBA.dto.stuCourseDto">
+    <id column="course_info_id" property="courseId" jdbcType="INTEGER"/>
+    <result column="course_name" property="courseName" jdbcType="VARCHAR"/>
+  </resultMap>
+
+  <sql id="Course_List" >
+    cou.id,cou.course_name
+  </sql>
   <sql id="Course_Result_List" >
-   cou.id,cou.course_name, cou.classroom, cou.course_credit, cou.course_hour, cou.course_quota, cou.day_of_week,
-    cou.week_of_semester, cou.lesson_of_day, cou.course_year, cou.course_type, cou.course_time
+   cou.id,ci.course_name, ci.classroom, ci.course_credit, ci.course_hour, ci.course_quota, cou.day_of_week,
+    cou.week_of_semester, cou.lesson_of_day, ci.course_year, ci.course_type, cou.course_time
   </sql>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.stu_courseKey" >
     delete from stu_course
@@ -64,9 +75,11 @@
   <select id="findCoursesOfWeek" resultMap="CourseResultMap"  >
     select
     <include refid="Course_Result_List" />
-    from stu_course as sc
-    inner join course as cou on cou.id=sc.course_id
-                                and cou.course_year=#{year,jdbcType=VARCHAR}
+    from stu_course as sc inner join course as cou
+                                  on cou.id=sc.course_id
+                          inner join course_info as ci
+                                  on cou.course_info_id=ci.id
+                                and ci.course_year=#{year,jdbcType=VARCHAR}
                                 and cou.week_of_semester=#{week,jdbcType=TINYINT}
                                 and sc.student_id in (
                                   select student_id
@@ -74,4 +87,21 @@
                                   where  student_id = #{stuId,jdbcType=INTEGER} )
   </select>
 
+  <select id="findCoursesList" resultMap="CourseListResultMap">
+    select
+      cou.course_info_id,cin.course_name
+    from stu_course as sc
+    inner join course as cou on cou.id=sc.course_id
+                            and sc.student_id= #{stuId,jdbcType=INTEGER}
+                            inner join  course_info as cin
+                            on cin.id=cou.course_info_id
+                            group by cou.course_info_id
+
+  </select>
+
+  <select id="selectMajorIdByCourseId" resultType="java.lang.Integer">
+    select s.major_id from stu_course as sc inner join student as s
+                                                   on sc.course_id=#{courseId,jdbcType=INTEGER}
+                                                   and sc.student_id=s.id
+  </select>
 </mapper>

@@ -1,5 +1,7 @@
 package com.IMBA.entity;
 
+import java.util.Date;
+
 public class examination extends examinationKey {
     private String site;
 
@@ -10,6 +12,26 @@ public class examination extends examinationKey {
     private Byte weekOfSemester;
 
     private String examTime;
+
+    private Date date;
+
+    private Integer seatNumber;
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
+
+    public Integer getSeatNumber() {
+        return seatNumber;
+    }
+
+    public void setSeatNumber(Integer seatNumber) {
+        this.seatNumber = seatNumber;
+    }
 
     public String getSite() {
         return site;

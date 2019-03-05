@@ -79,14 +79,16 @@
 
   <select id="selectAttendanceRecordByYear" resultMap="AttendancResultMap">
     select
-        sc.course_id,c.course_name,c.week_of_semester,ci.status
+        sc.course_id,cif.course_name,c.week_of_semester,ci.status
       from clock_in as ci inner join  stu_course as sc
                                 on ci.course_id=sc.course_id
                                 and ci.student_id=#{stuId,jdbcType=INTEGER}
                                 and sc.student_id=#{stuId,jdbcType=INTEGER}
                           inner join course as c
                                 on c.id=sc.course_id
-                                and c.course_year=#{year,jdbcType=VARCHAR}
+                          inner join course_info as cif
+                                on cif.id=c.course_info_id
+                                and cif.course_year=#{year,jdbcType=VARCHAR}
   </select>
 
 </mapper>

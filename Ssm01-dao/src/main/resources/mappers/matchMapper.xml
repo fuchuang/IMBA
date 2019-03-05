@@ -5,7 +5,7 @@
     <id column="id" property="id" jdbcType="INTEGER" />
     <result column="match_category" property="matchCategory" jdbcType="VARCHAR" />
     <result column="match_title" property="matchTitle" jdbcType="VARCHAR" />
-    <result column="match_type" property="matchType" jdbcType="VARCHAR" />
+    <result column="match_type" property="matchType" jdbcType="INTEGER" />
   </resultMap>
   <resultMap id="ResultMapWithBLOBs" type="com.IMBA.entity.match" extends="BaseResultMap" >
     <result column="match_content" property="matchContent" jdbcType="LONGVARCHAR" />
@@ -32,7 +32,7 @@
     insert into match (id, match_category, match_title, 
       match_type, match_content)
     values (#{id,jdbcType=INTEGER}, #{matchCategory,jdbcType=VARCHAR}, #{matchTitle,jdbcType=VARCHAR}, 
-      #{matchType,jdbcType=VARCHAR}, #{matchContent,jdbcType=LONGVARCHAR})
+      #{matchType,jdbcType=INTEGER}, #{matchContent,jdbcType=LONGVARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.IMBA.entity.match" >
     insert into match
@@ -81,7 +81,7 @@
         match_title = #{matchTitle,jdbcType=VARCHAR},
       </if>
       <if test="matchType != null" >
-        match_type = #{matchType,jdbcType=VARCHAR},
+        match_type = #{matchType,jdbcType=INTEGER},
       </if>
       <if test="matchContent != null" >
         match_content = #{matchContent,jdbcType=LONGVARCHAR},
@@ -93,7 +93,7 @@
     update match
     set match_category = #{matchCategory,jdbcType=VARCHAR},
       match_title = #{matchTitle,jdbcType=VARCHAR},
-      match_type = #{matchType,jdbcType=VARCHAR},
+      match_type = #{matchType,jdbcType=INTEGER},
       match_content = #{matchContent,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -101,7 +101,13 @@
     update match
     set match_category = #{matchCategory,jdbcType=VARCHAR},
       match_title = #{matchTitle,jdbcType=VARCHAR},
-      match_type = #{matchType,jdbcType=VARCHAR}
+      match_type = #{matchType,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+
+  <select id="selectByType" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List"/>
+    from match where match_type=#{type,jdbcType=INTEGER}
+  </select>
 </mapper>

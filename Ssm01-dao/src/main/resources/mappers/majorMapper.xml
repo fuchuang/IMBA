@@ -86,4 +86,6 @@
     values ( #{marjorName,jdbcType=VARCHAR}, #{classes,jdbcType=INTEGER},
       #{grade,jdbcType=INTEGER})
   </insert>
+
+
 </mapper>

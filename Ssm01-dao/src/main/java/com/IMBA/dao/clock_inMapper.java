@@ -19,6 +19,7 @@ public interface clock_inMapper {
     int updateByPrimaryKeySelective(clock_in record);
 
     int updateByPrimaryKey(clock_in record);
+
     List<attendanceRecordDto> selectAttendanceRecordByYear(@Param("stuId") Integer stuId,
                                                            @Param("year") String year);
 }

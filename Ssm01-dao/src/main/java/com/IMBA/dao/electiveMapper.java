@@ -1,7 +1,9 @@
 package com.IMBA.dao;
 
+import com.IMBA.dto.electiveResultDto;
 import com.IMBA.entity.elective;
 import com.IMBA.entity.electiveKey;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -18,5 +20,16 @@ public interface electiveMapper {
 
     int updateByPrimaryKey(elective record);
 
-    List<elective> selectCollection(Integer stuId);
+    List<electiveResultDto> selectCollection(Integer stuId);
+
+    List<electiveResultDto> selectByType(String type);
+
+    List<electiveResultDto> selectByKeyWord(@Param("keyWord") String keyWord,
+                                            @Param("stuId") Integer stuId);
+
+
+
+
+
+
 }

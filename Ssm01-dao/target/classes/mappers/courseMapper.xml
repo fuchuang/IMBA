@@ -14,11 +14,19 @@
     <result column="course_year" property="courseYear" jdbcType="VARCHAR" />
     <result column="course_type" property="courseType" jdbcType="CHAR" />
     <result column="course_time" property="courseTime" jdbcType="VARCHAR" />
+    <result column="teacher_name" property="teacher" jdbcType="VARCHAR"/>
+    <result column="marjor_name" property="majorName" jdbcType="VARCHAR"/>
+    <result column="grade" property="grade" jdbcType="INTEGER"/>
+    <result column="class" property="classNum" jdbcType="INTEGER"/>
   </resultMap>
   <sql id="Base_Column_List" >
     id, course_name, classroom, course_credit, course_hour, course_quota, day_of_week, 
     week_of_semester, lesson_of_day, course_year, course_type, course_time
   </sql>
+  <sql id="Course_Detail" >
+    course_name, classroom,course_time,teacher_name
+  </sql>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
@@ -189,11 +197,17 @@
   </insert>
 
 
-  <select id="findCoursesOfDay" resultMap="BaseResultMap"  >
+
+  <select id="selectByCouseId" resultMap="BaseResultMap">
     select
-    <include refid="Base_Column_List" />
-    from course
-    where id = #{id,jdbcType=INTEGER}
-          and
+    <include refid="Course_Detail" />
+    from course as cou inner join course_info as cin
+                               on cin.id=cou.course_info_id
+                               and  cou.id = #{course_id,jdbcType=INTEGER}
+                       inner join  teacher_course as tc
+                               on tc.course_id=cin.id
+                       inner join teacher as t
+                               on t.id=tc.teacher_id
+
   </select>
 </mapper>

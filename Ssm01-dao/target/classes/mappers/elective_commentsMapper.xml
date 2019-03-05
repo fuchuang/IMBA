@@ -8,6 +8,13 @@
     <result column="comment_content" property="commentContent" jdbcType="VARCHAR" />
     <result column="comment_time" property="commentTime" jdbcType="TIMESTAMP" />
   </resultMap>
+
+  <resultMap id="CommentsResultMap" type="com.IMBA.dto.electiveCommentsDto">
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="avatar_path" property="AvatarPaht" jdbcType="VARCHAR"/>
+    <result column="commentTime" property="date" jdbcType="TIMESTAMP"/>
+    <result column="comment_content" property="content" jdbcType="VARCHAR"/>
+  </resultMap>
   <sql id="Base_Column_List" >
     id, elective_id, student_id, comment_content, comment_time
   </sql>
@@ -31,7 +38,7 @@
     values (#{id,jdbcType=INTEGER}, #{electiveId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, 
       #{commentContent,jdbcType=VARCHAR}, #{commentTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.IMBA.entity.elective_comments" >
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.elective_comments" >
     insert into elective_comments
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -90,4 +97,12 @@
       and elective_id = #{electiveId,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectCommentsById" resultMap="CommentsResultMap">
+    select
+      ec.student_id,s.avatar_path,ec.comment_time,ec.comment_content
+    from elective_comments as ec inner join student as s
+                                        on ec.elective_id=#{id,jdbcType=INTEGER}
+                                        and ec.student_id=s.id;
+  </select>
 </mapper>

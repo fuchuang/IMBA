@@ -1,5 +1,8 @@
 package com.IMBA.entity;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class course {
     private Integer id;
 
@@ -24,6 +27,30 @@ public class course {
     private String courseType;
 
     private String courseTime;
+
+    private String teacher;
+
+    private List<major> classes=new ArrayList<major>(); //上该课程的所有班级列表
+
+
+    public List<major> getClasses() {
+        return classes;
+    }
+
+    public void setClasses(List<major> classes) {
+        this.classes = classes;
+    }
+    public void addMajor(major m){
+        this.classes.add(m);
+    }
+
+    public String getTeacher() {
+        return teacher;
+    }
+
+    public void setTeacher(String teacher) {
+        this.teacher = teacher;
+    }
 
     public Integer getId() {
         return id;
@@ -119,5 +146,13 @@ public class course {
 
     public void setCourseTime(String courseTime) {
         this.courseTime = courseTime == null ? null : courseTime.trim();
+    }
+
+    public void setCourseDetail(course c){
+        this.setClassroom(c.classroom);
+        this.setTeacher(c.teacher);
+        this.setCourseTime(c.courseTime);
+        this.setCourseName(c.courseName);
+
     }
 }

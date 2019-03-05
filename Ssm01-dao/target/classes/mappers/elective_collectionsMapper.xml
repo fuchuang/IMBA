@@ -15,14 +15,12 @@
     select
     <include refid="Base_Column_List" />
     from elective_collections
-    where id = #{id,jdbcType=INTEGER}
-      and elective_id = #{electiveId,jdbcType=INTEGER}
+    where  elective_id = #{electiveId,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.elective_collectionsKey" >
     delete from elective_collections
-    where id = #{id,jdbcType=INTEGER}
-      and elective_id = #{electiveId,jdbcType=INTEGER}
+    where elective_id = #{electiveId,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.IMBA.entity.elective_collections" >
@@ -31,12 +29,9 @@
     values (#{id,jdbcType=INTEGER}, #{electiveId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER},
       #{collectionTime,jdbcType=TIMESTAMP}, #{collecterId,jdbcType=INTEGER})
   </insert>
-  <insert id="insertSelective" parameterType="com.IMBA.entity.elective_collections" >
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.elective_collections" >
     insert into elective_collections
     <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
-        id,
-      </if>
       <if test="electiveId != null" >
         elective_id,
       </if>

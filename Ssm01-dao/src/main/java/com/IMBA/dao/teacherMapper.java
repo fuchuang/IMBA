@@ -1,6 +1,8 @@
 package com.IMBA.dao;
 
+import com.IMBA.dto.teachInfoDto;
 import com.IMBA.entity.teacher;
+import org.apache.ibatis.annotations.Param;
 
 public interface teacherMapper {
     int deleteByPrimaryKey(Integer id);
@@ -14,4 +16,9 @@ public interface teacherMapper {
     int updateByPrimaryKeySelective(teacher record);
 
     int updateByPrimaryKey(teacher record);
+
+    teacher selectByCourseId(Integer courseId);
+
+    Integer selectIsLike(@Param("teacherId") Integer teacherId, @Param("stuId")Integer stuId);
+
 }

@@ -7,6 +7,12 @@
     <id column="course_id" property="courseId" jdbcType="INTEGER" />
     <result column="score" property="score" jdbcType="INTEGER" />
   </resultMap>
+
+  <resultMap id="ScoreResultMap" type="com.IMBA.dto.courseScoresDto">
+    <result column="course_name" property="courseName" jdbcType="VARCHAR"/>
+    <result column="score" property="score" jdbcType="INTEGER"/>
+    <result column="course_credit" property="courseCredit" jdbcType="FLOAT"/>
+  </resultMap>
   <sql id="Base_Column_List" >
     id, student_id, course_id, score
   </sql>
@@ -79,4 +85,30 @@
       and student_id = #{studentId,jdbcType=INTEGER}
       and course_id = #{courseId,jdbcType=INTEGER}
   </update>
+
+  <select id="selectCourseScores" resultMap="ScoreResultMap">
+    select
+    cin.course_name,s.score,cin.course_credit
+    from score as s inner join course_info as cin
+                          on s.course_id=cin.id
+                          and cin.course_year=#{year,jdbcType=VARCHAR}
+                          and s.student_id=#{stuId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectAllCourseScore" resultMap="ScoreResultMap">
+    select
+    cin.course_name,s.score,cin.course_credit
+    from score as s inner join course_info as cin
+                          on s.course_id=cin.id
+                          and s.student_id=#{stuId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectStudentsIdByMajor" resultType="INTEGER" >
+  select id from student where major_id =
+                                  (
+                                   select major_id from student where id=#{stuId,jdbcType=INTEGER}
+                                  )
+
+  </select>
+
 </mapper>

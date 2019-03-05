@@ -1,5 +1,6 @@
 package com.IMBA.dao;
 
+import com.IMBA.dto.stuCourseDto;
 import com.IMBA.entity.stu_courseKey;
 import com.IMBA.entity.course;
 import org.apache.ibatis.annotations.Mapper;
@@ -19,4 +20,8 @@ public interface stu_courseMapper {
     List<course> findCoursesOfWeek(@Param("stuId") Integer stuId,
                                    @Param("year") String year,
                                    @Param("week") Byte week);
+
+    List<stuCourseDto> findCoursesList(Integer stuId);
+
+    List<Integer> selectMajorIdByCourseId(Integer courseId);
 }

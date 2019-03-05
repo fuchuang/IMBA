@@ -9,4 +9,8 @@ import org.springframework.stereotype.Service;
 public class stu_examServiceImpl implements stu_examService {
     @Autowired
     stu_examMapper mapper;
+
+    public boolean addToSchedule(int stuExamId) {
+        return false;
+    }
 }

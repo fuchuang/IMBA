@@ -2,6 +2,8 @@ package com.IMBA.dao;
 
 import com.IMBA.entity.match;
 
+import java.util.List;
+
 public interface matchMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -16,4 +18,8 @@ public interface matchMapper {
     int updateByPrimaryKeyWithBLOBs(match record);
 
     int updateByPrimaryKey(match record);
+
+    List<match> selectByType(Integer type);
+
+
 }
