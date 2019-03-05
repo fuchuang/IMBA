@@ -92,10 +92,6 @@ public class treeController {
         int student_id= (int) session.getAttribute("id");//账号
         //专业的同学的id的时间
         int major_id=studentservice.findmajor(student_id);
-
-
-
-        //
         String status="arrive";
         PageHelper.startPage(start,rows);
         List<String>stringList=registerservice.findstudent(status,major_id);
