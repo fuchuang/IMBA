@@ -29,5 +29,9 @@ public class studentServiceImpl implements studentService {
         return mapper.findstudentByid(id);
     }
 
+    public int findmajor(int stuid) {
+        return mapper.findmajor(stuid);
+    }
+
 
 }

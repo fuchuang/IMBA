@@ -8,6 +8,7 @@ public interface studentService {
     public student findstudentBystuid(String stuid);
     public List<student> selectall();
     public student findstudentByid(int id);
+    public int findmajor(int stuid);
 
 
 

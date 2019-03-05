@@ -13,11 +13,11 @@ public class registerServiceImpl implements registerService {
 
     public int insert(register record) {
         mapper.insert(record);
-
         return 0;
     }
 
-    public int findbystatus(String status, int id) {
-        return mapper.findbystatus(status, id);
+    public int findbystatus(String status, int id, int course_id) {
+        return mapper.findbystatus(status, id,course_id);
     }
+
 }

@@ -12,9 +12,15 @@
     id, student_id, course_id, register_status, register_time
   </sql>
 
-  <select id="findbystatus" parameterType="string" resultType="int">
-    select count(*) from register where  register_status=#{0} and student_id=#{1}
+  <select id="findbystatus"  resultType="int">
+    select count(*) from (register r ,course c) where  r.register_status=#{0} and r.student_id=#{1} and c.course_info_id=#{2} and c.id=r.course_id
   </select>
+
+<select id="findstudent" resultType="string">
+  select s.stu_name from register r,student s where s.major_id=#{1} and r.register_status=#{0} and r.student_id=s.id and to_days(r.register_time) <= to_days(now()))
+</select>
+
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.registerKey" >
     select 
     <include refid="Base_Column_List" />

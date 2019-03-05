@@ -6,6 +6,22 @@
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
     <id column="course_id" property="courseId" jdbcType="INTEGER" />
   </resultMap>
+
+
+  <resultMap id="studentregistermodelBaseResultMap" type="com.IMBA.model.studentregistermodel">
+    <id column="id" property="student_id" jdbcType="INTEGER"></id>
+    <result column="stu_name" property="stu_name" jdbcType="VARCHAR"></result>
+    <result column="course_id" property="course_id"></result>
+
+  </resultMap>
+  <select id="findcount" resultType="int" parameterType="int">
+    select count(*) from stu_course where course_id=#{courseid}
+  </select>
+  <select id="findstudentregistermodel" parameterType="int" resultMap="studentregistermodelBaseResultMap">
+    select  s.stu_name,s.id ,sc.course_id from stu_course sc ,student s,course c where c.course_info_id=#{0} and c.day_of_week=#{1} and c.week_of_semester=#{2} and c.lesson_of_day=#{3} and sc.course_id=c.id and sc.student_id=s.id
+  </select>
+
+
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.stu_courseKey" >
     delete from stu_course
     where id = #{id,jdbcType=INTEGER}

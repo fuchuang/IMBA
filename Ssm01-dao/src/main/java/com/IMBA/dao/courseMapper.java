@@ -1,15 +1,22 @@
 package com.IMBA.dao;
 
 import com.IMBA.entity.course;
+import com.IMBA.entity.courseKey;
+import com.IMBA.model.coursemodel;
+
+import java.util.List;
 
 public interface courseMapper {
-    int deleteByPrimaryKey(Integer id);
+
+
+
+    int deleteByPrimaryKey(courseKey key);
 
     int insert(course record);
 
     int insertSelective(course record);
 
-    course selectByPrimaryKey(Integer id);
+    course selectByPrimaryKey(courseKey key);
 
     int updateByPrimaryKeySelective(course record);
 

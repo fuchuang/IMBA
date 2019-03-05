@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.teacher_notificationMapper" >
+    <resultMap id="BaseResultMap" type="com.IMBA.entity.teacher_notification" >
+        <id column="id" property="id" jdbcType="INTEGER" />
+        <id column="course_id" property="course_id" jdbcType="INTEGER" />
+        <result column="notification" property="notification" jdbcType="VARCHAR" />
+        <result column="posttime" property="posttime" jdbcType="TIMESTAMP" />
+    </resultMap>
+    <sql id="Base_Column_List" >
+    id, notification,course_id,posttime
+  </sql>
+    <insert id="insert" parameterType="com.IMBA.entity.teacher_notification" >
+    insert into teacher_notification (id, course_id, notification,
+     posttime)
+    values (#{id,jdbcType=INTEGER}, #{course_id,jdbcType=INTEGER}, #{notification,jdbcType=VARCHAR},
+      #{posttime,jdbcType=TIMESTAMP})
+  </insert>
+    <select id="findbycourseid" parameterType="int" resultMap="BaseResultMap">
+        select * from teacher_notification where course_id=#{courseid}
+    </select>
+</mapper>

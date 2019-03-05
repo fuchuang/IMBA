@@ -33,14 +33,16 @@ public class MyShiroReaml extends AuthorizingRealm {
     private RedisUtil redisUtil;
 //    @Autowired
 //    private  studentService studentservice;
-
+    public static final String STU_ID = "stu_Id";
 
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         System.out.println("ddd");
         //授权
         SimpleAuthorizationInfo info = new SimpleAuthorizationInfo();
+
         Object principal = principalCollection.getPrimaryPrincipal();//获取登录的用户名
-        String studentjson=(String) redisUtil.get(principal);
+        String key=STU_ID+principal;
+        String studentjson=(String) redisUtil.get(key);
         student s=JsonUtil.toBean(student.class,studentjson);
         System.out.println("isamin:"+s.getIsadmin());
 
@@ -65,27 +67,31 @@ public class MyShiroReaml extends AuthorizingRealm {
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getRequest();
         HttpSession session=request.getSession();
 
-        String pass=null;
-//        System.out.println("namexxxx: "+principal);
 
+        String pass=null;
+        System.out.println("namexxxx: "+principal);
+
+        String name= String.valueOf(principal);
+        System.out.println("namexxxx111: "+name);
+        String key=STU_ID+principal;
        // 在redis中查找
-        if (redisUtil.hasKey(principal)){
+        if (redisUtil.hasKey(key)){
             //存在
             //获取密码
-//            System.out.println("redis: "+principal);
-            String studentjson=(String) redisUtil.get(principal);
+            System.out.println("redis: "+principal);
+            String studentjson=(String) redisUtil.get(key);
             student s=JsonUtil.toBean(student.class,studentjson);
             pass=s.getPassword();
 
             session.setAttribute("username",s.getStuName());
             session.setAttribute("stu_id",s.getStuId());
             session.setAttribute("id",s.getId());
-//            System.out.println("pass: "+pass);
+            System.out.println("pass: "+pass);
 
         }else {
             //不存在在数据库中查找
-            student stu= shiroService.findstudentBystuid((String) principal);
-
+            student stu= shiroService.findstudentBystuid(name);
+            System.out.println("null: "+principal);
 
             if (stu==null){
                 System.out.println("null: "+principal);
@@ -99,10 +105,11 @@ public class MyShiroReaml extends AuthorizingRealm {
                     System.out.println("password:"+stus.getPassword());
                     //将信息放入redis
 
-                    redisUtil.put(stus.getStuId(), JsonUtil.toJson(stus));
+                    redisUtil.put(STU_ID+stus.getStuId(), JsonUtil.toJson(stus));
                 }
                 session.setAttribute("username",stu.getStuName());
-                session.setAttribute("id",stu.getStuId());
+                session.setAttribute("id",stu.getId());
+                session.setAttribute("stu_id",stu.getStuId());
 
                 pass= stu.getPassword();
                 System.out.println("pass: "+pass);
@@ -125,7 +132,7 @@ public class MyShiroReaml extends AuthorizingRealm {
 
 
 
-       SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(principal, pass, getName());
+       SimpleAuthenticationInfo info = new SimpleAuthenticationInfo(name, pass, getName());
 
         return info;
     }

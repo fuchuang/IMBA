@@ -8,9 +8,11 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Set;
 
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Service;
 
 import org.springframework.util.StringUtils;
@@ -46,7 +48,31 @@ public class RedisUtil {
     public void lpush(String key,String Object){
         clusterRedisTemplate.opsForList().leftPush(key,Object);
     }
-    
+    public void incrementScore(String k,String v,double v1 ){
+        clusterRedisTemplate.opsForZSet().incrementScore(k,v,v1);
+    }
+    public double score(String v,String key){
+        return clusterRedisTemplate.opsForZSet().score(v, key);
+
+    }
+    public void opsForZsetadd(String k,String key,double s){
+        clusterRedisTemplate.opsForZSet().add(k, key,s);
+    }
+
+public Set<ZSetOperations.TypedTuple<String>>reverseRangeWithScores(String k,int s,int r){
+        return clusterRedisTemplate.opsForZSet().reverseRangeWithScores(k,s,r);
+
+}
+//    public Set<String>keys(String key ){
+////        return  clusterRedisTemplate.keys(key+"*");
+//        return clusterRedisTemplate.opsForZSet().
+//    }
+    public void set(String key,String value){
+        clusterRedisTemplate.opsForSet().add(key,value);
+    }
+    public Set<String>member(String key){
+       return clusterRedisTemplate.opsForSet().members(key);
+    }
     public  boolean hasKey(Object key){
 
         return clusterRedisTemplate.hasKey((String) key);
@@ -97,6 +123,9 @@ public class RedisUtil {
         }
         return obj;
     }
+
+
+
 
 
 

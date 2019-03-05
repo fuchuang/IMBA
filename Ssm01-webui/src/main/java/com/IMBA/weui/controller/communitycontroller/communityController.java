@@ -314,10 +314,6 @@ public class communityController {
             msg.put("msg","未收藏");
         }
 
-
-
-
-
         return  JSONObject.fromObject(msg);
     }
 

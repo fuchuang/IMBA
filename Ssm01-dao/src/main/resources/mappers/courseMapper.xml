@@ -1,177 +1,106 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.IMBA.dao.courseMapper" >
-  <resultMap id="BaseResultMap" type="com.IMBA.entity.course" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="course_name" property="courseName" jdbcType="VARCHAR" />
-    <result column="classroom" property="classroom" jdbcType="VARCHAR" />
-    <result column="course_credit" property="courseCredit" jdbcType="REAL" />
-    <result column="course_hour" property="courseHour" jdbcType="INTEGER" />
-    <result column="course_quota" property="courseQuota" jdbcType="INTEGER" />
-    <result column="day_of_week" property="dayOfWeek" jdbcType="TINYINT" />
-    <result column="week_of_semester" property="weekOfSemester" jdbcType="TINYINT" />
-    <result column="lesson_of_day" property="lessonOfDay" jdbcType="TINYINT" />
-    <result column="course_year" property="courseYear" jdbcType="VARCHAR" />
-    <result column="course_type" property="courseType" jdbcType="CHAR" />
-    <result column="course_time" property="courseTime" jdbcType="VARCHAR" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.IMBA.dao.courseMapper">
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.course">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="course_info_id" jdbcType="INTEGER" property="courseInfoId" />
+    <result column="day_of_week" jdbcType="TINYINT" property="dayOfWeek" />
+    <result column="week_of_semester" jdbcType="TINYINT" property="weekOfSemester" />
+    <result column="lesson_of_day" jdbcType="TINYINT" property="lessonOfDay" />
+    <result column="course_time" jdbcType="VARCHAR" property="courseTime" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    id, course_name, classroom, course_credit, course_hour, course_quota, day_of_week, 
-    week_of_semester, lesson_of_day, course_year, course_type, course_time
+  <sql id="Base_Column_List">
+    id, course_info_id, day_of_week, week_of_semester, lesson_of_day, course_time
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.courseKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from course
     where id = #{id,jdbcType=INTEGER}
+      and course_info_id = #{courseInfoId,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.courseKey">
     delete from course
     where id = #{id,jdbcType=INTEGER}
+      and course_info_id = #{courseInfoId,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.IMBA.entity.course" >
-    insert into course (id, course_name, classroom, 
-      course_credit, course_hour, course_quota, 
-      day_of_week, week_of_semester, lesson_of_day, 
-      course_year, course_type, course_time
+  <insert id="insert" parameterType="com.IMBA.entity.course">
+    insert into course (id, course_info_id, day_of_week, 
+      week_of_semester, lesson_of_day, course_time
       )
-    values (#{id,jdbcType=INTEGER}, #{courseName,jdbcType=VARCHAR}, #{classroom,jdbcType=VARCHAR}, 
-      #{courseCredit,jdbcType=REAL}, #{courseHour,jdbcType=INTEGER}, #{courseQuota,jdbcType=INTEGER}, 
-      #{dayOfWeek,jdbcType=TINYINT}, #{weekOfSemester,jdbcType=TINYINT}, #{lessonOfDay,jdbcType=TINYINT}, 
-      #{courseYear,jdbcType=VARCHAR}, #{courseType,jdbcType=CHAR}, #{courseTime,jdbcType=VARCHAR}
+    values (#{id,jdbcType=INTEGER}, #{courseInfoId,jdbcType=INTEGER}, #{dayOfWeek,jdbcType=TINYINT}, 
+      #{weekOfSemester,jdbcType=TINYINT}, #{lessonOfDay,jdbcType=TINYINT}, #{courseTime,jdbcType=VARCHAR}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.IMBA.entity.course" >
+  <insert id="insertSelective" parameterType="com.IMBA.entity.course">
     insert into course
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="courseName != null" >
-        course_name,
+      <if test="courseInfoId != null">
+        course_info_id,
       </if>
-      <if test="classroom != null" >
-        classroom,
-      </if>
-      <if test="courseCredit != null" >
-        course_credit,
-      </if>
-      <if test="courseHour != null" >
-        course_hour,
-      </if>
-      <if test="courseQuota != null" >
-        course_quota,
-      </if>
-      <if test="dayOfWeek != null" >
+      <if test="dayOfWeek != null">
         day_of_week,
       </if>
-      <if test="weekOfSemester != null" >
+      <if test="weekOfSemester != null">
         week_of_semester,
       </if>
-      <if test="lessonOfDay != null" >
+      <if test="lessonOfDay != null">
         lesson_of_day,
       </if>
-      <if test="courseYear != null" >
-        course_year,
-      </if>
-      <if test="courseType != null" >
-        course_type,
-      </if>
-      <if test="courseTime != null" >
+      <if test="courseTime != null">
         course_time,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="courseName != null" >
-        #{courseName,jdbcType=VARCHAR},
+      <if test="courseInfoId != null">
+        #{courseInfoId,jdbcType=INTEGER},
       </if>
-      <if test="classroom != null" >
-        #{classroom,jdbcType=VARCHAR},
-      </if>
-      <if test="courseCredit != null" >
-        #{courseCredit,jdbcType=REAL},
-      </if>
-      <if test="courseHour != null" >
-        #{courseHour,jdbcType=INTEGER},
-      </if>
-      <if test="courseQuota != null" >
-        #{courseQuota,jdbcType=INTEGER},
-      </if>
-      <if test="dayOfWeek != null" >
+      <if test="dayOfWeek != null">
         #{dayOfWeek,jdbcType=TINYINT},
       </if>
-      <if test="weekOfSemester != null" >
+      <if test="weekOfSemester != null">
         #{weekOfSemester,jdbcType=TINYINT},
       </if>
-      <if test="lessonOfDay != null" >
+      <if test="lessonOfDay != null">
         #{lessonOfDay,jdbcType=TINYINT},
       </if>
-      <if test="courseYear != null" >
-        #{courseYear,jdbcType=VARCHAR},
-      </if>
-      <if test="courseType != null" >
-        #{courseType,jdbcType=CHAR},
-      </if>
-      <if test="courseTime != null" >
+      <if test="courseTime != null">
         #{courseTime,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.course" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.course">
     update course
-    <set >
-      <if test="courseName != null" >
-        course_name = #{courseName,jdbcType=VARCHAR},
-      </if>
-      <if test="classroom != null" >
-        classroom = #{classroom,jdbcType=VARCHAR},
-      </if>
-      <if test="courseCredit != null" >
-        course_credit = #{courseCredit,jdbcType=REAL},
-      </if>
-      <if test="courseHour != null" >
-        course_hour = #{courseHour,jdbcType=INTEGER},
-      </if>
-      <if test="courseQuota != null" >
-        course_quota = #{courseQuota,jdbcType=INTEGER},
-      </if>
-      <if test="dayOfWeek != null" >
+    <set>
+      <if test="dayOfWeek != null">
         day_of_week = #{dayOfWeek,jdbcType=TINYINT},
       </if>
-      <if test="weekOfSemester != null" >
+      <if test="weekOfSemester != null">
         week_of_semester = #{weekOfSemester,jdbcType=TINYINT},
       </if>
-      <if test="lessonOfDay != null" >
+      <if test="lessonOfDay != null">
         lesson_of_day = #{lessonOfDay,jdbcType=TINYINT},
       </if>
-      <if test="courseYear != null" >
-        course_year = #{courseYear,jdbcType=VARCHAR},
-      </if>
-      <if test="courseType != null" >
-        course_type = #{courseType,jdbcType=CHAR},
-      </if>
-      <if test="courseTime != null" >
+      <if test="courseTime != null">
         course_time = #{courseTime,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
+      and course_info_id = #{courseInfoId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.course" >
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.course">
     update course
-    set course_name = #{courseName,jdbcType=VARCHAR},
-      classroom = #{classroom,jdbcType=VARCHAR},
-      course_credit = #{courseCredit,jdbcType=REAL},
-      course_hour = #{courseHour,jdbcType=INTEGER},
-      course_quota = #{courseQuota,jdbcType=INTEGER},
-      day_of_week = #{dayOfWeek,jdbcType=TINYINT},
+    set day_of_week = #{dayOfWeek,jdbcType=TINYINT},
       week_of_semester = #{weekOfSemester,jdbcType=TINYINT},
       lesson_of_day = #{lessonOfDay,jdbcType=TINYINT},
-      course_year = #{courseYear,jdbcType=VARCHAR},
-      course_type = #{courseType,jdbcType=CHAR},
       course_time = #{courseTime,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
+      and course_info_id = #{courseInfoId,jdbcType=INTEGER}
   </update>
 </mapper>

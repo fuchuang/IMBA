@@ -2,7 +2,11 @@ package com.IMBA.dao;
 
 import com.IMBA.entity.major;
 
+import java.util.List;
+
 public interface majorMapper {
+    major findmajorname(int stu_id);
+    List<major> findAll();
     int deleteByPrimaryKey(Integer id);
 
     int insert(major record);
