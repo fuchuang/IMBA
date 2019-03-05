@@ -3,7 +3,10 @@ package com.IMBA.weui.controller.communitycontroller;
 import com.IMBA.entity.major;
 import com.IMBA.redis.RedisUtil;
 import com.IMBA.service.majorService;
+import com.IMBA.service.registerService;
 import com.IMBA.service.studentService;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ZSetOperations;
@@ -33,7 +36,10 @@ public class treeController {
     majorService majorservice;
     @Autowired
     studentService studentservice;
+    @Autowired
+    registerService registerservice;
     public static  final String AVERAGE_SCORE_RANK= "average_score_rank";
+
 
 
     @RequestMapping(value = "/tree/list")
@@ -88,8 +94,16 @@ public class treeController {
         int major_id=studentservice.findmajor(student_id);
 
 
-        //
 
+        //
+        String status="arrive";
+        PageHelper.startPage(start,rows);
+        List<String>stringList=registerservice.findstudent(status,major_id);
+        PageInfo<String>pageInfo=new PageInfo<>(stringList);
+
+        Map<String,Object> msg=new HashMap<>();
+        msg.put("msg",pageInfo);
+        return  JSONObject.fromObject(msg);
 
     }
 

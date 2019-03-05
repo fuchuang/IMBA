@@ -6,6 +6,8 @@ import com.IMBA.service.registerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service("registerService")
 public class registerServiceImpl implements registerService {
     @Autowired
@@ -18,6 +20,10 @@ public class registerServiceImpl implements registerService {
 
     public int findbystatus(String status, int id, int course_id) {
         return mapper.findbystatus(status, id,course_id);
+    }
+
+    public List<String> findstudent(String status, int major) {
+        return mapper.findstudent(status,major);
     }
 
 }
