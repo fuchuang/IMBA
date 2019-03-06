@@ -24,4 +24,7 @@ public interface stu_courseMapper {
     List<stuCourseDto> findCoursesList(Integer stuId);
 
     List<Integer> selectMajorIdByCourseId(Integer courseId);
+
+    List<course> findCoursesOfSemester(@Param("stuId") Integer stuId,
+                                       @Param("year") String year);
 }

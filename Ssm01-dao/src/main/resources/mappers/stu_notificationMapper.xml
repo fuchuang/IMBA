@@ -102,11 +102,11 @@
   </update>
 
 
-  <select id="selectBystuIdAndNoticeId" resultMap="BaseResultMap" parameterType="com.IMBA.entity.stu_notificationKey" >
+  <select id="selectBystuIdAndNoticeId" resultMap="BaseResultMap"  >
     select
     <include refid="Base_Column_List" />
     from stu_notification
-    where  notification_id = #{notificationId,jdbcType=INTEGER}
-    and student_id = #{studentId,jdbcType=INTEGER}
+    where  notification_id = #{noticeId,jdbcType=INTEGER}
+    and student_id = #{stuId,jdbcType=INTEGER}
   </select>
 </mapper>

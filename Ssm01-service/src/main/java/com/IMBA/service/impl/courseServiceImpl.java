@@ -2,6 +2,7 @@ package com.IMBA.service.impl;
 
 import com.IMBA.dao.courseMapper;
 import com.IMBA.entity.course;
+import com.IMBA.entity.examination;
 import com.IMBA.entity.major;
 import com.IMBA.service.courseService;
 import com.IMBA.service.majorService;
@@ -22,6 +23,7 @@ public class courseServiceImpl implements courseService {
     stu_courseService stuCourseService;
     @Autowired
     majorService majorservice;
+
     //得到课程的详细信息
     public course findCourseById(int courseId) {
         //返回的数据包括 课程名称 上课地点 上课时间 上课老师 上此课的班级
@@ -44,5 +46,10 @@ public class courseServiceImpl implements courseService {
             return -1;
         }
 
+    }
+
+    //TODO
+    public boolean addToCourseFromExam(examination exam){
+        return false;
     }
 }

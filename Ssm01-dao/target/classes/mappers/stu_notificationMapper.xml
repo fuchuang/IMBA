@@ -7,9 +7,10 @@
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
     <result column="read_status" property="readStatus" jdbcType="BIT" />
     <result column="is_collect" property="isCollect" jdbcType="BIT" />
+    <result column="read_time" property="readTime" jdbcType="TIMESTAMP" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, notification_id, student_id, read_status, is_collect
+    id, notification_id, student_id, read_status, is_collect,read_time
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.stu_notificationKey" >
     select 
@@ -49,6 +50,9 @@
       <if test="isCollect != null" >
         is_collect,
       </if>
+      <if test="readTime != null" >
+        read_time,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -64,7 +68,10 @@
         #{readStatus,jdbcType=BIT},
       </if>
       <if test="isCollect != null" >
-        #{isCollect,jdbcType=BIT},
+      #{isCollect,jdbcType=BIT},
+    </if>
+      <if test="readTime != null" >
+        #{readTime,jdbcType=TIMESTAMP},
       </if>
     </trim>
   </insert>
@@ -76,6 +83,9 @@
       </if>
       <if test="isCollect != null" >
         is_collect = #{isCollect,jdbcType=BIT},
+      </if>
+      <if test="readTime != null" >
+        read_time = #{readTime,jdbcType=TIMESTAMP},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
@@ -90,4 +100,13 @@
       and notification_id = #{notificationId,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
+
+
+  <select id="selectBystuIdAndNoticeId" resultMap="BaseResultMap"  >
+    select
+    <include refid="Base_Column_List" />
+    from stu_notification
+    where  notification_id = #{noticeId,jdbcType=INTEGER}
+    and student_id = #{stuId,jdbcType=INTEGER}
+  </select>
 </mapper>

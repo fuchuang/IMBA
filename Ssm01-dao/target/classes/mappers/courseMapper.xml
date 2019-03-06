@@ -203,7 +203,7 @@
     <include refid="Course_Detail" />
     from course as cou inner join course_info as cin
                                on cin.id=cou.course_info_id
-                               and  cou.id = #{course_id,jdbcType=INTEGER}
+                               and  cou.id = #{id,jdbcType=INTEGER}
                        inner join  teacher_course as tc
                                on tc.course_id=cin.id
                        inner join teacher as t

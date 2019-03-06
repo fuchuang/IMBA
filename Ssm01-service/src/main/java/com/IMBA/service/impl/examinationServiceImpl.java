@@ -4,6 +4,7 @@ import com.IMBA.dao.examinationMapper;
 import com.IMBA.dto.examResultDto;
 import com.IMBA.entity.examination;
 import com.IMBA.entity.examinationKey;
+import com.IMBA.service.courseService;
 import com.IMBA.service.examinationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +16,8 @@ import java.util.List;
 public class examinationServiceImpl implements examinationService {
     @Autowired
     examinationMapper examinationmapper;
+    @Autowired
+    courseService courseservice;
 
 
     public List<examResultDto> getExams(int stuId) {
@@ -30,5 +33,11 @@ public class examinationServiceImpl implements examinationService {
         }
         List<examResultDto> result=examinationmapper.selectByYear(schoolYear,stuId);
         return result;
+    }
+
+    public boolean addToSchedule(int stuId, int examId) {
+        //添加course course_info
+
+        return false;
     }
 }

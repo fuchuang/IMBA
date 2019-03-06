@@ -22,5 +22,8 @@ public interface stu_courseService {
     //根据课程id球同上一门课程的专业id
     List<Integer> findMajorByCourseId(int courseId);
 
+    //查询整个学期的课程
+    List<course> findCourseOfSemester(int stuId,String year);
+
 
 }

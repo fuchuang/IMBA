@@ -34,7 +34,6 @@ public class stu_courseServiceImpl implements stu_courseService {
         return coursesInDay;
     }
 
-    //TODO 待删
     public boolean addStuCourse(int stuId, int courseId) {
         stu_courseKey courseKey=new stu_courseKey();
         courseKey.setStudentId(stuId);
@@ -48,7 +47,6 @@ public class stu_courseServiceImpl implements stu_courseService {
         return true;
     }
 
-    //TODO 哪里调用过？？
     public List<stuCourseDto> findCoursesList(int stuId) {
         List<stuCourseDto> list=mapper.findCoursesList(stuId);
         return list;
@@ -56,6 +54,11 @@ public class stu_courseServiceImpl implements stu_courseService {
 
     public List<Integer> findMajorByCourseId(int courseId) {
         return mapper.selectMajorIdByCourseId(courseId);
+    }
+
+    public List<course> findCourseOfSemester(int stuId, String year) {
+        List<course> result=mapper.findCoursesOfSemester(stuId,year);
+        return result;
     }
 
 }

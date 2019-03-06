@@ -7,18 +7,17 @@
     <id column="course_id" property="courseId" jdbcType="INTEGER" />
   </resultMap>
   <resultMap id="CourseResultMap" type="com.IMBA.entity.course" >
-    <id column="cou.id" property="id" jdbcType="INTEGER" />
-    <result column="cou.course_name" property="courseName" jdbcType="VARCHAR" />
-    <result column="cou.classroom" property="classroom" jdbcType="VARCHAR" />
-    <result column="cou.course_credit" property="courseCredit" jdbcType="REAL" />
-    <result column="cou.course_hour" property="courseHour" jdbcType="INTEGER" />
-    <result column="cou.course_quota" property="courseQuota" jdbcType="INTEGER" />
-    <result column="cou.day_of_week" property="dayOfWeek" jdbcType="TINYINT" />
-    <result column="cou.week_of_semester" property="weekOfSemester" jdbcType="TINYINT" />
-    <result column="cou.lesson_of_day" property="lessonOfDay" jdbcType="TINYINT" />
-    <result column="cou.course_year" property="courseYear" jdbcType="VARCHAR" />
-    <result column="cou.course_type" property="courseType" jdbcType="CHAR" />
-    <result column="cou.course_time" property="courseTime" jdbcType="VARCHAR" />
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="course_name" property="courseName" jdbcType="VARCHAR" />
+    <result column="classroom" property="classroom" jdbcType="VARCHAR" />
+    <result column="course_credit" property="courseCredit" jdbcType="REAL" />
+    <result column="course_hour" property="courseHour" jdbcType="INTEGER" />
+    <result column="course_quota" property="courseQuota" jdbcType="INTEGER" />
+    <result column="day_of_week" property="dayOfWeek" jdbcType="TINYINT" />
+    <result column="lesson_of_day" property="lessonOfDay" jdbcType="TINYINT" />
+    <result column="course_year" property="courseYear" jdbcType="VARCHAR" />
+    <result column="course_type" property="courseType" jdbcType="CHAR" />
+    <result column="course_time" property="courseTime" jdbcType="VARCHAR" />
   </resultMap>
 
 
@@ -33,7 +32,7 @@
   </sql>
   <sql id="Course_Result_List" >
    cou.id,ci.course_name, ci.classroom, ci.course_credit, ci.course_hour, ci.course_quota, cou.day_of_week,
-    cou.week_of_semester, cou.lesson_of_day, ci.course_year, ci.course_type, cou.course_time
+     cou.lesson_of_day, ci.course_year, ci.course_type, cou.course_time
   </sql>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.stu_courseKey" >
     delete from stu_course
@@ -104,4 +103,17 @@
                                                    on sc.course_id=#{courseId,jdbcType=INTEGER}
                                                    and sc.student_id=s.id
   </select>
+
+  <select id="findCoursesOfSemester" resultMap="CourseResultMap"  >
+    select
+    <include refid="Course_Result_List" />
+    from stu_course as sc inner join course as cou
+    on cou.id=sc.course_id
+    inner join course_info as ci
+    on cou.course_info_id=ci.id
+    and ci.course_year=#{year,jdbcType=VARCHAR}
+    and sc.student_id=#{stuId,jdbcType=INTEGER}
+    group by ci.id,cou.day_of_week,cou.lesson_of_day
+  </select>
+
 </mapper>
