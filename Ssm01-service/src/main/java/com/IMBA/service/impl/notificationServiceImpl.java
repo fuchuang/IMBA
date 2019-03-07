@@ -20,9 +20,13 @@ public class notificationServiceImpl implements notificationService {
     @Autowired
     stu_notificationService stuNotificationService;
 
-    public List<noticesDto> findCollectionsByStuId(int stuId) {
-        List<noticesDto> list=mapper.selectCollection(stuId);
+    public List<noticesDto> findCollectionsByStuId(int stuId,int offset,int limit) {
+        List<noticesDto> list=mapper.selectCollection(stuId,offset,limit);
         return list;
+    }
+
+    public int getCollectionCount(int stuId) {
+        return mapper.getCollectionCount(stuId);
     }
 
     public notification noticesDetail(int stuId,int id) {
@@ -35,14 +39,18 @@ public class notificationServiceImpl implements notificationService {
         return notice;
     }
 
-    public List<noticesDto> findNoticesByStuId(int stuId) {
+    public List<noticesDto> findNoticesByStuId(int stuId,int offset,int limit) {
         //还要返回是否已阅读
-        List<noticesDto> list=mapper.selectByStuId(stuId);
+        List<noticesDto> list=mapper.selectByStuId(stuId,offset,limit);
         for (int i=0;i<list.size();i++){
             stu_notification sn=stuNotificationService.getById(stuId,list.get(i).getId());
             list.get(i).setRead(sn.getReadStatus());
         }
         return list;
+    }
+
+    public int getNoticesCount(int stuId) {
+        return mapper.getNoticesCount(stuId);
     }
 
     public boolean addNotices(notification notices) {
@@ -51,9 +59,13 @@ public class notificationServiceImpl implements notificationService {
         return false;
     }
 
-    public List<noticesDto> getViewRecently(int stuId) {
-        List result=mapper.selectBYTime(stuId);
+    public List<noticesDto> getViewRecently(int stuId,int offset,int limit) {
+        List result=mapper.selectBYTime(stuId,offset,limit);
         return result;
+    }
+
+    public int getViewRecentlyCount(int stuId) {
+        return mapper.getRecentlyViewedCount(stuId);
     }
 
     public boolean addCollect(int stuId, int noticeId) {

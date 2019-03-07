@@ -1,6 +1,7 @@
 package com.IMBA.dao;
 
 import com.IMBA.entity.match;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,7 +20,9 @@ public interface matchMapper {
 
     int updateByPrimaryKey(match record);
 
-    List<match> selectByType(Integer type);
+    List<match> selectByType(@Param("matchType") Integer matchType,@Param("offset") Integer offset,@Param("num") Integer num);
+
+    int getCount(int matchType);
 
 
 }

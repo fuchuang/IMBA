@@ -103,11 +103,18 @@
       match_title = #{matchTitle,jdbcType=VARCHAR},
       match_type = #{matchType,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
+
   </update>
 
-  <select id="selectByType" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByType"  resultMap="BaseResultMap">
     select
-    <include refid="Base_Column_List"/>
-    from match where match_type=#{type,jdbcType=INTEGER}
+    id, match_category, match_title, match_type
+                      from match_
+                      where match_type = #{matchType,jdbcType=INTEGER}
+                      limit #{offset} ,#{num}
+  </select>
+
+  <select id="getCount" resultType="java.lang.Integer">
+    select count(*) from match_ where match_type =#{matchType};
   </select>
 </mapper>
