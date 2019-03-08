@@ -2,8 +2,12 @@ package com.IMBA.dao;
 
 import com.IMBA.entity.video;
 import com.IMBA.entity.videoKey;
+import com.IMBA.model.videolistmodel;
+
+import java.util.List;
 
 public interface videoMapper {
+
     int deleteByPrimaryKey(videoKey key);
 
     int insert(video record);

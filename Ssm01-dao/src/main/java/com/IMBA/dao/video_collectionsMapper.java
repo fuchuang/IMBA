@@ -7,6 +7,7 @@ public interface video_collectionsMapper {
     int deleteByPrimaryKey(video_collectionsKey key);
 
     int insert(video_collections record);
+    int findcollectionsbystu_idandvideo_series_id(int stu_id,int video_series_id);
 
     int insertSelective(video_collections record);
 

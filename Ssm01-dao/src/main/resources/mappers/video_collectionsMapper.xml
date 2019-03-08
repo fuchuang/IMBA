@@ -10,6 +10,13 @@
   <sql id="Base_Column_List" >
     id, video_series_id, student_id, collection_time
   </sql>
+
+  <select id="findcollectionsbystu_idandvideo_series_id" resultType="int">
+
+    select count(*) from video_collections  where video_series_id=#{1} and student_id=#{0}
+  </select>
+
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.video_collectionsKey" >
     select 
     <include refid="Base_Column_List" />

@@ -8,9 +8,28 @@
     <result column="course_type" property="courseType" jdbcType="VARCHAR" />
     <result column="watching_num" property="watchingNum" jdbcType="INTEGER" />
   </resultMap>
+  <resultMap id="videolistmodelBaseResultMap" type="com.IMBA.model.videolistmodel">
+    <id column="video_series_id" property="id" jdbcType="INTEGER"></id>
+    <result  column="course_lecturer" property="course_lecturer" jdbcType="VARCHAR"></result>
+    <result column="course_title" property="course_title" jdbcType="VARCHAR" />
+
+    <collection property="videomodels" ofType="com.IMBA.model.videomodel">
+      <id column="id" property="video_id"></id>
+      <result column="video_title" property="video_title"></result>
+    </collection>
+
+  </resultMap>
   <sql id="Base_Column_List" >
     id, course_lecturer, course_title, course_type, watching_num
   </sql>
+
+
+  <select id="findvideoList" resultMap="videolistmodelBaseResultMap">
+    select vs.course_lecturer ,vs.course_title,vs.id video_series_id,
+    v.video_title,v.id from video_series vs, video v where v.video_series_id=#{0} and v.video_series_id=vs.id
+  </select>
+
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
