@@ -15,4 +15,10 @@ public interface teacherService {
 
     //取消点赞
     boolean cancelLikes(int stuId,int teacherId);
+
+    //评分
+    boolean evaluteTeacher(int stuId,int teacherId,float grade);
+
+    //查询教师评分
+    float getEvaluateById(int teacherId);
 }

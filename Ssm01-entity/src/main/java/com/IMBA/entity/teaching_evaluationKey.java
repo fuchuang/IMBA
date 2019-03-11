@@ -5,7 +5,7 @@ public class teaching_evaluationKey {
 
     private Integer studentId;
 
-    private Integer courseId;
+    private Integer teacherId;
 
     public Integer getId() {
         return id;
@@ -23,11 +23,11 @@ public class teaching_evaluationKey {
         this.studentId = studentId;
     }
 
-    public Integer getCourseId() {
-        return courseId;
+    public Integer getTeacherId() {
+        return teacherId;
     }
 
-    public void setCourseId(Integer courseId) {
-        this.courseId = courseId;
+    public void setTeacherId(Integer courseId) {
+        this.teacherId = courseId;
     }
 }

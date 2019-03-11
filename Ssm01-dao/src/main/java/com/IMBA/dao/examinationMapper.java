@@ -22,4 +22,6 @@ public interface examinationMapper {
 
     List<examResultDto> selectByYear(@Param("year") String year,
                                      @Param("stuId") Integer stuId);
+
+    examResultDto selectById(Integer id);
 }

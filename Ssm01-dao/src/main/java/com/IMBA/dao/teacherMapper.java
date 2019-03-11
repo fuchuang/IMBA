@@ -21,4 +21,6 @@ public interface teacherMapper {
 
     Integer selectIsLike(@Param("teacherId") Integer teacherId, @Param("stuId")Integer stuId);
 
+    int updateGradeByTeacherId(teacher record);
+
 }

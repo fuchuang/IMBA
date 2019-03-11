@@ -2,10 +2,12 @@ package com.IMBA.service.impl;
 
 import com.IMBA.dao.examinationMapper;
 import com.IMBA.dto.examResultDto;
+import com.IMBA.entity.course;
 import com.IMBA.entity.examination;
 import com.IMBA.entity.examinationKey;
 import com.IMBA.service.courseService;
 import com.IMBA.service.examinationService;
+import com.IMBA.service.stu_examService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -18,10 +20,11 @@ public class examinationServiceImpl implements examinationService {
     examinationMapper examinationmapper;
     @Autowired
     courseService courseservice;
+    @Autowired
+    stu_examService stuExamService;
 
 
     public List<examResultDto> getExams(int stuId) {
-        //根据现在的日期 判断学年 再返回该学年的课程 根据课程id判断学年
         Calendar calendar=Calendar.getInstance();
         int year=calendar.get(Calendar.YEAR);
         int month=calendar.get(Calendar.MONTH)+1;
@@ -35,9 +38,13 @@ public class examinationServiceImpl implements examinationService {
         return result;
     }
 
-    public boolean addToSchedule(int stuId, int examId) {
-        //添加course course_info
 
-        return false;
+
+    public boolean addToSchedule(int stuId, int examId) {
+        //标记学生-考试 的isOnschedule 2.把考试包装成课程
+        stuExamService.updateIsOnSchedule(stuId,examId,true);
+        examResultDto exam=examinationmapper.selectById(examId);
+        boolean ok=courseservice.examToCourse(exam);
+        return ok;
     }
 }

@@ -20,7 +20,7 @@
     <result column="class" property="classNum" jdbcType="INTEGER"/>
   </resultMap>
   <sql id="Base_Column_List" >
-    id, course_name, classroom, course_credit, course_hour, course_quota, day_of_week, 
+    id, course_name, classroom, course_credit, course_hour, course_quota, day_of_week,
     week_of_semester, lesson_of_day, course_year, course_type, course_time
   </sql>
   <sql id="Course_Detail" >
@@ -28,7 +28,7 @@
   </sql>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from course
     where id = #{id,jdbcType=INTEGER}
@@ -38,14 +38,14 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.IMBA.entity.course" >
-    insert into course (id, course_name, classroom, 
-      course_credit, course_hour, course_quota, 
-      day_of_week, week_of_semester, lesson_of_day, 
+    insert into course (id, course_name, classroom,
+      course_credit, course_hour, course_quota,
+      day_of_week, week_of_semester, lesson_of_day,
       course_year, course_type, course_time
       )
-    values (#{id,jdbcType=INTEGER}, #{courseName,jdbcType=VARCHAR}, #{classroom,jdbcType=VARCHAR}, 
-      #{courseCredit,jdbcType=REAL}, #{courseHour,jdbcType=INTEGER}, #{courseQuota,jdbcType=INTEGER}, 
-      #{dayOfWeek,jdbcType=TINYINT}, #{weekOfSemester,jdbcType=TINYINT}, #{lessonOfDay,jdbcType=TINYINT}, 
+    values (#{id,jdbcType=INTEGER}, #{courseName,jdbcType=VARCHAR}, #{classroom,jdbcType=VARCHAR},
+      #{courseCredit,jdbcType=REAL}, #{courseHour,jdbcType=INTEGER}, #{courseQuota,jdbcType=INTEGER},
+      #{dayOfWeek,jdbcType=TINYINT}, #{weekOfSemester,jdbcType=TINYINT}, #{lessonOfDay,jdbcType=TINYINT},
       #{courseYear,jdbcType=VARCHAR}, #{courseType,jdbcType=CHAR}, #{courseTime,jdbcType=VARCHAR}
       )
   </insert>
@@ -88,6 +88,9 @@
       <if test="courseTime != null" >
         course_time,
       </if>
+      <if test="courseInfoId != null" >
+        course_info_id,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -125,6 +128,9 @@
       </if>
       <if test="courseTime != null" >
         #{courseTime,jdbcType=VARCHAR},
+      </if>
+      <if test="courseInfoId != null" >
+        #{courseInfoId,jdbcType=INTEGER},
       </if>
     </trim>
   </insert>

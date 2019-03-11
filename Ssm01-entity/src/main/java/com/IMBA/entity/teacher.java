@@ -15,6 +15,26 @@ public class teacher {
 
     private Integer likesNumber;
 
+    private Float grade;
+
+    private Integer evaluateNum;
+
+    public Float getGrade() {
+        return grade;
+    }
+
+    public void setGrade(Float grade) {
+        this.grade = grade;
+    }
+
+    public Integer getEvaluateNum() {
+        return evaluateNum;
+    }
+
+    public void setEvaluateNum(Integer evaluateNum) {
+        this.evaluateNum = evaluateNum;
+    }
+
     public Integer getId() {
         return id;
     }

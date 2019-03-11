@@ -6,6 +6,8 @@ import java.util.List;
 public class course {
     private Integer id;
 
+    private Integer courseInfoId;
+
     private String courseName;
 
     private String classroom;
@@ -32,6 +34,14 @@ public class course {
 
     private List<major> classes=new ArrayList<major>(); //上该课程的所有班级列表
 
+
+    public Integer getCourseInfoId() {
+        return courseInfoId;
+    }
+
+    public void setCourseInfoId(Integer courseInfoId) {
+        this.courseInfoId = courseInfoId;
+    }
 
     public List<major> getClasses() {
         return classes;

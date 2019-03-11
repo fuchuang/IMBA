@@ -1,5 +1,6 @@
 package com.IMBA.service;
 
+import com.IMBA.dto.examResultDto;
 import com.IMBA.entity.course;
 import com.IMBA.entity.student;
 
@@ -9,10 +10,13 @@ import java.util.Map;
 public interface courseService {
 
     //通过课程id查找课程
-    public course findCourseById(int courseId);
+     course findCourseById(int courseId);
 
     //添加课程
-    public int addCourse(course course);
+     int addCourse(course course);
+
+    //把考试包装成课程
+    boolean examToCourse(examResultDto exam);
 
 
 

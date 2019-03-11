@@ -17,6 +17,16 @@ public class examination extends examinationKey {
 
     private Integer seatNumber;
 
+    private boolean isOnSchedule;
+
+    public boolean isOnSchedule() {
+        return isOnSchedule;
+    }
+
+    public void setOnSchedule(boolean onSchedule) {
+        isOnSchedule = onSchedule;
+    }
+
     public Date getDate() {
         return date;
     }

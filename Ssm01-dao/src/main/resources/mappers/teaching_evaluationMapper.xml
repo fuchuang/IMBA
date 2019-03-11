@@ -4,11 +4,11 @@
   <resultMap id="BaseResultMap" type="com.IMBA.entity.teaching_evaluation" >
     <id column="id" property="id" jdbcType="INTEGER" />
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
-    <id column="course_id" property="courseId" jdbcType="INTEGER" />
+    <id column="teacher_id" property="teacherId" jdbcType="INTEGER" />
     <result column="satisfaction" property="satisfaction" jdbcType="REAL" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, student_id, course_id, satisfaction
+    id, student_id, teacher_id, satisfaction
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.teaching_evaluationKey" >
     select 
@@ -16,18 +16,18 @@
     from teaching_evaluation
     where id = #{id,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
-      and course_id = #{courseId,jdbcType=INTEGER}
+      and teacher_id = #{teacherId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.teaching_evaluationKey" >
     delete from teaching_evaluation
     where id = #{id,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
-      and course_id = #{courseId,jdbcType=INTEGER}
+      and teacher_id = #{teacherId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.IMBA.entity.teaching_evaluation" >
-    insert into teaching_evaluation (id, student_id, course_id, 
+    insert into teaching_evaluation (id, student_id, teacher_id,
       satisfaction)
-    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}, 
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{teacherId,jdbcType=INTEGER},
       #{satisfaction,jdbcType=REAL})
   </insert>
   <insert id="insertSelective" parameterType="com.IMBA.entity.teaching_evaluation" >
@@ -39,8 +39,8 @@
       <if test="studentId != null" >
         student_id,
       </if>
-      <if test="courseId != null" >
-        course_id,
+      <if test="teacherId != null" >
+        teacher_id,
       </if>
       <if test="satisfaction != null" >
         satisfaction,
@@ -53,8 +53,8 @@
       <if test="studentId != null" >
         #{studentId,jdbcType=INTEGER},
       </if>
-      <if test="courseId != null" >
-        #{courseId,jdbcType=INTEGER},
+      <if test="teacherId != null" >
+        #{teacherId,jdbcType=INTEGER},
       </if>
       <if test="satisfaction != null" >
         #{satisfaction,jdbcType=REAL},
@@ -70,13 +70,28 @@
     </set>
     where id = #{id,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
-      and course_id = #{courseId,jdbcType=INTEGER}
+      and teacher_id = #{teacherId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.teaching_evaluation" >
     update teaching_evaluation
     set satisfaction = #{satisfaction,jdbcType=REAL}
     where id = #{id,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
-      and course_id = #{courseId,jdbcType=INTEGER}
+      and teacher_id = #{teacherId,jdbcType=INTEGER}
   </update>
+
+  <insert id="insertAndGetId" parameterType="com.IMBA.entity.teaching_evaluation" useGeneratedKeys="true" keyProperty="id">
+    insert into teaching_evaluation (student_id, teacher_id,
+      satisfaction)
+    values (#{studentId,jdbcType=INTEGER}, #{teacherId,jdbcType=INTEGER},
+      #{satisfaction,jdbcType=REAL})
+  </insert>
+
+  <select id="selectByStudentIdAndTeacherId" resultMap="BaseResultMap" parameterType="com.IMBA.entity.teaching_evaluationKey" >
+    select
+    <include refid="Base_Column_List" />
+    from teaching_evaluation
+    where  student_id = #{studentId,jdbcType=INTEGER}
+    and teacher_id = #{teacherId,jdbcType=INTEGER}
+  </select>
 </mapper>

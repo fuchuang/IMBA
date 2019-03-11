@@ -15,4 +15,8 @@ public interface stu_examMapper {
     int updateByPrimaryKeySelective(stu_exam record);
 
     int updateByPrimaryKey(stu_exam record);
+
+    stu_exam selectByStuIdAndExamId(stu_examKey key);
+
+    int updateIsOnScheduleByStuIdAndExamId(stu_examKey key);
 }
