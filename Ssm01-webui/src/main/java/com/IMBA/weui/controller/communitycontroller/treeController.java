@@ -69,10 +69,7 @@ public class treeController {
                 if(average>0){
                     redisUtil.opsForZsetadd(AVERAGE_SCORE_RANK,mojorcourse, average);
                 }
-
             }
-
-
 
         }
         Set<ZSetOperations.TypedTuple<String>> rangeWithScores=redisUtil.reverseRangeWithScores(AVERAGE_SCORE_RANK,start*rows,(start+1)*rows);

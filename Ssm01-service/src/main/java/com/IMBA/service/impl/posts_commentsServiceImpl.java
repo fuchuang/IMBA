@@ -26,5 +26,9 @@ public class posts_commentsServiceImpl implements posts_commentsService {
         return mapper.findbypostid(postid);
     }
 
+    public int findcount() {
+        return mapper.findcount();
+    }
+
 
 }

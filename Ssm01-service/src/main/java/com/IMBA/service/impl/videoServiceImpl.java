@@ -14,4 +14,8 @@ public class videoServiceImpl implements videoService {
     public int insert(video record) {
         return mapper.insert(record);
     }
+
+    public String findvideo(int id) {
+        return mapper.findvideo(id);
+    }
 }

@@ -19,4 +19,8 @@ public class postsServiceImpl implements postsService {
     public posts findbypostid(int id) {
         return mapper.findbypostid(id);
     }
+
+    public int findcount() {
+        return mapper.findcount();
+    }
 }

@@ -9,5 +9,7 @@ public interface posts_commentsService {
     int insert(posts_comments record);
     int findrowsbypostid(int id);
     List<posts_comments> findbypostid(int postid);
+    int findcount();
+
 
 }

@@ -70,7 +70,6 @@ public class MyShiroReaml extends AuthorizingRealm {
 
         String pass=null;
         System.out.println("namexxxx: "+principal);
-
         String name= String.valueOf(principal);
         System.out.println("namexxxx111: "+name);
         String key=STU_ID+principal;

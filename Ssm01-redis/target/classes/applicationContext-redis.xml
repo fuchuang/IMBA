@@ -48,28 +48,28 @@
         <property name="clusterNodes">
             <set>
                 <bean class="org.springframework.data.redis.connection.RedisNode">
-                    <constructor-arg name="host" value="192.168.80.128"></constructor-arg>
+                    <constructor-arg name="host" value="localhost"></constructor-arg>
                     <constructor-arg name="port" value="6661"></constructor-arg>
                 </bean>
 
                 <bean class="org.springframework.data.redis.connection.RedisNode">
-                    <constructor-arg name="host" value="192.168.80.128"></constructor-arg>
+                    <constructor-arg name="host" value="localhost"></constructor-arg>
                     <constructor-arg name="port" value="6662"></constructor-arg>
                 </bean>
                 <bean class="org.springframework.data.redis.connection.RedisNode">
-                    <constructor-arg name="host" value="192.168.80.128"></constructor-arg>
+                    <constructor-arg name="host" value="localhost"></constructor-arg>
                     <constructor-arg name="port" value="6663"></constructor-arg>
                 </bean>
                 <bean class="org.springframework.data.redis.connection.RedisNode">
-                    <constructor-arg name="host" value="192.168.80.128"></constructor-arg>
+                    <constructor-arg name="host" value="localhost"></constructor-arg>
                     <constructor-arg name="port" value="6664"></constructor-arg>
                 </bean>
                 <bean class="org.springframework.data.redis.connection.RedisNode">
-                    <constructor-arg name="host" value="192.168.80.128"></constructor-arg>
+                    <constructor-arg name="host" value="localhost"></constructor-arg>
                     <constructor-arg name="port" value="6665"></constructor-arg>
                 </bean>
                 <bean class="org.springframework.data.redis.connection.RedisNode">
-                    <constructor-arg name="host" value="192.168.80.128"></constructor-arg>
+                    <constructor-arg name="host" value="localhost"></constructor-arg>
                     <constructor-arg name="port" value="6666"></constructor-arg>
                 </bean>
             </set>

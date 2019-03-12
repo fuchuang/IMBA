@@ -179,7 +179,6 @@ public class teacherController {
         if (register_status.equals("late")||register_status.equals("truant")){
 
         }else {
-
             redisUtil.set(MAJOR_COLLETION,mojorcourse);
             redisUtil.incrementScore(SCORE_RANK,mojor,score);
         }
@@ -190,9 +189,6 @@ public class teacherController {
         msg.put("msg","success");
         return  JSONObject.fromObject(msg);
     }
-    //提交
-
-
 
 
     //标记为管理员
@@ -208,7 +204,9 @@ public class teacherController {
         return  JSONObject.fromObject(msg);
     }
 
+    //问卷
 
+    //评教
 
 
 }

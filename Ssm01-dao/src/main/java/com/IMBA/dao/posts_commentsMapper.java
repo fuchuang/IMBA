@@ -9,7 +9,8 @@ import java.util.List;
 public interface posts_commentsMapper {
     int findrowsbypostid(int id);
     List<posts_comments> findbypostid(int postid);
-
+    //贴子回复数目
+    int findcount();
 
     int deleteByPrimaryKey(posts_commentsKey key);
 

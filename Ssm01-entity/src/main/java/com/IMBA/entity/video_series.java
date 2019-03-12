@@ -10,6 +10,15 @@ public class video_series {
     private String courseType;
 
     private Integer watchingNum;
+    private String video_screenshots_path;
+
+    public String getVideo_screenshots_path() {
+        return video_screenshots_path;
+    }
+
+    public void setVideo_screenshots_path(String video_screenshots_path) {
+        this.video_screenshots_path = video_screenshots_path;
+    }
 
     public Integer getId() {
         return id;

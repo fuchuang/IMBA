@@ -6,11 +6,14 @@
     <id column="video_series_id" property="videoSeriesId" jdbcType="INTEGER" />
     <result column="video_path" property="videoPath" jdbcType="VARCHAR" />
     <result column="video_title" property="videoTitle" jdbcType="VARCHAR" />
-    <result column="video_screenshots_path" property="video_screenshots_path" jdbcType="VARCHAR" />
+
   </resultMap>
   <sql id="Base_Column_List" >
-    id, video_series_id, video_path, video_title,video_screenshots_path
+    id, video_series_id, video_path, video_title
   </sql>
+  <select id="findvideo" resultType="string">
+    select video_path from video where id=#{0}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.videoKey" >
     select 
     <include refid="Base_Column_List" />
@@ -27,7 +30,7 @@
     insert into video (id, video_series_id, video_path, 
       video_title,video_screenshots_path)
     values (#{id,jdbcType=INTEGER}, #{videoSeriesId,jdbcType=INTEGER}, #{videoPath,jdbcType=VARCHAR}, 
-      #{videoTitle,jdbcType=VARCHAR}, #{video_screenshots_path,jdbcType=VARCHAR}
+      #{videoTitle,jdbcType=VARCHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.IMBA.entity.video" >

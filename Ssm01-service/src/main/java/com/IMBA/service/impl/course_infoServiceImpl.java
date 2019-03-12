@@ -24,4 +24,8 @@ public class course_infoServiceImpl implements course_infoService {
     public int findcourse_hourbycourid(int courseid) {
         return courseInfoMapper.findcourse_hourbycourid(courseid);
     }
+
+    public int findcount() {
+        return courseInfoMapper.findcount();
+    }
 }

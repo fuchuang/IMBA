@@ -42,7 +42,7 @@ public class SensitiveWordInit {
     private Set<String> readSensitiveWordFile() throws Exception{
         Set<String> set = null;
 
-        File file = new File("F:\\工具\\比赛\\敏感词\\网站敏感词库\\百度敏感词\\百度敏感词.txt");    //读取文件
+        File file = new File("C:\\IMBA\\敏感词库\\百度敏感词.txt");    //读取文件
         InputStreamReader read = new InputStreamReader(new FileInputStream(file),ENCODING);
         try {
             if(file.isFile() && file.exists()){      //文件流是否存在

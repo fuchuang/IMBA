@@ -8,4 +8,5 @@ public interface course_infoService {
     List<coursemodel> findCouseMsg(int student_id, String year);
     List<coursemodel>findCouseMsgbyteacherid(int teacher,String year);
     int findcourse_hourbycourid(int courseid);
+    int findcount();
 }

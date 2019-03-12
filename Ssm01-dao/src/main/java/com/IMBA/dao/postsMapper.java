@@ -6,6 +6,8 @@ import com.IMBA.entity.postsKey;
 public interface postsMapper {
     posts findbypostid(int id);
     int deleteByPrimaryKey(postsKey key);
+    //贴子数目
+    int findcount();
 
     int insert(posts record);
 

@@ -10,8 +10,9 @@ public interface course_infoMapper {
 
     List<coursemodel> findCouseMsg(int student_id, String year);
     List<coursemodel>findCouseMsgbyteacherid(int teacher,String year);
-
     int findcourse_hourbycourid(int courseid);
+    //查找课程数目
+    int findcount();
 
 
 

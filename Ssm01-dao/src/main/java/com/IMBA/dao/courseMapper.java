@@ -10,6 +10,7 @@ public interface courseMapper {
 
 
 
+
     int deleteByPrimaryKey(courseKey key);
 
     int insert(course record);

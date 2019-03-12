@@ -7,6 +7,7 @@
     <result column="course_title" property="courseTitle" jdbcType="VARCHAR" />
     <result column="course_type" property="courseType" jdbcType="VARCHAR" />
     <result column="watching_num" property="watchingNum" jdbcType="INTEGER" />
+      <result column="video_screenshots_path" property="video_screenshots_path" jdbcType="VARCHAR" />
   </resultMap>
   <resultMap id="videolistmodelBaseResultMap" type="com.IMBA.model.videolistmodel">
     <id column="video_series_id" property="id" jdbcType="INTEGER"></id>
@@ -19,9 +20,32 @@
     </collection>
 
   </resultMap>
+
+  <resultMap id="videowatchnumsrankBaseResultMap" type="com.IMBA.model.videowatchnumsrank">
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="course_title" property="course_title" jdbcType="VARCHAR" />
+    <result column="watching_num" property="watching_num" jdbcType="INTEGER" />
+  </resultMap>
+
+  <resultMap id="adminlikemsgmodelBaseResultMap" type="com.IMBA.model.adminlikemsgmodel">
+    <id column="video_series_id" property="video_series_id" jdbcType="INTEGER" />
+    <result column="course_title" property="course_title" jdbcType="VARCHAR" />
+    <result column="count" property="count" jdbcType="INTEGER" />
+  </resultMap>
+
+
   <sql id="Base_Column_List" >
-    id, course_lecturer, course_title, course_type, watching_num
+    id, course_lecturer, course_title, course_type, watching_num ,video_screenshots_path
   </sql>
+
+  <select id="findvideo_seriesListbycollection_stu_id" parameterType="int" resultMap="BaseResultMap">
+    select vs.course_lecturer,vs.id,vs.course_title,vs.watching_num,vs.video_screenshots_path,vs.course_type  from video_series vs,video_collections vc where vc.student_id=#{0} and vc.video_series_id=vs.id
+  </select>
+  <select id="findvideo_seriesListbyrecord_stu_id" parameterType="int" resultMap="BaseResultMap">
+    select  vs.course_lecturer,vs.id,vs.course_title,vs.watching_num,vs.video_screenshots_path,vs.course_type from video_series vs,video_record vr ,video v where vr.student_id=#{0} and vr.video_id=v.id and  v.video_series_id=vs.id
+group by vs.id
+</select>
+
 
 
   <select id="findvideoList" resultMap="videolistmodelBaseResultMap">
@@ -29,6 +53,21 @@
     v.video_title,v.id from video_series vs, video v where v.video_series_id=#{0} and v.video_series_id=vs.id
   </select>
 
+  <select id="findvideo_seriesList" resultMap="BaseResultMap">
+    select * from video_series where course_type=#{0}
+  </select>
+
+<update id="updatewathing_num" parameterType="int">
+  update video_series  set watching_num=watching_num+1 where  id=#{0}
+</update>
+
+  <select id="findbywatchnums" resultMap="videowatchnumsrankBaseResultMap">
+    select course_title , watching_num,id from video_series order by watching_num desc
+  </select>
+
+  <select id="findlikenums" resultMap="adminlikemsgmodelBaseResultMap">
+    select vsk.video_series_id,vs.course_title,count(*) as count from video_series_like vsk ,video_series vs where vs.id=vsk.video_series_id group by vsk.video_series_id having count>=1 order by count desc ;
+  </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
@@ -41,10 +80,14 @@
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.IMBA.entity.video_series" >
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+
     insert into video_series (id, course_lecturer, course_title, 
       course_type, watching_num)
     values (#{id,jdbcType=INTEGER}, #{courseLecturer,jdbcType=VARCHAR}, #{courseTitle,jdbcType=VARCHAR}, 
-      #{courseType,jdbcType=VARCHAR}, #{watchingNum,jdbcType=INTEGER})
+      #{courseType,jdbcType=VARCHAR}, #{watchingNum,jdbcType=INTEGER},, #{video_screenshots_path,jdbcType=VARCHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.IMBA.entity.video_series" >
     insert into video_series

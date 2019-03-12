@@ -16,4 +16,14 @@ public class clock_inServiceImpl implements clock_inService {
         clockInMapper.insert(record);
         return 0;
     }
+
+    public int selectclockin_today(int stu_id) {
+        return clockInMapper.selectclockin_today(stu_id);
+    }
+
+    public int selectclockin_nums(int stu_id) {
+        return clockInMapper.selectclockin_nums(stu_id);
+    }
+
+
 }

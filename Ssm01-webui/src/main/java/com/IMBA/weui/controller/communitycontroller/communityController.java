@@ -2,6 +2,7 @@ package com.IMBA.weui.controller.communitycontroller;
 
 import com.IMBA.entity.*;
 import com.IMBA.model.*;
+import com.IMBA.redis.RedisUtil;
 import com.IMBA.service.*;
 import com.IMBA.solr.postSolr;
 import com.IMBA.utils.SensitivewordFilter;
@@ -35,6 +36,11 @@ public class communityController {
     private posts_collectionService postsCollectionService;
     @Autowired
     private recently_readService recentlyReadService;
+    @Autowired
+    RedisUtil redisUtil;
+
+    public static  final String POSTS_RANK= "posts_rank";
+
 
     //发帖
     @RequestMapping(value = "/commnity/postadd")
@@ -197,8 +203,10 @@ public class communityController {
             recentlyReadService.insert(record);
         }
 
+        //插入redis中排行榜单
 
-
+        String postname= post_id+":"+pmodel.getPostsTitle();
+        redisUtil.incrementScore(POSTS_RANK,postname,1);
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg",pmodel);
         return  JSONObject.fromObject(msg);

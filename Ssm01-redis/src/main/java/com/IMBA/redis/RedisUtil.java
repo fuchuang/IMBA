@@ -55,8 +55,14 @@ public class RedisUtil {
         return clusterRedisTemplate.opsForZSet().score(v, key);
 
     }
+    public long opsForZSetzCard(String k){
+        return clusterRedisTemplate.opsForZSet().zCard(k);
+    }
     public void opsForZsetadd(String k,String key,double s){
         clusterRedisTemplate.opsForZSet().add(k, key,s);
+    }
+    public Long reverseRank(String k, String key){
+        return clusterRedisTemplate.opsForZSet().reverseRank(k,key);
     }
 
 public Set<ZSetOperations.TypedTuple<String>>reverseRangeWithScores(String k,int s,int r){

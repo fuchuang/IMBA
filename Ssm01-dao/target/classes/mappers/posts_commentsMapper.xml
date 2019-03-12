@@ -19,6 +19,10 @@
     select * from posts_comments where posts_id=#{id}
   </select>
 
+  <select id="findcount()" resultType="int">
+    select count(*)  from  posts_comments
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.posts_commentsKey" >
     select 
     <include refid="Base_Column_List" />

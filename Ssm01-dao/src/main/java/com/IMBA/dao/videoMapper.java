@@ -8,6 +8,9 @@ import java.util.List;
 
 public interface videoMapper {
 
+
+
+    String findvideo(int id);
     int deleteByPrimaryKey(videoKey key);
 
     int insert(video record);

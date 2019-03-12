@@ -14,7 +14,8 @@ import java.util.Date;
 import java.util.List;
 
 public class postSolr{
-    private static final String URL="http://192.168.80.128:8080/solr/post_core"; //solr服务器地址
+//    private static final String URL="http://192.168.80.128:8080/solr/post_core"; //solr服务器地址
+    private static final String URL="https://campus.gbdev.cn:8080/solr/post_core"; //solr服务器地址
     private static HttpSolrClient solrClient = null;
     private void init(){
         solrClient = new HttpSolrClient.Builder(URL).build();

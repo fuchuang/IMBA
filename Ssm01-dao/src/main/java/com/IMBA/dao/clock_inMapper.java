@@ -4,6 +4,9 @@ import com.IMBA.entity.clock_in;
 import com.IMBA.entity.clock_inKey;
 
 public interface clock_inMapper {
+
+    int selectclockin_today(int stu_id);
+    int selectclockin_nums(int stu_id);
     int deleteByPrimaryKey(clock_inKey key);
 
     int insert(clock_in record);

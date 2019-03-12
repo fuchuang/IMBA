@@ -9,6 +9,12 @@
   <sql id="Base_Column_List">
     id, student_id, clocked_time
   </sql>
+  <select id="selectclockin_today" resultType="int" parameterType="int">
+    select count(*) from  clock_in where    student_id=#{0} and date(clocked_time) = curdate() ;
+  </select>
+  <select id="selectclockin_nums" resultType="int" >
+    select count(*) from clock_in where student_id=#{0}
+  </select>
   <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />

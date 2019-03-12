@@ -10,6 +10,24 @@
   <sql id="Base_Column_List" >
     id, video_id, student_id, watch_progress
   </sql>
+  <select id="findvideo_recordbystu_idandvideo_id" resultType="int">
+    select count(*) from video_record where student_id=#{0} and  video_id=#{1}
+  </select>
+
+  <update id="updatewatch_progressbystu_idandvideo_id" >
+    update video_record set watch_progress = #{2} where video_id = #{1} and student_id = #{0}
+  </update>
+
+
+  <select id="findvideo_recordbystu_idandvideo_idandwatch_progress" resultType="int">
+     select count(*) from video_record where student_id=#{0} and  video_id=#{1} and watch_progress=#{2}
+  </select>
+
+
+  <select id="findvideo_bystu_idandwatch_progress" resultType="int">
+    select count(*) from video_record where student_id=#{0} and  watch_progress=#{1}
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.video_recordKey" >
     select 
     <include refid="Base_Column_List" />
@@ -72,11 +90,5 @@
       and video_id = #{videoId,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.video_record" >
-    update video_record
-    set watch_progress = #{watchProgress,jdbcType=REAL}
-    where id = #{id,jdbcType=INTEGER}
-      and video_id = #{videoId,jdbcType=INTEGER}
-      and student_id = #{studentId,jdbcType=INTEGER}
-  </update>
+
 </mapper>
