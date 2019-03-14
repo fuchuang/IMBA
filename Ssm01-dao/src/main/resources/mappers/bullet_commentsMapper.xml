@@ -91,5 +91,15 @@
       and major_id = #{majorId,jdbcType=INTEGER}
   </update>
 
+  <select id="selectByWeek"  resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from bullet_comments
+    where  major_id = #{majorId,jdbcType=INTEGER}
+    and academic_year=#{year,jdbcType=VARCHAR}
+    and week_of_semester = #{week,jdbcType=TINYINT}
+  </select>
+
+
 
 </mapper>

@@ -11,6 +11,12 @@
             <value>
                 /user/login = anon <!--可以不需要登录-->
                 /user/CheckLogin = anon <!--可以不需要登录-->
+                /commnity/postlist=anon
+                /commnity/keyword=anon
+                /commnity/postsid=anon
+                //tree/list=anon
+                /commnity/commentsid=anon
+                /commnity/findkeywordposts=anon
                 /teacher/*=authc,roles[teacher]
                 /** = authc <!-- authc 表示需要认证才能访问的页面 -->
 

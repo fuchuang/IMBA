@@ -11,7 +11,7 @@ public class student extends studentKey {
 
     private String personalizedSignatures;
 
-    private Boolean isadmin;
+    private Byte isadmin;
 
     private String sex;
 
@@ -55,11 +55,11 @@ public class student extends studentKey {
         this.personalizedSignatures = personalizedSignatures == null ? null : personalizedSignatures.trim();
     }
 
-    public Boolean getIsadmin() {
+    public Byte getIsadmin() {
         return isadmin;
     }
 
-    public void setIsadmin(Boolean isadmin) {
+    public void setIsadmin(Byte isadmin) {
         this.isadmin = isadmin;
     }
 

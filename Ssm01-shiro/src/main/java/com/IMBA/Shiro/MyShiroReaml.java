@@ -46,16 +46,20 @@ public class MyShiroReaml extends AuthorizingRealm {
         student s=JsonUtil.toBean(student.class,studentjson);
         System.out.println("isamin:"+s.getIsadmin());
 
-        if (!s.getIsadmin()){
+        if (s.getIsadmin()==1){
             //学生
             System.out.println("false");
             info.addRole("student");
 
         }
-        if (s.getIsadmin()){
+        if (s.getIsadmin()==2){
             //老师
             System.out.println("老师");
             info.addRole("teacher");
+        }
+        if(s.getIsadmin()==3){
+            System.out.println("管理员");
+            info.addRole("admin");
         }
 
         return info;

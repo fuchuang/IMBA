@@ -16,15 +16,15 @@ public interface studentMapper {
 
 
 
-    int deleteByPrimaryKey(studentKey key);
+//    int deleteByPrimaryKey(studentKey key);
 
     int insert(student record);
 
-    int insertSelective(student record);
-
-    student selectByPrimaryKey(studentKey key);
-
-    int updateByPrimaryKeySelective(student record);
-
-    int updateByPrimaryKey(student record);
+//    int insertSelective(student record);
+//
+//    student selectByPrimaryKey(studentKey key);
+//
+//    int updateByPrimaryKeySelective(student record);
+//
+//    int updateByPrimaryKey(student record);
 }

@@ -9,14 +9,19 @@
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="avatar_path" jdbcType="VARCHAR" property="avatarPath" />
     <result column="personalized_signatures" jdbcType="VARCHAR" property="personalizedSignatures" />
-    <result column="isAdmin" jdbcType="BIT" property="isadmin" />
+    <result column="isAdmin" jdbcType="TINYINT" property="isadmin" />
     <result column="sex" jdbcType="CHAR" property="sex" />
   </resultMap>
-
   <sql id="Base_Column_List">
-    id, major_id, stu_id, stu_name, password, avatar_path, personalized_signatures, isAdmin, 
+    id, major_id, stu_id, stu_name, password, avatar_path, personalized_signatures, isAdmin,
     sex
   </sql>
+
+
+  <!--<sql id="Base_Column_List">-->
+    <!--id, major_id, stu_id, stu_name, password, avatar_path, personalized_signatures, isAdmin, -->
+    <!--sex-->
+  <!--</sql>-->
 
   <select id="findmajor" parameterType="int" resultType="int">
     select major_id from student where id=#{0}
@@ -33,11 +38,11 @@
   </select>
 
   <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.studentKey" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from student
     where id = #{id,jdbcType=INTEGER}
-      and major_id = #{majorId,jdbcType=INTEGER}
+    and major_id = #{majorId,jdbcType=INTEGER}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.studentKey">
     delete from student
@@ -45,13 +50,13 @@
       and major_id = #{majorId,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.IMBA.entity.student">
-    insert into student (id, major_id, stu_id, 
-      stu_name, password, avatar_path, 
+    insert into student (id, major_id, stu_id,
+      stu_name, password, avatar_path,
       personalized_signatures, isAdmin, sex
       )
-    values (#{id,jdbcType=INTEGER}, #{majorId,jdbcType=INTEGER}, #{stuId,jdbcType=VARCHAR}, 
-      #{stuName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{avatarPath,jdbcType=VARCHAR}, 
-      #{personalizedSignatures,jdbcType=VARCHAR}, #{isadmin,jdbcType=BIT}, #{sex,jdbcType=CHAR}
+    values (#{id,jdbcType=INTEGER}, #{majorId,jdbcType=INTEGER}, #{stuId,jdbcType=VARCHAR},
+      #{stuName,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{avatarPath,jdbcType=VARCHAR},
+      #{personalizedSignatures,jdbcType=VARCHAR}, #{isadmin,jdbcType=TINYINT}, #{sex,jdbcType=CHAR}
       )
   </insert>
   <insert id="insertSelective" parameterType="com.IMBA.entity.student">
@@ -108,7 +113,7 @@
         #{personalizedSignatures,jdbcType=VARCHAR},
       </if>
       <if test="isadmin != null">
-        #{isadmin,jdbcType=BIT},
+        #{isadmin,jdbcType=TINYINT},
       </if>
       <if test="sex != null">
         #{sex,jdbcType=CHAR},
@@ -134,14 +139,14 @@
         personalized_signatures = #{personalizedSignatures,jdbcType=VARCHAR},
       </if>
       <if test="isadmin != null">
-        isAdmin = #{isadmin,jdbcType=BIT},
+        isAdmin = #{isadmin,jdbcType=TINYINT},
       </if>
       <if test="sex != null">
         sex = #{sex,jdbcType=CHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
-      and major_id = #{majorId,jdbcType=INTEGER}
+    and major_id = #{majorId,jdbcType=INTEGER}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.student">
     update student
@@ -150,7 +155,7 @@
       password = #{password,jdbcType=VARCHAR},
       avatar_path = #{avatarPath,jdbcType=VARCHAR},
       personalized_signatures = #{personalizedSignatures,jdbcType=VARCHAR},
-      isAdmin = #{isadmin,jdbcType=BIT},
+      isAdmin = #{isadmin,jdbcType=TINYINT},
       sex = #{sex,jdbcType=CHAR}
     where id = #{id,jdbcType=INTEGER}
       and major_id = #{majorId,jdbcType=INTEGER}

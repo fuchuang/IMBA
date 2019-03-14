@@ -8,6 +8,7 @@ import com.IMBA.service.studentService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import net.sf.json.JSONObject;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Controller;
@@ -39,6 +40,7 @@ public class treeController {
     @Autowired
     registerService registerservice;
     public static  final String AVERAGE_SCORE_RANK= "average_score_rank";
+
 
 
 
@@ -80,6 +82,7 @@ public class treeController {
     }
     //浇水
     //
+    @RequiresRoles("student")
     @RequestMapping(value = "/tree/classes")
     @ResponseBody()
     JSONObject treeclasses(HttpServletRequest request,@RequestParam(name = "start",defaultValue = "0")int start,@RequestParam(name = "rows",defaultValue = "10")int rows){
