@@ -5,9 +5,11 @@ import com.IMBA.entity.match;
 import com.IMBA.entity.notification;
 import com.IMBA.utils.R;
 import com.sun.xml.internal.ws.spi.db.DatabindingException;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Date;
@@ -22,7 +24,8 @@ public class InfoController extends BaseController{
      */
     @GetMapping("notificationDetail")
     @ResponseBody
-    public R notificationDetail(int stuId,int notificationId){
+    public R notificationDetail(@RequestParam(value = "stuId") int stuId,
+                                @RequestParam(value = "notificationId") int notificationId){
         notification n=notifiService.noticesDetail(stuId,notificationId);
         if (n!=null){
             return reToObj(n);
@@ -37,7 +40,9 @@ public class InfoController extends BaseController{
      */
     @GetMapping("notificationList")
     @ResponseBody
-    public R showNotifications(int stuId,int offset,int limit){
+    public R showNotifications(@RequestParam(value = "stuId")int stuId,
+                               @RequestParam(value = "offset")int offset,
+                               @RequestParam(value = "limit")int limit){
         List list= notifiService.findNoticesByStuId(stuId,offset,limit);
         Map result=new HashMap();
         result.put("data",list);
@@ -51,7 +56,8 @@ public class InfoController extends BaseController{
      */
     @GetMapping("scoreInquiry")
     @ResponseBody
-    public R scoreInquiry(int stuId,String year){
+    public R scoreInquiry(@RequestParam(value = "stuId")int stuId,
+                          @RequestParam(value = "year")String year){
         float averageGPA=scoreservice.getAverageGPA(stuId);
         float semesterGPA=scoreservice.getGPAByTerm(stuId,year);
         int rank=scoreservice.getRankInMajor(stuId,year);
@@ -70,7 +76,7 @@ public class InfoController extends BaseController{
      */
     @GetMapping("scoreInquiry")
     @ResponseBody
-    public R tearchersInfo(int stuId){
+    public R tearchersInfo(@RequestParam(value = "stuId")int stuId){
         List<teachInfoDto> result=teacherservice.getTeachersInfo(stuId);
         return reToObj(result);
     }
@@ -81,7 +87,8 @@ public class InfoController extends BaseController{
      */
     @GetMapping("electiveInfo")
     @ResponseBody
-    public R electiveInfo(int stuId,String electiveType){
+    public R electiveInfo(@RequestParam(value = "stuId")int stuId,
+                          @RequestParam(value = "electiveType")String electiveType){
         if (electiveType.equals("人文社科") || electiveType.equals("自然科学")||electiveType.equals("创新创业")){
             List list=electiveservice.findElectiveByType(stuId,electiveType);
             return reToObj(list);
@@ -97,7 +104,7 @@ public class InfoController extends BaseController{
      */
     @GetMapping("electiveDetailInfo")
     @ResponseBody
-    public R electiveDetailInfo(int electiveId){
+    public R electiveDetailInfo(@RequestParam(value = "electiveId")int electiveId){
         List result=electiveCommentsService.getComments(electiveId);
         return reToObj(result);
     }
@@ -110,7 +117,9 @@ public class InfoController extends BaseController{
      */
     @GetMapping("matchInfo")
     @ResponseBody
-    public R matchInfo(int matchType,int offset,int dataNum){
+    public R matchInfo(@RequestParam(value = "matchType")int matchType,
+                       @RequestParam(value = "offset") int offset,
+                       @RequestParam(value = "dataNum")int dataNum){
         List<match> result=matchservice.getMatchByType(matchType,offset,dataNum);
         int count=matchservice.getCount(matchType);
         Map res=new HashMap();
@@ -124,7 +133,7 @@ public class InfoController extends BaseController{
      */
     @GetMapping("matchDetailInfo")
     @ResponseBody
-    public R matchDetailInfo(int matchId){
+    public R matchDetailInfo(@RequestParam(value = "matchId")int matchId){
         match result=matchservice.getMatchDetail(matchId);
         if (result!=null){
             return  reToObj(result);
@@ -137,7 +146,10 @@ public class InfoController extends BaseController{
      * 添加选课评论
      */
     @PostMapping
-    public R addElectiveComment(int stuId, int electiveId, String content, Date date){
+    public R addElectiveComment(@RequestParam(value = "stuId")int stuId,
+                                @RequestParam(value = "electiveId")int electiveId,
+                                @RequestParam(value = "content")String content,
+                                @RequestParam(value = "date")Date date){
         boolean result=electiveCommentsService.addComment(stuId,electiveId,date,content);
         if (result){
             return success("添加成功");
@@ -151,7 +163,7 @@ public class InfoController extends BaseController{
      */
     @GetMapping("examInfo")
     @ResponseBody
-    public R examInfo(int stuId){
+    public R examInfo(@RequestParam(value = "stuId")int stuId){
         List result=examinationservice.getExams(stuId);
         return reToObj(result);
     }
@@ -162,7 +174,9 @@ public class InfoController extends BaseController{
      */
     @GetMapping("addExamToSchedule")
     @ResponseBody
-    public R addExamToSchedule(int stuId,int examId,int courseExamId){
+    public R addExamToSchedule(@RequestParam(value = "stuId")int stuId,
+                               @RequestParam(value = "examId")int examId,
+                               @RequestParam(value = "courseExamId")int courseExamId){
        int stuCourseId=examinationservice.addToSchedule(stuId,examId,courseExamId);
        return success("stuCourseId",stuCourseId);
 
@@ -175,7 +189,8 @@ public class InfoController extends BaseController{
      */
     @GetMapping("cancelMarkAtSchedule")
     @ResponseBody
-    public R cancelMarkAtSchedule(int stuExamId,int exam_course_id ){
+    public R cancelMarkAtSchedule(@RequestParam(value = "stuExamId")int stuExamId,
+                                  @RequestParam(value = "exam_course_id")int exam_course_id ){
         examinationservice.cancelAddToSchedule(stuExamId,exam_course_id);
         return success();
     }
@@ -185,7 +200,8 @@ public class InfoController extends BaseController{
      */
     @GetMapping("searchForElective")
     @ResponseBody
-    public R searchForElective(int stuId,String keyWords){
+    public R searchForElective(@RequestParam(value = "stuId")int stuId,
+                               @RequestParam(value = "keyWords")String keyWords){
         List result;
         if (keyWords.trim().equals("")){
             return error();
@@ -202,7 +218,10 @@ public class InfoController extends BaseController{
      */
     @GetMapping("collectElective")
     @ResponseBody
-    public R collectElective(int stuId,int electiveId,int status,Date time){
+    public R collectElective(@RequestParam(value = "stuId")int stuId,
+                             @RequestParam(value = "electiveId")int electiveId,
+                             @RequestParam(value = "status")int status,
+                             @RequestParam(value = "time")Date time){
         boolean result;
         switch (status){
             case 0:
@@ -224,7 +243,9 @@ public class InfoController extends BaseController{
      */
     @GetMapping("likeElective")
     @ResponseBody
-    public R likeElective(int stuId,int electiveId,int status){
+    public R likeElective(@RequestParam(value = "stuId")int stuId,
+                          @RequestParam(value = "electiveId")int electiveId,
+                          @RequestParam(value = "status")int status){
         boolean result;
         switch (status){
             case 0:
@@ -244,7 +265,9 @@ public class InfoController extends BaseController{
      */
     @GetMapping("likeTeacher")
     @ResponseBody
-    public R likeTeacher(int stuId,int teacherId,int status){
+    public R likeTeacher(@RequestParam(value = "stuId")int stuId,
+                         @RequestParam(value = "teacherId")int teacherId,
+                         @RequestParam(value = "status")int status){
         boolean result;
         switch (status){
             case 1:
@@ -264,7 +287,9 @@ public class InfoController extends BaseController{
      */
     @GetMapping
     @ResponseBody
-    public R teachingEvaluation(int stuId,int teacherId,float grade){
+    public R teachingEvaluation(@RequestParam(value = "stuId")int stuId,
+                                @RequestParam(value = "teacherId")int teacherId,
+                                @RequestParam(value = "grade")float grade){
         boolean result=teacherservice.evaluteTeacher(stuId,teacherId,grade);
         if (result)return success("添加成功");
         return error();

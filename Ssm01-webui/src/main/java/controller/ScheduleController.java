@@ -136,7 +136,9 @@ public class ScheduleController extends BaseController{
      */
     @RequestMapping("showMemoInWeek")
     @ResponseBody
-    public R showMemoInWeek(int stuId,String year,int week){
+    public R showMemoInWeek(@RequestParam(value="stuId")int stuId,
+                            @RequestParam(value = "year")String year,
+                            @RequestParam(value = "week") int week){
         List<course> courses=stuCourseService.findCoursesOfWeek(stuId,year, (byte) week);
         List<memo> memos=memoservice.showMemoInWeek(stuId,courses);
         return reToObj(memos);
@@ -147,7 +149,7 @@ public class ScheduleController extends BaseController{
      */
     @RequestMapping("showCourseDetail")
     @ResponseBody
-    public R showCourseDetail(int courseId){
+    public R showCourseDetail(@RequestParam(value="courseId")int courseId){
         course c=courseservice.findCourseById(courseId);
         return reToObj(c);
     }
@@ -178,7 +180,7 @@ public class ScheduleController extends BaseController{
      */
     @RequestMapping("showBgImg")
     @ResponseBody
-    public R showBgImg(int stuId){
+    public R showBgImg(@RequestParam(value="stuId")int stuId){
         String path=backgroundService.findImgByStuId(stuId);
         if (path!=null){
             return success("path",path);
@@ -231,7 +233,7 @@ public class ScheduleController extends BaseController{
 
     @GetMapping("getCoursesOfSemester")
     @ResponseBody
-    public  R getCoursesOfSemester(int stuId,String year){
+    public  R getCoursesOfSemester(@RequestParam(value="stuId")int stuId,@RequestParam(value="year")String year){
         List result=stuCourseService.findCourseOfSemester(stuId,year);
         return reToObj(result);
     }

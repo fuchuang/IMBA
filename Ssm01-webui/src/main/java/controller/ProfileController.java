@@ -29,7 +29,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("personalInfo")
     @ResponseBody
-    public R personalInfo(int stuId){
+    public R personalInfo(@RequestParam(value="stuId")int stuId){
         studentInfo result=studentservice.getStuInfoById(stuId);
         if (result!=null)return reToObj(result);
         return error();
@@ -40,7 +40,7 @@ public class ProfileController extends BaseController {
      */
     @PostMapping("editSignature")
     @ResponseBody
-    public R  editSignature(int stuId,String content){
+    public R  editSignature(@RequestParam(value="stuId")int stuId,@RequestParam(value="content")String content){
         boolean n=studentservice.updateSignature(stuId,content);
         if (n){
             return success();
@@ -54,7 +54,9 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("notificationCollection")
     @ResponseBody
-    public R notificationCollection(int stuId,int offset,int limit){
+    public R notificationCollection(@RequestParam(value="stuId")int stuId,
+                                    @RequestParam(value="offset")int offset,
+                                    @RequestParam(value="limit")int limit){
         List list=notifiService.findCollectionsByStuId(stuId,offset,limit);
         Map result=new HashMap();
         result.put("data",list);
@@ -67,7 +69,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("collectNotification")
     @ResponseBody
-    public R collectNotification(int stuId,int noticeId){
+    public R collectNotification(@RequestParam(value="stuId")int stuId,@RequestParam(value="noticeId")int noticeId){
         boolean ans=stuNotificationService.addItem(stuId,noticeId);
         if (ans){
             return success();
@@ -81,7 +83,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("videoCollection")
     @ResponseBody
-    public R videoCollection(int stuId){
+    public R videoCollection(@RequestParam(value="stuId")int stuId){
         List<video_series> list=videoSeriesService.findCollectionsByStuId(stuId);
         return reToObj(list);
     }
@@ -91,7 +93,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("electiveCollection")
     @ResponseBody
-    public R electiveCollection(int stuId){
+    public R electiveCollection(@RequestParam(value="stuId")int stuId){
         List<electiveResultDto> list=electiveservice.findCollectionsByStuId(stuId);
         return reToObj(list);
     }
@@ -101,7 +103,9 @@ public class ProfileController extends BaseController {
      */
     @GetMapping
     @ResponseBody
-    public R viewRecentlyNotice(int stuId,int offset,int limit){
+    public R viewRecentlyNotice(@RequestParam(value="stuId")int stuId,
+                                @RequestParam(value="offset")int offset,
+                                @RequestParam(value="limit")int limit){
         List list=notifiService.getViewRecently(stuId,offset,limit);
         Map result=new HashMap();
         result.put("data",list);
@@ -115,7 +119,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("videoViewedHistory")
     @ResponseBody
-    public R videoViewedHistory(int stuId){
+    public R videoViewedHistory(@RequestParam(value="stuId")int stuId){
         List list=videoSeriesService.watchedRecentlyByStuId(stuId);
         return reToObj(list);
     }
@@ -126,7 +130,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("/myPosts/viewdRecently")
     @ResponseBody
-    public R viewdRecently(int stuId){
+    public R viewdRecently(@RequestParam(value="stuId")int stuId){
        List<posts> list= postsservice.getViewedRecently(stuId);
        return reToObj(list);
     }
@@ -136,7 +140,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("/myPosts/posted")
     @ResponseBody
-    public R postedList(int stuId){
+    public R postedList(@RequestParam(value="stuId")int stuId){
         List<posts> list= postsservice.getViewedRecently(stuId);
         return reToObj(list);
     }
@@ -146,7 +150,7 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("/myPosts/likes")
     @ResponseBody
-    public R LikedPosts(int stuId){
+    public R LikedPosts(@RequestParam(value="stuId")int stuId){
         List<posts> list= postsservice.getLikedPosts(stuId);
         return reToObj(list);
     }
@@ -159,7 +163,7 @@ public class ProfileController extends BaseController {
     @ResponseBody
     public void downloadFile(HttpServletRequest request,
                           HttpServletResponse response,
-                          @RequestParam  String filePath){
+                          @RequestParam(value="filePath")  String filePath){
         String fileName=request.getSession().getServletContext().getRealPath("/")+filePath;
         DownloadFile.download(response,fileName);
     }
@@ -171,7 +175,8 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("attendanceRecord")
     @ResponseBody
-    public R attendanceRecord(int stuId,String year){
+    public R attendanceRecord(@RequestParam(value="stuId")int stuId,
+                              @RequestParam(value="year")String year){
         Map map=clockInService.getAttendanceRecord(stuId,year);
         return reToObj(map);
     }
