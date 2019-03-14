@@ -14,7 +14,7 @@ public interface stu_courseService {
     List<course> findCoursesOfDay(Integer stuId,String year,Byte week,Byte day);
 
     //添加该学生的具体课程
-    boolean addStuCourse(int StuId,int courseId);
+    int addStuCourse(int StuId,int courseId);
 
     //查询该学生所上过的课程目录
     List<stuCourseDto> findCoursesList(int stuId);
@@ -24,6 +24,11 @@ public interface stu_courseService {
 
     //查询整个学期的课程
     List<course> findCourseOfSemester(int stuId,String year);
+
+    //删除课程
+    boolean deleteCourse(int stuCourseId);
+
+    int findCourseIdById(int id);
 
 
 }

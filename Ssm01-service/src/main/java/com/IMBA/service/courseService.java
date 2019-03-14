@@ -16,7 +16,10 @@ public interface courseService {
      int addCourse(course course);
 
     //把考试包装成课程
-    boolean examToCourse(examResultDto exam);
+    int examToCourse(examResultDto exam,int stuId);
+
+    //删除标记到课表所创建的course和course_info
+    public void deleteExamToCourse(int stuCourseId);
 
 
 

@@ -34,17 +34,19 @@ public class stu_courseServiceImpl implements stu_courseService {
         return coursesInDay;
     }
 
-    public boolean addStuCourse(int stuId, int courseId) {
+    public int addStuCourse(int stuId, int courseId) {
         stu_courseKey courseKey=new stu_courseKey();
         courseKey.setStudentId(stuId);
         courseKey.setCourseId(courseId);
+        int id;
         try{
-            mapper.insertSelective(courseKey);
+             mapper.insertSelective(courseKey);
+             id=courseKey.getId();
         }catch (Exception e){
-            System.out.println(e);
-            return false;
+
+            return -1;
         }
-        return true;
+        return id;
     }
 
     public List<stuCourseDto> findCoursesList(int stuId) {
@@ -59,6 +61,16 @@ public class stu_courseServiceImpl implements stu_courseService {
     public List<course> findCourseOfSemester(int stuId, String year) {
         List<course> result=mapper.findCoursesOfSemester(stuId,year);
         return result;
+    }
+
+    public boolean deleteCourse(int stuCourseId) {
+        int n=mapper.deleteById(stuCourseId);
+        if (n==1)return true;
+        return false;
+    }
+
+    public int findCourseIdById(int id) {
+         return mapper.selectById(id).getCourseId();
     }
 
 }

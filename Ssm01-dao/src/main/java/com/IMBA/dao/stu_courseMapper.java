@@ -27,4 +27,8 @@ public interface stu_courseMapper {
 
     List<course> findCoursesOfSemester(@Param("stuId") Integer stuId,
                                        @Param("year") String year);
+
+    int deleteById(Integer id);
+
+    stu_courseKey selectById(Integer id);
 }

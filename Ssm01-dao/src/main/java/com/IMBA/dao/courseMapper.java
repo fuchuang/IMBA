@@ -25,6 +25,8 @@ public interface courseMapper {
 
     course selectByCouseId( Integer id);
 
+    course selectExamCourseByCouseId(Integer id);
+
 
 
 }

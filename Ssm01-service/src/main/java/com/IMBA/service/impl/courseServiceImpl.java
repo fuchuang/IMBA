@@ -12,6 +12,7 @@ import com.IMBA.service.majorService;
 import com.IMBA.service.stu_courseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
@@ -50,14 +51,15 @@ public class courseServiceImpl implements courseService {
         }
 
     }
-
-    public boolean examToCourse(examResultDto exam) {
+    @Transactional(propagation= Propagation.REQUIRED)
+    public int examToCourse(examResultDto exam,int stuId) {
         //添加course_info
         course_info courseInfo=new course_info();
         courseInfo.setCourse_name(exam.getCourseName()+"考试");
         courseInfo.setClassroom(exam.getSite());
         courseInfo.setCourseYear(getSchoolYear());
-        int courseInfoId=course_info_Mapper.insertSelective(courseInfo);
+        course_info_Mapper.insertSelective(courseInfo);
+        int courseInfoId=courseInfo.getId();
         //添加实体course
         course c=new course();
         c.setCourseInfoId(courseInfoId);
@@ -65,8 +67,20 @@ public class courseServiceImpl implements courseService {
         c.setDayOfWeek(exam.getDayOfWeek());
         c.setCourseTime(exam.getExamTime());
         coursemapper.insertSelective(c);
-        //TODO
-        return false;
+        int course_exam_id =c.getId();
+        //增加 学生-课程
+        int stu_course_id=stuCourseService.addStuCourse(stuId,course_exam_id);
+        return stu_course_id;
+
+    }
+
+    public void deleteExamToCourse(int stuCourseId) {
+        int courseId=stuCourseService.findCourseIdById(stuCourseId);
+        stuCourseService.deleteCourse(stuCourseId);
+        course c=coursemapper.selectExamCourseByCouseId(courseId);
+        coursemapper.deleteByPrimaryKey(courseId);
+        int course_info_id=c.getCourseInfoId();
+        course_info_Mapper.deleteById(course_info_id);
     }
 
     private String getSchoolYear(){

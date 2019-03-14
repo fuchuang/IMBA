@@ -13,4 +13,7 @@ public class videoServiceImpl implements videoService {
     @Autowired
     videoMapper mapper;
 
+    public int getAllVideoNum() {
+        return mapper.getCount();
+    }
 }

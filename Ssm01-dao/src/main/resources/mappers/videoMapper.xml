@@ -80,4 +80,8 @@
       and video_series_id = #{videoSeriesId,jdbcType=INTEGER}
   </update>
 
+  <select id="getCount" resultType="java.lang.Integer">
+    select count(*) from video
+  </select>
+
 </mapper>

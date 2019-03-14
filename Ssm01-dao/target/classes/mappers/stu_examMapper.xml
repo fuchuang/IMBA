@@ -6,9 +6,10 @@
     <id column="examination_id" property="examinationId" jdbcType="INTEGER" />
     <id column="student_id" property="studentId" jdbcType="INTEGER" />
     <result column="seat_number" property="seatNumber" jdbcType="INTEGER" />
+    <result column="on_schedule" property="isOnSchedule" jdbcType="BIT" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, examination_id, student_id, seat_number
+    id, examination_id, student_id, seat_number,on_schedule
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.stu_examKey" >
     select 
@@ -79,4 +80,28 @@
       and examination_id = #{examinationId,jdbcType=INTEGER}
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
+
+  <update id="updateIsOnScheduleById" parameterType="com.IMBA.entity.stu_exam" >
+    update stu_exam
+    <set >
+      <if test="exam_stu_course_id != null" >
+        exam_stu_course_id = #{exam_stu_course_id,jdbcType=INTEGER},
+      </if>
+      <if test="isOnSchedule != null" >
+        on_schedule = #{isOnSchedule,jdbcType=BIT},
+      </if>
+    </set>
+
+
+
+    where  id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectByStuIdAndExamId" resultMap="BaseResultMap" parameterType="com.IMBA.entity.stu_examKey" >
+    select
+    <include refid="Base_Column_List" />
+    from stu_exam
+    where  examination_id = #{examinationId,jdbcType=INTEGER}
+    and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
 </mapper>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.IMBA.dao.elective_LikesMapper">
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.electiveLikes">
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="elective_id" jdbcType="INTEGER" property="electiveId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+   id,student_id,elective_id
+  </sql>
+
+  <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.electiveLikes" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from stu_elective_likes
+    where student_id = #{studentId,jdbcType=INTEGER}
+    and elective_id = #{electiveId,jdbcType=INTEGER}
+  </select>
+
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.electiveLikes" >
+    insert into stu_elective_likes (student_id,elective_id)
+    values ( #{stuId,jdbcType=INTEGER}, #{electiveId,jdbcType=INTEGER})
+  </insert>
+
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.electiveLikes" >
+    delete from stu_elective_likes
+    where student_id = #{studentId,jdbcType=INTEGER}
+      and elective_id = #{electiveId,jdbcType=INTEGER}
+  </delete>
+
+</mapper>

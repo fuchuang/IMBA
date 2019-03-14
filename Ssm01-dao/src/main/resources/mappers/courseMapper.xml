@@ -3,6 +3,7 @@
 <mapper namespace="com.IMBA.dao.courseMapper" >
   <resultMap id="BaseResultMap" type="com.IMBA.entity.course" >
     <id column="id" property="id" jdbcType="INTEGER" />
+      <id column="course_info_id" property="courseInfoId" jdbcType="INTEGER"/>
     <result column="course_name" property="courseName" jdbcType="VARCHAR" />
     <result column="classroom" property="classroom" jdbcType="VARCHAR" />
     <result column="course_credit" property="courseCredit" jdbcType="REAL" />
@@ -24,7 +25,7 @@
     week_of_semester, lesson_of_day, course_year, course_type, course_time
   </sql>
   <sql id="Course_Detail" >
-    course_name, classroom,course_time,teacher_name
+    course_name, classroom,course_time,teacher_name,course_info_id
   </sql>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
@@ -216,4 +217,12 @@
                                on t.id=tc.teacher_id
 
   </select>
+
+    <select id="selectExamCourseByCouseId" resultMap="BaseResultMap">
+        select
+        course_info_id
+        from course as cou inner join course_info as cin
+        on cin.id=cou.course_info_id
+        and  cou.id = #{id,jdbcType=INTEGER}
+    </select>
 </mapper>

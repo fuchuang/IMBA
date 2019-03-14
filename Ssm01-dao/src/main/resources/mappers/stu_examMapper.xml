@@ -81,11 +81,20 @@
       and student_id = #{studentId,jdbcType=INTEGER}
   </update>
 
-  <update id="updateIsOnScheduleByStuIdAndExamId" parameterType="com.IMBA.entity.stu_exam" >
+  <update id="updateIsOnScheduleById" parameterType="com.IMBA.entity.stu_exam" >
     update stu_exam
-    set on_schedule = #{isOnSchedule,jdbcType=INTEGER}
-    where  examination_id = #{examinationId,jdbcType=INTEGER}
-      and student_id = #{studentId,jdbcType=INTEGER}
+    <set >
+      <if test="exam_stu_course_id != null" >
+        exam_stu_course_id = #{exam_stu_course_id,jdbcType=INTEGER},
+      </if>
+      <if test="isOnSchedule != null" >
+        on_schedule = #{isOnSchedule,jdbcType=BIT},
+      </if>
+    </set>
+
+
+
+    where  id = #{id,jdbcType=INTEGER}
   </update>
 
   <select id="selectByStuIdAndExamId" resultMap="BaseResultMap" parameterType="com.IMBA.entity.stu_examKey" >

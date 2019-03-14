@@ -18,5 +18,5 @@ public interface stu_examMapper {
 
     stu_exam selectByStuIdAndExamId(stu_examKey key);
 
-    int updateIsOnScheduleByStuIdAndExamId(stu_examKey key);
+    int updateIsOnScheduleById(stu_examKey key);
 }

@@ -46,7 +46,7 @@
     values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}
       )
   </insert>
-  <insert id="insertSelective" parameterType="com.IMBA.entity.stu_courseKey" >
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.stu_courseKey" >
     insert into stu_course
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -116,4 +116,12 @@
     group by ci.id,cou.day_of_week,cou.lesson_of_day
   </select>
 
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+    delete from stu_course
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from stu_course where id=#{id,jdbcType=INTEGER}
+  </select>
 </mapper>

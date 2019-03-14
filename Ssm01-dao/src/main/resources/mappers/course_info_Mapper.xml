@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.courseInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.course_info" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="course_name" property="course_name" jdbcType="VARCHAR" />
+    <result column="classroom" property="classroom" jdbcType="VARCHAR" />
+    <result column="course_credit" property="courseCredit" jdbcType="REAL" />
+    <result column="course_hour" property="courseHour" jdbcType="INTEGER" />
+    <result column="course_quota" property="courseQuota" jdbcType="INTEGER" />
+    <result column="course_year" property="courseYear" jdbcType="VARCHAR" />
+    <result column="course_type" property="courseType" jdbcType="CHAR" />
+
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, course_name, classroom, course_credit, course_hour, course_quota, course_year, course_type
+  </sql>
+
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.course_info" >
+    insert into course_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="course_name != null" >
+        course_name,
+      </if>
+      <if test="classroom != null" >
+        classroom,
+      </if>
+      <if test="courseCredit != null" >
+        course_credit,
+      </if>
+      <if test="courseHour != null" >
+        course_hour,
+      </if>
+      <if test="courseQuota != null" >
+        course_quota,
+      </if>
+      <if test="courseYear != null" >
+        course_year,
+      </if>
+      <if test="courseType != null" >
+        course_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="course_name != null" >
+        #{course_name,jdbcType=VARCHAR},
+      </if>
+      <if test="classroom != null" >
+        #{classroom,jdbcType=VARCHAR},
+      </if>
+      <if test="courseCredit != null" >
+        #{courseCredit,jdbcType=REAL},
+      </if>
+      <if test="courseHour != null" >
+        #{courseHour,jdbcType=INTEGER},
+      </if>
+      <if test="courseQuota != null" >
+        #{courseQuota,jdbcType=INTEGER},
+      </if>
+      <if test="courseYear != null" >
+        #{courseYear,jdbcType=VARCHAR},
+      </if>
+      <if test="courseType != null" >
+        #{courseType,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+
+  <delete id="deleteById" parameterType="java.lang.Integer">
+    delete from course_info where id=#{id,jdbcType=INTEGER}
+  </delete>
+
+</mapper>

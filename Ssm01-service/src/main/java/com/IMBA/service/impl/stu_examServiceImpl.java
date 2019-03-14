@@ -11,12 +11,14 @@ public class stu_examServiceImpl implements stu_examService {
     @Autowired
     stu_examMapper mapper;
 
-    public boolean updateIsOnSchedule(int stuId,int examId,boolean isOn) {
+    public boolean updateIsOnSchedule(int stuExamId,boolean isOn,int stu_course_exam_id) {
         stu_exam record=new stu_exam();
-        record.setStudentId(stuId);
-        record.setExaminationId(examId);
+        record.setId(stuExamId);
         record.setOnSchedule(isOn);
-        int n=mapper.updateIsOnScheduleByStuIdAndExamId(record);
+        if (stu_course_exam_id!=-1){
+            record.setExam_stu_course_id(stu_course_exam_id);
+        }
+        int n=mapper.updateIsOnScheduleById(record);
         if (n==1)return true;
         return false;
     }

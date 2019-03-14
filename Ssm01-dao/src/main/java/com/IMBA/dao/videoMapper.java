@@ -18,4 +18,6 @@ public interface videoMapper {
 
     int updateByPrimaryKey(video record);
 
+    int getCount();
+
 }

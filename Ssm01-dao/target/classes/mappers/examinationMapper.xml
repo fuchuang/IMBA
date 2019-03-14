@@ -3,22 +3,27 @@
 <mapper namespace="com.IMBA.dao.examinationMapper" >
   <resultMap id="BaseResultMap" type="com.IMBA.entity.examination" >
   <id column="id" property="id" jdbcType="INTEGER" />
+  <id column="id" property="stuExamId" jdbcType="INTEGER" />
   <id column="course_id" property="courseId" jdbcType="INTEGER" />
   <result column="site" property="site" jdbcType="VARCHAR" />
   <result column="invigilator" property="invigilator" jdbcType="VARCHAR" />
   <result column="day_of_week" property="dayOfWeek" jdbcType="TINYINT" />
   <result column="week_of_semester" property="weekOfSemester" jdbcType="TINYINT" />
   <result column="exam_time" property="examTime" jdbcType="VARCHAR" />
+
 </resultMap>
   <resultMap id="SelectByYearResultMap" type="com.IMBA.dto.examResultDto" extends="BaseResultMap">
     <result column="course_name" property="courseName" jdbcType="VARCHAR"/>
+    <result column="on_schedule" property="isOnSchedule" jdbcType="BIT"/>
+    <result column="seat_number" property="seatNumber" jdbcType="INTEGER"/>
+    <result column="exam_stu_course_id" property="stuExamCourseId" jdbcType="INTEGER"/>
   </resultMap>
   <sql id="Base_Column_List" >
     id, course_id, site, invigilator, day_of_week, week_of_semester, exam_time
   </sql>
 
   <sql id="Select_By_Year_Column_List" >
-    exam.id, cin.course_name, exam.site, exam.invigilator, exam.day_of_week, exam.week_of_semester, exam.exam_time
+    se.id, cin.course_name, exam.site, exam.invigilator, exam.day_of_week, exam.week_of_semester, exam.exam_time,on_schedule,seat_number,exam_stu_course_id
   </sql>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.examinationKey" >
@@ -131,5 +136,13 @@
                              inner join course_info as cin
                                 on exam.course_id=cin.id
                                 and cin.course_year=#{year,jdbcType=VARCHAR}
+  </select>
+
+  <select id="selectById" resultMap="SelectByYearResultMap" parameterType="com.IMBA.entity.examinationKey" >
+    select
+    cin.course_name, exam.site,exam.day_of_week, exam.week_of_semester, exam.exam_time
+    from examination as exam inner join course_info as cin
+    where exam.id = #{id,jdbcType=INTEGER}
+    and course_id = cin.id
   </select>
 </mapper>
