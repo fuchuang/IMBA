@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.postsMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.posts" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="isAnonymity" property="isanonymity" jdbcType="BIT" />
+    <result column="posts_title" property="postsTitle" jdbcType="VARCHAR" />
+    <result column="posts_tags" property="postsTags" jdbcType="VARCHAR" />
+    <result column="posts_time" property="postsTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.IMBA.entity.posts" extends="BaseResultMap" >
+    <result column="posts_content" property="postsContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, student_id, isAnonymity, posts_title, posts_tags, posts_time
+  </sql>
+  <sql id="Blob_Column_List" >
+    posts_content
+  </sql>
+
+
+
+  <select id="findbypostid" resultMap="ResultMapWithBLOBs" parameterType="int">
+
+    select * from posts where id=#{id}
+  </select>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="com.IMBA.entity.postsKey" >
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from posts
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+
+  <select id="findcount" resultType="int">
+    select count(*)  from posts
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.postsKey" >
+    delete from posts
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.posts" >
+    insert into posts (id, student_id, isAnonymity, 
+      posts_title, posts_tags, posts_time, 
+      posts_content)
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{isanonymity,jdbcType=BIT}, 
+      #{postsTitle,jdbcType=VARCHAR}, #{postsTags,jdbcType=VARCHAR}, #{postsTime,jdbcType=TIMESTAMP}, 
+      #{postsContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.posts" >
+    insert into posts
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="isanonymity != null" >
+        isAnonymity,
+      </if>
+      <if test="postsTitle != null" >
+        posts_title,
+      </if>
+      <if test="postsTags != null" >
+        posts_tags,
+      </if>
+      <if test="postsTime != null" >
+        posts_time,
+      </if>
+      <if test="postsContent != null" >
+        posts_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="isanonymity != null" >
+        #{isanonymity,jdbcType=BIT},
+      </if>
+      <if test="postsTitle != null" >
+        #{postsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="postsTags != null" >
+        #{postsTags,jdbcType=VARCHAR},
+      </if>
+      <if test="postsTime != null" >
+        #{postsTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="postsContent != null" >
+        #{postsContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.posts" >
+    update posts
+    <set >
+      <if test="isanonymity != null" >
+        isAnonymity = #{isanonymity,jdbcType=BIT},
+      </if>
+      <if test="postsTitle != null" >
+        posts_title = #{postsTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="postsTags != null" >
+        posts_tags = #{postsTags,jdbcType=VARCHAR},
+      </if>
+      <if test="postsTime != null" >
+        posts_time = #{postsTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="postsContent != null" >
+        posts_content = #{postsContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.IMBA.entity.posts" >
+    update posts
+    set isAnonymity = #{isanonymity,jdbcType=BIT},
+      posts_title = #{postsTitle,jdbcType=VARCHAR},
+      posts_tags = #{postsTags,jdbcType=VARCHAR},
+      posts_time = #{postsTime,jdbcType=TIMESTAMP},
+      posts_content = #{postsContent,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.posts" >
+    update posts
+    set isAnonymity = #{isanonymity,jdbcType=BIT},
+      posts_title = #{postsTitle,jdbcType=VARCHAR},
+      posts_tags = #{postsTags,jdbcType=VARCHAR},
+      posts_time = #{postsTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+
+
+  <!--查找已看的帖子 -->
+  <select id="selectViewd" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    p.id, rr.student_id, isAnonymity, posts_title, posts_tags, posts_time,posts_content
+    from posts as p inner join recently_read as rr
+                            on rr.student_id=#{stuId,jdbcType=INTEGER}
+                            and p.id=rr.posts_id
+  </select>
+
+  <!--查找喜欢的帖子 -->
+  <select id="selectLiked" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    p.id, pc.student_id, isAnonymity, posts_title, posts_tags, posts_time,posts_content
+    from posts as p inner join posts_collection as pc
+                            on pc.student_id=#{stuId,jdbcType=INTEGER}
+                            and p.id=pc.posts_id
+  </select>
+
+  <!--查找已发的帖子 -->
+  <select id="selectPosted" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from posts where student_id=#{stuId,jdbcType=INTEGER}
+  </select>
+
+</mapper>

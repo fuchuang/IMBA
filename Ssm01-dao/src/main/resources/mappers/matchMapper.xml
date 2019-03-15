@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.matchMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.match" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="match_category" property="matchCategory" jdbcType="VARCHAR" />
+    <result column="match_title" property="matchTitle" jdbcType="VARCHAR" />
+    <result column="match_type" property="matchType" jdbcType="INTEGER" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.IMBA.entity.match" extends="BaseResultMap" >
+    <result column="match_content" property="matchContent" jdbcType="LONGVARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, match_category, match_title, match_type
+  </sql>
+  <sql id="Blob_Column_List" >
+    match_content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select <include refid="Base_Column_List" />,<include refid="Blob_Column_List" /> from match_ where id = #{id,jdbcType=INTEGER}
+
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from match_
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.match" >
+    insert into match_ (id, match_category, match_title,
+      match_type, match_content)
+    values (#{id,jdbcType=INTEGER}, #{matchCategory,jdbcType=VARCHAR}, #{matchTitle,jdbcType=VARCHAR},
+      #{matchType,jdbcType=INTEGER}, #{matchContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.match" >
+    insert into match_
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="matchCategory != null" >
+        match_category,
+      </if>
+      <if test="matchTitle != null" >
+        match_title,
+      </if>
+      <if test="matchType != null" >
+        match_type,
+      </if>
+      <if test="matchContent != null" >
+        match_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="matchCategory != null" >
+        #{matchCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="matchTitle != null" >
+        #{matchTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="matchType != null" >
+        #{matchType,jdbcType=VARCHAR},
+      </if>
+      <if test="matchContent != null" >
+        #{matchContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.match" >
+    update match
+    <set >
+      <if test="matchCategory != null" >
+        match_category = #{matchCategory,jdbcType=VARCHAR},
+      </if>
+      <if test="matchTitle != null" >
+        match_title = #{matchTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="matchType != null" >
+        match_type = #{matchType,jdbcType=INTEGER},
+      </if>
+      <if test="matchContent != null" >
+        match_content = #{matchContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.IMBA.entity.match" >
+    update match_
+    set match_category = #{matchCategory,jdbcType=VARCHAR},
+      match_title = #{matchTitle,jdbcType=VARCHAR},
+      match_type = #{matchType,jdbcType=INTEGER},
+      match_content = #{matchContent,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.match" >
+    update match_
+    set match_category = #{matchCategory,jdbcType=VARCHAR},
+      match_title = #{matchTitle,jdbcType=VARCHAR},
+      match_type = #{matchType,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+
+  </update>
+
+  <select id="selectByType"  resultMap="BaseResultMap">
+    select
+    id, match_category, match_title, match_type
+                      from match_
+                      where match_type = #{matchType,jdbcType=INTEGER}
+                      limit #{offset} ,#{num}
+  </select>
+
+  <select id="getCount" resultType="java.lang.Integer">
+    select count(*) from match_ where match_type =#{matchType};
+  </select>
+</mapper>

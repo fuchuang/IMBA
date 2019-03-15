@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.stu_courseMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.stu_courseKey" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <id column="course_id" property="courseId" jdbcType="INTEGER" />
+  </resultMap>
+
+
+  <resultMap id="CourseResultMap" type="com.IMBA.entity.course" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="course_name" property="courseName" jdbcType="VARCHAR" />
+    <result column="classroom" property="classroom" jdbcType="VARCHAR" />
+    <result column="course_credit" property="courseCredit" jdbcType="REAL" />
+    <result column="course_hour" property="courseHour" jdbcType="INTEGER" />
+    <result column="course_quota" property="courseQuota" jdbcType="INTEGER" />
+    <result column="day_of_week" property="dayOfWeek" jdbcType="TINYINT" />
+    <result column="lesson_of_day" property="lessonOfDay" jdbcType="TINYINT" />
+    <result column="course_year" property="courseYear" jdbcType="VARCHAR" />
+    <result column="course_type" property="courseType" jdbcType="CHAR" />
+    <result column="course_time" property="courseTime" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <resultMap id="CourseListResultMap" type="com.IMBA.dto.stuCourseDto">
+    <id column="course_info_id" property="courseId" jdbcType="INTEGER"/>
+    <result column="course_name" property="courseName" jdbcType="VARCHAR"/>
+  </resultMap>
+
+  <sql id="Course_List" >
+    cou.id,cou.course_name
+  </sql>
+  <sql id="Course_Result_List" >
+   cou.id,ci.course_name, ci.classroom, ci.course_credit, ci.course_hour, ci.course_quota, cou.day_of_week,
+     cou.lesson_of_day, ci.course_year, ci.course_type, cou.course_time
+  </sql>
+
+
+
+
+
+
+  <resultMap id="studentregistermodelBaseResultMap" type="com.IMBA.model.studentregistermodel">
+    <id column="id" property="student_id" jdbcType="INTEGER"></id>
+    <result column="stu_name" property="stu_name" jdbcType="VARCHAR"></result>
+    <result column="course_id" property="course_id"></result>
+
+  </resultMap>
+  <select id="findcount" resultType="int" parameterType="int">
+    select count(*) from stu_course where course_id=#{courseid}
+  </select>
+  <select id="findstudentregistermodel" parameterType="int" resultMap="studentregistermodelBaseResultMap">
+    select  s.stu_name,s.id ,sc.course_id from stu_course sc ,student s,course c where c.course_info_id=#{0} and c.day_of_week=#{1} and c.week_of_semester=#{2} and c.lesson_of_day=#{3} and sc.course_id=c.id and sc.student_id=s.id
+  </select>
+
+
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.stu_courseKey" >
+    delete from stu_course
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.stu_courseKey" >
+    insert into stu_course (id, student_id, course_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.stu_courseKey" >
+    insert into stu_course
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="courseId != null" >
+        course_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="courseId != null" >
+        #{courseId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+
+  <select id="findCoursesOfWeek" resultMap="CourseResultMap"  >
+    select
+    <include refid="Course_Result_List" />
+    from stu_course as sc inner join course as cou
+    on cou.id=sc.course_id
+    inner join course_info as ci
+    on cou.course_info_id=ci.id
+    and ci.course_year=#{year,jdbcType=VARCHAR}
+    and cou.week_of_semester=#{week,jdbcType=TINYINT}
+    and sc.student_id in (
+    select student_id
+    from stu_course
+    where  student_id = #{stuId,jdbcType=INTEGER} )
+  </select>
+
+  <select id="findCoursesList" resultMap="CourseListResultMap">
+    select
+      cou.course_info_id,cin.course_name
+    from stu_course as sc
+    inner join course as cou on cou.id=sc.course_id
+                            and sc.student_id= #{stuId,jdbcType=INTEGER}
+                            inner join  course_info as cin
+                            on cin.id=cou.course_info_id
+                            group by cou.course_info_id
+
+  </select>
+
+  <select id="selectMajorIdByCourseId" resultType="java.lang.Integer">
+    select s.major_id from stu_course as sc inner join student as s
+                                                   on sc.course_id=#{courseId,jdbcType=INTEGER}
+                                                   and sc.student_id=s.id
+  </select>
+
+  <select id="findCoursesOfSemester" resultMap="CourseResultMap"  >
+    select
+    <include refid="Course_Result_List" />
+    from stu_course as sc inner join course as cou
+    on cou.id=sc.course_id
+    inner join course_info as ci
+    on cou.course_info_id=ci.id
+    and ci.course_year=#{year,jdbcType=VARCHAR}
+    and sc.student_id=#{stuId,jdbcType=INTEGER}
+    group by ci.id,cou.day_of_week,cou.lesson_of_day
+  </select>
+
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+    delete from stu_course
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <select id="selectById" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select * from stu_course where id=#{id,jdbcType=INTEGER}
+  </select>
+
+
+</mapper>

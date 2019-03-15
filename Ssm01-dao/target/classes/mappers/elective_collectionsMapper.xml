@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.elective_collectionsMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.elective_collections" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="elective_id" property="electiveId" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="collection_time" property="collectionTime" jdbcType="TIMESTAMP" />
+    <result column="collecter_id" property="collecterId" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, elective_id, student_id, collection_time, collecter_id
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.elective_collectionsKey" >
+    select
+    <include refid="Base_Column_List" />
+    from elective_collections
+    where id = #{id,jdbcType=INTEGER}
+      and elective_id = #{electiveId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.elective_collectionsKey" >
+    delete from elective_collections
+    where id = #{id,jdbcType=INTEGER}
+      and elective_id = #{electiveId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.elective_collections" >
+    insert into elective_collections (id, elective_id, student_id,
+      collection_time, collecter_id)
+    values (#{id,jdbcType=INTEGER}, #{electiveId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER},
+      #{collectionTime,jdbcType=TIMESTAMP}, #{collecterId,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.elective_collections" >
+    insert into elective_collections
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="electiveId != null" >
+        elective_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="collectionTime != null" >
+        collection_time,
+      </if>
+      <if test="collecterId != null" >
+        collecter_id,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="electiveId != null" >
+        #{electiveId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="collectionTime != null" >
+        #{collectionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="collecterId != null" >
+        #{collecterId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.elective_collections" >
+    update elective_collections
+    <set >
+      <if test="collectionTime != null" >
+        collection_time = #{collectionTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="collecterId != null" >
+        collecter_id = #{collecterId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and elective_id = #{electiveId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.elective_collections" >
+    update elective_collections
+    set collection_time = #{collectionTime,jdbcType=TIMESTAMP},
+      collecter_id = #{collecterId,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+      and elective_id = #{electiveId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+</mapper>

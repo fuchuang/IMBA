@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.IMBA.dao.clock_inMapper">
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.clock_in">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <id column="student_id" jdbcType="INTEGER" property="studentId" />
+    <result column="clocked_time" jdbcType="TIMESTAMP" property="clockedTime" />
+  </resultMap>
+
+
+  <resultMap id="AttendancResultMap" type="com.IMBA.dto.attendanceRecordDto">
+    <id column="course_id" jdbcType="INTEGER" property="stuCourseId"/>
+    <result column="course_name" jdbcType="VARCHAR" property="courseName"/>
+    <result column="week_of_semester" jdbcType="INTEGER" property="week"/>
+    <result column="status" jdbcType="VARCHAR" property="status"/>
+  </resultMap>
+
+
+
+  <sql id="Base_Column_List">
+    id, student_id, clocked_time
+  </sql>
+  <select id="selectclockin_today" resultType="int" parameterType="int">
+    select count(*) from  clock_in where    student_id=#{0} and date(clocked_time) = curdate() ;
+  </select>
+  <select id="selectclockin_nums" resultType="int" >
+    select count(*) from clock_in where student_id=#{0}
+  </select>
+  <select id="selectByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from clock_in
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.clock_inKey">
+    delete from clock_in
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.clock_in">
+    insert into clock_in (id, student_id, clocked_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{clockedTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.clock_in">
+    insert into clock_in
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="studentId != null">
+        student_id,
+      </if>
+      <if test="clockedTime != null">
+        clocked_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null">
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="clockedTime != null">
+        #{clockedTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.clock_in">
+    update clock_in
+    <set>
+      <if test="clockedTime != null">
+        clocked_time = #{clockedTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.clock_in">
+    update clock_in
+    set clocked_time = #{clockedTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectAttendanceRecordByYear" resultMap="AttendancResultMap">
+    select
+        sc.course_id,cif.course_name,c.week_of_semester,ci.register_status
+      from register as ci inner join  stu_course as sc
+                                on ci.course_id=sc.course_id
+                                and ci.student_id=#{stuId,jdbcType=INTEGER}
+                                and sc.student_id=#{stuId,jdbcType=INTEGER}
+                          inner join course as c
+                                on c.id=sc.course_id
+                          inner join course_info as cif
+                                on cif.id=c.course_info_id
+                                and cif.course_year=#{year,jdbcType=VARCHAR}
+  </select>
+
+
+</mapper>

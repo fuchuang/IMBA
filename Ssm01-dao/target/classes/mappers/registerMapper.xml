@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.registerMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.register" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <id column="course_id" property="courseId" jdbcType="INTEGER" />
+    <result column="register_status" property="registerStatus" jdbcType="CHAR" />
+    <result column="register_time" property="registerTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, student_id, course_id, register_status, register_time
+  </sql>
+
+  <select id="findbystatus"  resultType="int">
+    select count(*) from (register r ,course c) where  r.register_status=#{0} and r.student_id=#{1} and c.course_info_id=#{2} and c.id=r.course_id
+  </select>
+
+<select id="findstudent" resultType="string">
+  select s.stu_name from register r,student s where s.major_id=#{1} and r.register_status=#{0} and r.student_id=s.id and to_days(STR_TO_DATE(r.register_time,"%Y年%m月%d日 %H时%i分%s秒")) = to_days(now()))
+</select>
+
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.registerKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from register
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.registerKey" >
+    delete from register
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.register" >
+    insert into register (id, student_id, course_id, 
+      register_status, register_time)
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{courseId,jdbcType=INTEGER}, 
+      #{registerStatus,jdbcType=CHAR}, #{registerTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.register" >
+    insert into register
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="courseId != null" >
+        course_id,
+      </if>
+      <if test="registerStatus != null" >
+        register_status,
+      </if>
+      <if test="registerTime != null" >
+        register_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="courseId != null" >
+        #{courseId,jdbcType=INTEGER},
+      </if>
+      <if test="registerStatus != null" >
+        #{registerStatus,jdbcType=CHAR},
+      </if>
+      <if test="registerTime != null" >
+        #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.register" >
+    update register
+    <set >
+      <if test="registerStatus != null" >
+        register_status = #{registerStatus,jdbcType=CHAR},
+      </if>
+      <if test="registerTime != null" >
+        register_time = #{registerTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.register" >
+    update register
+    set register_status = #{registerStatus,jdbcType=CHAR},
+      register_time = #{registerTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and course_id = #{courseId,jdbcType=INTEGER}
+  </update>
+</mapper>

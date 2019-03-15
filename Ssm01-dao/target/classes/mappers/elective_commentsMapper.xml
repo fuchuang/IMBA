@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.elective_commentsMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.elective_comments" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="elective_id" property="electiveId" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="comment_content" property="commentContent" jdbcType="VARCHAR" />
+    <result column="comment_time" property="commentTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <resultMap id="CommentsResultMap" type="com.IMBA.dto.electiveCommentsDto">
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="avatar_path" property="AvatarPath" jdbcType="VARCHAR"/>
+    <result column="commentTime" property="date" jdbcType="TIMESTAMP"/>
+    <result column="comment_content" property="content" jdbcType="VARCHAR"/>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, elective_id, student_id, comment_content, comment_time
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.elective_commentsKey" >
+    select
+    <include refid="Base_Column_List" />
+    from elective_comments
+    where id = #{id,jdbcType=INTEGER}
+    and elective_id = #{electiveId,jdbcType=INTEGER}
+    and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.elective_commentsKey" >
+    delete from elective_comments
+    where id = #{id,jdbcType=INTEGER}
+      and elective_id = #{electiveId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.elective_comments" >
+    insert into elective_comments (id, elective_id, student_id,
+      comment_content, comment_time)
+    values (#{id,jdbcType=INTEGER}, #{electiveId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER},
+      #{commentContent,jdbcType=VARCHAR}, #{commentTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.elective_comments" >
+    insert into elective_comments
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="electiveId != null" >
+        elective_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="commentContent != null" >
+        comment_content,
+      </if>
+      <if test="commentTime != null" >
+        comment_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="electiveId != null" >
+        #{electiveId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="commentContent != null" >
+        #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.elective_comments" >
+    update elective_comments
+    <set >
+      <if test="commentContent != null" >
+        comment_content = #{commentContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentTime != null" >
+        comment_time = #{commentTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+    and elective_id = #{electiveId,jdbcType=INTEGER}
+    and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.elective_comments" >
+    update elective_comments
+    set comment_content = #{commentContent,jdbcType=VARCHAR},
+      comment_time = #{commentTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and elective_id = #{electiveId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectCommentsById" resultMap="CommentsResultMap">
+    select
+      ec.student_id,s.avatar_path,ec.comment_time,ec.comment_content
+    from elective_comments as ec inner join student as s
+                                        on ec.elective_id=#{id,jdbcType=INTEGER}
+                                        and ec.student_id=s.id;
+  </select>
+</mapper>

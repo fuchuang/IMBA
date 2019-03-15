@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.posts_commentsMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.posts_comments" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="posts_id" property="postsId" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <id column="sub_comment_id" property="subCommentId" jdbcType="INTEGER" />
+    <result column="comments_content" property="commentsContent" jdbcType="VARCHAR" />
+    <result column="comments_time" property="commentsTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, posts_id, student_id, sub_comment_id, comments_content, comments_time
+  </sql>
+  <select id="findrowsbypostid" resultType="int" parameterType="int">
+    select  count(*) from posts_comments where posts_id=#{id}
+  </select>
+  <select id="findbypostid" resultMap="BaseResultMap" parameterType="int">
+    select * from posts_comments where posts_id=#{id}
+  </select>
+
+  <select id="findcount()" resultType="int">
+    select count(*)  from  posts_comments
+  </select>
+
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.posts_commentsKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from posts_comments
+    where id = #{id,jdbcType=INTEGER}
+      and posts_id = #{postsId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and sub_comment_id = #{subCommentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.posts_commentsKey" >
+    delete from posts_comments
+    where id = #{id,jdbcType=INTEGER}
+      and posts_id = #{postsId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and sub_comment_id = #{subCommentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.posts_comments" >
+    insert into posts_comments (id, posts_id, student_id, 
+      sub_comment_id, comments_content, comments_time
+      )
+    values (#{id,jdbcType=INTEGER}, #{postsId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, 
+      #{subCommentId,jdbcType=INTEGER}, #{commentsContent,jdbcType=VARCHAR}, #{commentsTime,jdbcType=TIMESTAMP}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.posts_comments" >
+    insert into posts_comments
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="postsId != null" >
+        posts_id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="subCommentId != null" >
+        sub_comment_id,
+      </if>
+      <if test="commentsContent != null" >
+        comments_content,
+      </if>
+      <if test="commentsTime != null" >
+        comments_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="postsId != null" >
+        #{postsId,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="subCommentId != null" >
+        #{subCommentId,jdbcType=INTEGER},
+      </if>
+      <if test="commentsContent != null" >
+        #{commentsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentsTime != null" >
+        #{commentsTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.posts_comments" >
+    update posts_comments
+    <set >
+      <if test="commentsContent != null" >
+        comments_content = #{commentsContent,jdbcType=VARCHAR},
+      </if>
+      <if test="commentsTime != null" >
+        comments_time = #{commentsTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and posts_id = #{postsId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and sub_comment_id = #{subCommentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.posts_comments" >
+    update posts_comments
+    set comments_content = #{commentsContent,jdbcType=VARCHAR},
+      comments_time = #{commentsTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+      and posts_id = #{postsId,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+      and sub_comment_id = #{subCommentId,jdbcType=INTEGER}
+  </update>
+</mapper>

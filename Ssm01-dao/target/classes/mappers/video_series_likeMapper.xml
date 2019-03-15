@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.IMBA.dao.video_series_likeMapper">
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.video_series_like">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="video_series_id" jdbcType="INTEGER" property="videoSeries" />
+    <result column="stu_id" jdbcType="INTEGER" property="stuId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, video_series, stu_id
+  </sql>
+
+  <insert id="insert" parameterType="com.IMBA.entity.video_series_like">
+    insert into video_series_like (id, video_series_id, stu_id
+      )
+    values (#{id,jdbcType=INTEGER}, #{videoSeries,jdbcType=INTEGER}, #{stuId,jdbcType=INTEGER}
+      )
+  </insert>
+
+  <select id="findlikesbystu_idandvideo_series_id" resultType="int">
+    select count(*) from video_series_like where stu_id=#{0} and video_series_id=#{1}
+  </select>
+
+  <select id="findcoutbyvideo_series_id" resultType="int">
+    select count(*) from  video_series_like where video_series_id=#{0}
+  </select>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</mapper>

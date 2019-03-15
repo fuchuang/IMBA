@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.notificationMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.dto.noticesDto" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="noti_date" property="notiDate" jdbcType="TIMESTAMP" />
+    <result column="noti_summarized" property="notiSummarized" jdbcType="VARCHAR" />
+    <result column="noti_title" property="notiTitle" jdbcType="VARCHAR" />
+  </resultMap>
+  <resultMap id="ResultMapWithBLOBs" type="com.IMBA.entity.notification" extends="BaseResultMap" >
+    <result column="noti_content" property="notiContent" jdbcType="LONGVARCHAR" />
+    <result column="attached_file_path" property="attachedFilePath" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, noti_date, noti_summarized, noti_title
+  </sql>
+  <sql id="Blob_Column_List" >
+    noti_content,attached_file_path
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from notification
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from notification
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.notification" >
+    insert into notification (id, noti_date, noti_summarized,
+      noti_title, noti_content)
+    values (#{id,jdbcType=INTEGER}, #{notiDate,jdbcType=TIMESTAMP}, #{notiSummarized,jdbcType=VARCHAR},
+      #{notiTitle,jdbcType=VARCHAR}, #{notiContent,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.notification" >
+    insert into notification
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="notiDate != null" >
+        noti_date,
+      </if>
+      <if test="notiSummarized != null" >
+        noti_summarized,
+      </if>
+      <if test="notiTitle != null" >
+        noti_title,
+      </if>
+      <if test="notiContent != null" >
+        noti_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="notiDate != null" >
+        #{notiDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="notiSummarized != null" >
+        #{notiSummarized,jdbcType=VARCHAR},
+      </if>
+      <if test="notiTitle != null" >
+        #{notiTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="notiContent != null" >
+        #{notiContent,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.notification" >
+    update notification
+    <set >
+      <if test="notiDate != null" >
+        noti_date = #{notiDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="notiSummarized != null" >
+        noti_summarized = #{notiSummarized,jdbcType=VARCHAR},
+      </if>
+      <if test="notiTitle != null" >
+        noti_title = #{notiTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="notiContent != null" >
+        noti_content = #{notiContent,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.IMBA.entity.notification" >
+    update notification
+    set noti_date = #{notiDate,jdbcType=TIMESTAMP},
+      noti_summarized = #{notiSummarized,jdbcType=VARCHAR},
+      noti_title = #{notiTitle,jdbcType=VARCHAR},
+      noti_content = #{notiContent,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.notification" >
+    update notification
+    set noti_date = #{notiDate,jdbcType=TIMESTAMP},
+      noti_summarized = #{notiSummarized,jdbcType=VARCHAR},
+      noti_title = #{notiTitle,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectCollection" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    n.id, noti_date, noti_summarized, noti_title
+    from notification as n inner join stu_notification as sn
+                                  on sn.student_id=#{stuId,jdbcType=INTEGER}
+                                  and n.id=sn.notification_id
+                                  and sn.is_collect=1
+                                  limit #{offset},#{limit}
+  </select>
+
+  <select id="selectByStuId" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    n.id, noti_date, noti_summarized, noti_title
+    from notification as n inner join stu_notification as sn
+                                  on sn.student_id = #{stuId,jdbcType=INTEGER}
+                                  and n.id = sn.notification_id
+                                  limit #{offset},#{limit}
+  </select>
+
+  <select id="selectById" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from notification
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.notification" >
+    insert into notification
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="notiDate != null" >
+        noti_date,
+      </if>
+      <if test="notiSummarized != null" >
+        noti_summarized,
+      </if>
+      <if test="notiTitle != null" >
+        noti_title,
+      </if>
+      <if test="notiContent != null" >
+        noti_content,
+      </if>
+      <if test="attachedFilePath != null" >
+        attached_file_path,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="notiDate != null" >
+        #{notiDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="notiSummarized != null" >
+        #{notiSummarized,jdbcType=VARCHAR},
+      </if>
+      <if test="notiTitle != null" >
+        #{notiTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="notiContent != null" >
+        #{notiContent,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="attachedFilePath != null" >
+        #{attachedFilePath,jdbcType=VARCHAR},
+      </if>
+
+    </trim>
+  </insert>
+
+  <select id="selectBYTime" resultMap="ResultMapWithBLOBs">
+    select
+    n.id, noti_date, noti_summarized, noti_title
+    from notification as n inner join stu_notification as sn
+                              on sn.notification_id=n.id
+                              and sn.read_status=1
+                           inner join student as st
+                              on st.id=sn.student_id
+                              and st.id=#{stuId}
+                           order by sn.read_time desc
+                           limit #{offset},#{limit}
+  </select>
+
+  <select id="getRecentlyViewedCount" resultType="java.lang.Integer">
+    select count(*) from stu_notification where read_status=1
+  </select>
+
+  <select id="getCollectionCount" resultType="java.lang.Integer">
+    select count(*) from stu_notification where is_collect=1 and student_id=#{stuId}
+  </select>
+
+  <select id="getNoticesCount" resultType="java.lang.Integer">
+    select count(*) from stu_notification where  student_id=#{stuId}
+  </select>
+
+</mapper>

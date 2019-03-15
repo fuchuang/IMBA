@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.memoMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.memo" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <id column="course_id" property="courseId" jdbcType="INTEGER" />
+    <result column="memo_content" property="memoContent" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, student_id, memo_content
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.memoKey" >
+    select
+    <include refid="Base_Column_List" />
+    from memo
+    where course_id = #{courseId,jdbcType=INTEGER}
+    and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.memoKey" >
+    delete from memo
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.memo" >
+    insert into memo (id, student_id, memo_content
+      )
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{memoContent,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.memo" >
+    insert into memo
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="memoContent != null" >
+        memo_content,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="memoContent != null" >
+        #{memoContent,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.memo" >
+    update memo
+    <set >
+      <if test="memoContent != null" >
+        memo_content = #{memoContent,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+    and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.memo" >
+    update memo
+    set memo_content = #{memoContent,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+
+  <insert id="insertMemo" parameterType="com.IMBA.entity.memo" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+    insert into memo (student_id, memo_content ,course_id
+      )
+    values ( #{studentId,jdbcType=INTEGER}, #{memoContent,jdbcType=VARCHAR},#{courseId,jdbcType=INTEGER}
+      )
+  </insert>
+
+  <select id="findById" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from memo
+    where id = #{memoId,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteById" parameterType="java.lang.Integer" >
+    delete from memo
+    where id = #{memoId,jdbcType=INTEGER}
+  </delete>
+</mapper>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.IMBA.dao.info_functionsMapper" >
+  <resultMap id="BaseResultMap" type="com.IMBA.entity.info_functions" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <id column="student_id" property="studentId" jdbcType="INTEGER" />
+    <result column="function_name" property="functionName" jdbcType="VARCHAR" />
+    <result column="img_path" property="imgPath" jdbcType="VARCHAR" />
+    <result column="function_link" property="functionLink" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, student_id, function_name, img_path, function_link
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.info_functionsKey" >
+    select 
+    <include refid="Base_Column_List" />
+    from info_functions
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="com.IMBA.entity.info_functionsKey" >
+    delete from info_functions
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.IMBA.entity.info_functions" >
+    insert into info_functions (id, student_id, function_name, 
+      img_path, function_link)
+    values (#{id,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER}, #{functionName,jdbcType=VARCHAR}, 
+      #{imgPath,jdbcType=VARCHAR}, #{functionLink,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.IMBA.entity.info_functions" >
+    insert into info_functions
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="studentId != null" >
+        student_id,
+      </if>
+      <if test="functionName != null" >
+        function_name,
+      </if>
+      <if test="imgPath != null" >
+        img_path,
+      </if>
+      <if test="functionLink != null" >
+        function_link,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="studentId != null" >
+        #{studentId,jdbcType=INTEGER},
+      </if>
+      <if test="functionName != null" >
+        #{functionName,jdbcType=VARCHAR},
+      </if>
+      <if test="imgPath != null" >
+        #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="functionLink != null" >
+        #{functionLink,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.info_functions" >
+    update info_functions
+    <set >
+      <if test="functionName != null" >
+        function_name = #{functionName,jdbcType=VARCHAR},
+      </if>
+      <if test="imgPath != null" >
+        img_path = #{imgPath,jdbcType=VARCHAR},
+      </if>
+      <if test="functionLink != null" >
+        function_link = #{functionLink,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.info_functions" >
+    update info_functions
+    set function_name = #{functionName,jdbcType=VARCHAR},
+      img_path = #{imgPath,jdbcType=VARCHAR},
+      function_link = #{functionLink,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+      and student_id = #{studentId,jdbcType=INTEGER}
+  </update>
+</mapper>

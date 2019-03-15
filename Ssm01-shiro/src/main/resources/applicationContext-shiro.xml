@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager" /> <!--加载管理器-->
+        <property name="loginUrl" value="/user/login" />    <!--没有登录的时候，跳转到这个页面-->
+        <property name="unauthorizedUrl" value="/user/login" /> <!--当没有权限的时候，跳转到这个url-->
+
+        <property name="filterChainDefinitions">
+            <value>
+                /user/login = anon <!--可以不需要登录-->
+                /user/CheckLogin = anon <!--可以不需要登录-->
+                /commnity/postlist=anon
+                /commnity/keyword=anon
+                /commnity/postsid=anon
+                //tree/list=anon
+                /commnity/commentsid=anon
+                /commnity/findkeywordposts=anon
+                /teacher/*=authc,roles[teacher]
+                /** = authc <!-- authc 表示需要认证才能访问的页面 -->
+
+
+
+            </value>
+        </property>
+    </bean>
+
+    <!-- 自定义Realm -->
+    <bean id="myShiroRealm" class="com.IMBA.Shiro.MyShiroReaml">
+        <!-- businessManager 用来实现用户名密码的查询 -->
+        <property name="shiroService" ref="studentService" />
+
+    </bean>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <!-- 注入realm -->
+        <property name="realm" ref="myShiroRealm"/>
+    </bean>
+
+    <bean id="redisUtil" class="com.IMBA.redis.RedisUtil"></bean>
+    <bean id="studentService" class="com.IMBA.service.impl.studentServiceImpl"></bean>
+
+
+</beans>
