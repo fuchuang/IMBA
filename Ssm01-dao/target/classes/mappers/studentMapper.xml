@@ -43,6 +43,11 @@
       )
   </insert>
 
+
+  <update id="updateIsAdmin">
+    update student set isAdmin=#{1} where stu_id=#{0}
+
+  </update>
   <select id="findByStuId" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />

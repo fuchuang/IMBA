@@ -14,6 +14,24 @@ public class postmodel {
     private String postsContent;
 
     private String name;
+    private int id;
+    private int stuid;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getStuid() {
+        return stuid;
+    }
+
+    public void setStuid(int stuid) {
+        this.stuid = stuid;
+    }
 
     public Boolean getIsanonymity() {
         return isanonymity;

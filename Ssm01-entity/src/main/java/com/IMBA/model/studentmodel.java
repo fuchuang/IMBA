@@ -2,17 +2,17 @@ package com.IMBA.model;
 
 public class studentmodel {
 
-    private String stuId;
+    private int stuId;
 
     private String stuName;
 
     private String avatarPath;
 
-    public String getStuId() {
+    public int getStuId() {
         return stuId;
     }
 
-    public void setStuId(String stuId) {
+    public void setStuId(Integer stuId) {
         this.stuId = stuId;
     }
 

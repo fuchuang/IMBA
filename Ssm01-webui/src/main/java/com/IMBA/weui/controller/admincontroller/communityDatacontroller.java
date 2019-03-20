@@ -7,6 +7,7 @@ import com.IMBA.service.majorService;
 import com.IMBA.service.registerService;
 import com.IMBA.service.studentService;
 import net.sf.json.JSONObject;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Controller;
@@ -38,6 +39,7 @@ public class communityDatacontroller {
     course_infoService courseInfoService;
     public static  final String AVERAGE_SCORE_RANK= "average_score_rank";
     //树排名
+    @RequiresRoles("admin")
     @RequestMapping(value = "Admin/treelist")
     @ResponseBody()
     JSONObject Admintreelist(HttpServletRequest request, @RequestParam(name = "start",defaultValue = "0")int start, @RequestParam(name = "rows",defaultValue = "10")int rows){
@@ -64,6 +66,8 @@ public class communityDatacontroller {
                 //求出平均分
                 if(average>0){
                     redisUtil.opsForZsetadd(AVERAGE_SCORE_RANK,mojorcourse, average);
+                }else {
+                    redisUtil.opsForZsetadd(AVERAGE_SCORE_RANK,mojorcourse, 0.0);
                 }
             }
 
@@ -75,6 +79,7 @@ public class communityDatacontroller {
 
     }
     //社群数目
+    @RequiresRoles("admin")
     @RequestMapping(value = "Admin/communitynums")
     @ResponseBody()
     JSONObject communitynums(){

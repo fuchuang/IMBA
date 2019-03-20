@@ -56,6 +56,7 @@ public class RedisUtil {
 
     }
     public long opsForZSetzCard(String k){
+
         return clusterRedisTemplate.opsForZSet().zCard(k);
     }
     public void opsForZsetadd(String k,String key,double s){

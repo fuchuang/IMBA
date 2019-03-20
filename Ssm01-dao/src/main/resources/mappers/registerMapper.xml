@@ -17,7 +17,7 @@
   </select>
 
 <select id="findstudent" resultType="string">
-  select s.stu_name from register r,student s where s.major_id=#{1} and r.register_status=#{0} and r.student_id=s.id and to_days(STR_TO_DATE(r.register_time,"%Y年%m月%d日 %H时%i分%s秒")) = to_days(now()))
+  select s.stu_name from register r,student s where s.major_id=#{1} and r.register_status=#{0} and r.student_id=s.id and  to_days(r.register_time) = to_days(now())
 </select>
 
 

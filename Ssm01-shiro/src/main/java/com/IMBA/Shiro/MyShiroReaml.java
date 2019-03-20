@@ -61,7 +61,12 @@ public class MyShiroReaml extends AuthorizingRealm {
             System.out.println("管理员");
             info.addRole("admin");
         }
-
+        if (s.getIsadmin()==4){
+            //老师
+            System.out.println("老师");
+            info.addRole("teacher");
+            info.addRole("student");
+        }
         return info;
     }
 

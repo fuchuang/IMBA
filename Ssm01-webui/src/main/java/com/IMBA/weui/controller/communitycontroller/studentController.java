@@ -4,6 +4,7 @@ import com.IMBA.entity.teacher_notification;
 import com.IMBA.entity.teacher_questionnaire;
 import com.IMBA.model.coursemodel;
 import com.IMBA.model.registermodel;
+import com.IMBA.model.studentregistermodel;
 import com.IMBA.service.*;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
@@ -35,6 +36,8 @@ public class studentController {
     course_infoService courseInfoService;
     @Autowired
     teacher_questionnaireService teacherquestionnaireService;
+    @Autowired
+    stu_adminService stuAdminService;
 
     //课程列表
     @RequiresRoles("student")
@@ -97,5 +100,25 @@ public class studentController {
         return  JSONObject.fromObject(msg);
     }
 
+    @RequestMapping(value = "/student/course/reggisterlist")
+    @ResponseBody()
+    JSONObject studentreggisterlist( @RequestParam(value = "courseinfoid",defaultValue = "1")int courseinfoid,
+                              @RequestParam(value = "week_of_semester",defaultValue = "1")int week_of_semester,
+                              @RequestParam(value = "lesson_of_day",defaultValue = "1")int lesson_of_day,
+                              @RequestParam(value = "day_of_week",defaultValue = "1")int day_of_week,
+                              HttpServletRequest request){
+        HttpSession session=request.getSession();
+        int student_id= (int) session.getAttribute("id");//账号
+        Map<String,Object> msg=new HashMap<>();
+        if(stuAdminService.isadmin(student_id,courseinfoid)>0){
+
+            List<studentregistermodel>studentregistermodelList=stuCourseService.findstudentregistermodel(courseinfoid,day_of_week,week_of_semester,lesson_of_day);
+            msg.put("msg",studentregistermodelList);
+        }else {
+            msg.put("msg","没有相关权限");
+        }
+
+        return  JSONObject.fromObject(msg);
+    }
 
 }

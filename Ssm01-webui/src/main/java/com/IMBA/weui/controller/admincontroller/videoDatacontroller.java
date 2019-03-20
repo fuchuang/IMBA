@@ -6,6 +6,7 @@ import com.IMBA.service.video_seriesService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import net.sf.json.JSONObject;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,7 @@ public class videoDatacontroller {
     @Autowired
     video_seriesService videoSeriesService;
     //视频观看人数
+    @RequiresRoles("admin")
     @RequestMapping(value = "Admin/videowatchnums")
     @ResponseBody()
     JSONObject Adminvideowatchnums(@RequestParam(name = "start",defaultValue = "0")int start, @RequestParam(name = "rows",defaultValue = "3")int rows){
@@ -34,6 +36,7 @@ public class videoDatacontroller {
     }
     //视频观看时长？
     //视频点赞数
+    @RequiresRoles("admin")
     @RequestMapping(value = "Admin/likehnums")
     @ResponseBody()
     JSONObject Adminlikehnums(@RequestParam(name = "start",defaultValue = "0")int start, @RequestParam(name = "rows",defaultValue = "3")int rows){

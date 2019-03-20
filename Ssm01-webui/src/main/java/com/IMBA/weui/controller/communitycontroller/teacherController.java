@@ -64,6 +64,11 @@ public class teacherController {
     @Autowired
     teaching_evaluationService teachingEvaluationService;
 
+    @Autowired
+    studentService studentservice;
+    @Autowired
+    stu_adminService stuAdminService;
+
 
 
     public static final String SCORE_RANK = "score_rank";
@@ -74,19 +79,18 @@ public class teacherController {
     @RequiresRoles("teacher")
     @RequestMapping(value = "/teacher/filesend",produces="text/html;charset=utf-8")
     @ResponseBody
-    JSONObject filesend(@RequestParam("file") CommonsMultipartFile partFile, @RequestParam("course_id") int course_id, HttpServletRequest request) throws IOException {
+    JSONObject filesend(@RequestParam("file") CommonsMultipartFile partFile, @RequestParam("courseinfoid") int course_id, HttpServletRequest request) throws IOException {
 
 
         HttpSession session=request.getSession();
         int Uploaderid= (int) session.getAttribute("id");
 
         String path=filePath;
-        String filename=partFile.getOriginalFilename();//上传时候的文件名
+        String filename=UUID.randomUUID().toString()+partFile.getOriginalFilename();//上传时候的文件名
         File file = new File(path+"/"+filename);
         InputStream inputStream = partFile.getInputStream();
         FileUtils.copyInputStreamToFile(inputStream, file);
-        String filepath=path+"/"+filename;
-
+        String filepath="/upload/"+filename;
         course_files record=new course_files();
         record.setFilesPath(filepath);
         record.setFilesTitle(filename);
@@ -158,7 +162,7 @@ public class teacherController {
 
 
     //点名
-    @RequiresRoles("teacher")
+  /*  @RequiresRoles("teacher")*/
     @RequestMapping(value = "/teacher/reggisterid")
     @ResponseBody()
     JSONObject reggisterid(@RequestParam(value = "register_status",defaultValue = "dayoff")String register_status,
@@ -195,18 +199,6 @@ public class teacherController {
     }
 
 
-    //标记为管理员
-
-    @RequiresRoles("teacher")
-    @RequestMapping(value = "/teacher/setadmin")
-    @ResponseBody()
-    JSONObject setadmin(@RequestParam (value = "student_id",defaultValue = "1")int student_id,
-                           @RequestParam(value = "course_id",defaultValue = "1")int course_id){
-
-        Map<String,Object> msg=new HashMap<>();
-        msg.put("msg","success");
-        return  JSONObject.fromObject(msg);
-    }
 
     //问卷
     @RequiresRoles("teacher")
@@ -258,5 +250,31 @@ public class teacherController {
         return  JSONObject.fromObject(msg);
     }
 
+    //标记为管理员
+    @RequiresRoles("teacher")
+    @RequestMapping(value = "/teacher/setadmin")
+    @ResponseBody()
+    JSONObject setadmin(@RequestParam (value = "student_id",defaultValue = "1")int student_id,
+                        @RequestParam(value = "courseinfoid",defaultValue = "1")int course_id){
+
+        stu_admin stu_admin=new stu_admin();
+        stu_admin.setStudentId(student_id);
+        stu_admin.setCourseId(course_id);
+        stuAdminService.insert(stu_admin);
+        Map<String,Object> msg=new HashMap<>();
+        msg.put("msg","success");
+        return  JSONObject.fromObject(msg);
+    }
+    //取消管理员
+    @RequiresRoles("teacher")
+    @RequestMapping(value = "/teacher/deleteadmin")
+    @ResponseBody()
+    JSONObject deleteadmin(@RequestParam (value = "student_id",defaultValue = "1")int student_id,
+                        @RequestParam(value = "courseinfoid",defaultValue = "1")int course_id){
+        stuAdminService.deleteadmin(student_id,course_id);
+        Map<String,Object> msg=new HashMap<>();
+        msg.put("msg","success");
+        return  JSONObject.fromObject(msg);
+    }
 
 }

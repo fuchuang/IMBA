@@ -68,6 +68,10 @@ public class studentServiceImpl implements studentService {
         }
     }
 
+    public int updateIsAdmin(int stu_id, byte isadmin) {
+        return mapper.updateIsAdmin(stu_id, isadmin);
+    }
+
 //    public studentInfo getStuInfoById(int stuId) {
 //        student s=mapper.findByStuId(stuId);
 //        if (s==null)return null;

@@ -58,7 +58,7 @@ public class LiveController {
    //观看
    @RequestMapping(value = "/Live/id")
    @ResponseBody
-   JSONObject Liveid(HttpServletRequest request, @RequestParam(name = "id",defaultValue = "0")int id){
+   JSONObject Liveid(HttpServletRequest request, @RequestParam(name = "id",defaultValue = "1")int id){
 
         live_video liveVideo=livevideoService.findlive_videobyid(id);
         livevideoService.updatewatch_nums(id);

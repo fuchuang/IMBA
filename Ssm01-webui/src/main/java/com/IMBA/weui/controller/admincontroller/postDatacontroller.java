@@ -4,6 +4,7 @@ import com.IMBA.model.adminpostmsgmodel;
 import com.IMBA.redis.RedisUtil;
 import com.IMBA.service.postsService;
 import net.sf.json.JSONObject;
+import org.apache.shiro.authz.annotation.RequiresRoles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.ZSetOperations;
 import org.springframework.stereotype.Controller;
@@ -25,6 +26,7 @@ public class postDatacontroller {
     RedisUtil redisUtil;
 
     //发帖数目和回帖数目
+    @RequiresRoles("admin")
     @RequestMapping(value = "Admin/postmsg")
     @ResponseBody()
     JSONObject Adminpostmsg(){
@@ -40,6 +42,7 @@ public class postDatacontroller {
 
     }
     //贴子热度
+    @RequiresRoles("admin")
     @RequestMapping(value = "Admin/postRank")
     @ResponseBody()
     JSONObject postRank(@RequestParam(name = "start",defaultValue = "0")int start, @RequestParam(name = "rows",defaultValue = "10")int rows){

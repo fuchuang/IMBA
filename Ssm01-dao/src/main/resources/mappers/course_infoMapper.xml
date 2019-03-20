@@ -33,7 +33,7 @@
 select course_hour  from course_info where  id=#{0}
 </select>
   <select id="findCouseMsgbyteacherid" resultMap="CourseModelBaseResultMap">
-   select c.id ,t.teacher_name,c.course_name, c.course_quota from course_info c, teacher t ,teacher_course tc where t.id=#{0} and c.course_year=#{1}  and tc.course_id=c.id  and tc.teacher_id=t.id
+    select c.id ,t.teacher_name,c.course_name, c.course_quota from course_info c, teacher t ,teacher_course tc , stu_teacher stut where stut.stu_id=#{0} and c.course_year=#{1} and tc.course_id=c.id and tc.teacher_id=stut.teacher_id and t.id=stut.teacher_id ;
   </select>
 
   <select id="findcount" resultType="int">

@@ -1,5 +1,6 @@
 package com.IMBA.weui.controller.videocontroller;
 
+import com.IMBA.entity.clock_in;
 import com.IMBA.entity.video_series;
 import com.IMBA.model.videoRankmodel;
 import com.IMBA.redis.RedisUtil;
@@ -17,9 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import static com.IMBA.weui.controller.videocontroller.VideoOnDemandController.VIDEO_RANK;
 
@@ -43,12 +42,34 @@ public class ClockController {
         int count=clockInService.selectclockin_today(student_id);
         Map<String,Object> msg=new HashMap<>();
         if (count>0){
-            msg.put("msg","yes");
-        }else {
             msg.put("msg","no");
+        }else {
+            msg.put("msg","yes");
+
         }
         return  JSONObject.fromObject(msg);
     }
+    //打卡
+    @RequestMapping(value = "/video/clock")
+    @ResponseBody
+    JSONObject videoclock(HttpServletRequest request){
+        HttpSession session=request.getSession();
+        int student_id= (int) session.getAttribute("id");
+        int count=clockInService.selectclockin_today(student_id);
+        Map<String,Object> msg=new HashMap<>();
+        if (count>0){
+
+        }else {
+            clock_in record=new clock_in();
+            record.setClockedTime(new Date());
+            record.setStudentId(student_id);
+          clockInService.insert(record);
+
+        }
+        msg.put("msg","success");
+        return  JSONObject.fromObject(msg);
+    }
+
     @RequestMapping(value = "/video/clocknums")
     @ResponseBody
     JSONObject videoclocknums(HttpServletRequest request){
@@ -58,7 +79,6 @@ public class ClockController {
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg",count);
         return  JSONObject.fromObject(msg);
-
 
     }
     //学习完课程，击败列表中的数据
@@ -71,16 +91,23 @@ public class ClockController {
         Map<String,Object> msg=new HashMap<>();
         videoRankmodel videorankmodel=new videoRankmodel();
         if (videoRecordService.findvideo_bystu_idandwatch_progress(stu_id,1)>0){
-            double score=  redisUtil.score(VIDEO_RANK,stu);
-            double rank=redisUtil.reverseRank(VIDEO_RANK,stu)+1;
-            double along=redisUtil.opsForZSetzCard(VIDEO_RANK);
-            System.out.println(along);
-            System.out.println(rank);
-            double winnums=(along-rank)/along;
 
-            videorankmodel.setWinnum(winnums);
-            videorankmodel.setVideonum(score);
-            msg.put("msg",videorankmodel);
+
+            Set<String>keySet=redisUtil.member(VIDEO_RANK);
+            for (String key:keySet){
+                if (stu==key){
+                    double score=  redisUtil.score(VIDEO_RANK,stu);
+                    double rank=redisUtil.reverseRank(VIDEO_RANK,stu)+1;
+                    double along=redisUtil.opsForZSetzCard(VIDEO_RANK);
+                    System.out.println(along);
+                    System.out.println(rank);
+                    double winnums=(along-rank)/along;
+                    videorankmodel.setWinnum(winnums);
+                    videorankmodel.setVideonum(score);
+                    msg.put("msg",videorankmodel);
+                }
+            }
+
         } else{
             videorankmodel.setWinnum(0);
             videorankmodel.setVideonum(0);
@@ -108,18 +135,19 @@ public class ClockController {
     }
 
     //正在学习的课程
-    @RequestMapping(value = "/video/studneting")
+    @RequestMapping(value = "/video/studenting")
     @ResponseBody
     JSONObject studneting(HttpServletRequest request,@RequestParam(name = "start",defaultValue = "0")int start,@RequestParam(name = "rows",defaultValue = "10")int rows){
         HttpSession session=request.getSession();
         int student_id= (int) session.getAttribute("id");
         PageHelper.startPage(start,rows);
-       List<video_series> video_seriesList=videoSeriesService.findvideo_seriesListbyrecord_stu_id(student_id);
+        List<video_series> video_seriesList=videoSeriesService.findvideo_seriesListbyrecord_stu_id(student_id);
         PageInfo<video_series> video_seriesPageInfo=new PageInfo<>(video_seriesList);
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg",video_seriesPageInfo);
         return  JSONObject.fromObject(msg);
 
     }
+
 
 }

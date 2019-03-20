@@ -11,6 +11,7 @@ public interface majorMapper {
     int insertAndGetId(major record);
 
 
+
     int insert(major record);
 
     int insertSelective(major record);

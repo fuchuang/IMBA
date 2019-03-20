@@ -49,7 +49,6 @@ public class treeController {
     JSONObject treelist(HttpServletRequest request,@RequestParam(name = "start",defaultValue = "0")int start,@RequestParam(name = "rows",defaultValue = "10")int rows){
         //查找专业班级
         List<major>majorList=majorservice.findAll();
-
         for (major mj:majorList){
             String mojorcourse=mj.getGrade()+mj.getMarjorName()+mj.getClasses()+"班";
             System.out.println(mojorcourse);
@@ -71,6 +70,8 @@ public class treeController {
                 if(average>0){
                     redisUtil.opsForZsetadd(AVERAGE_SCORE_RANK,mojorcourse, average);
                 }
+            }else {
+                redisUtil.opsForZsetadd(AVERAGE_SCORE_RANK,mojorcourse, 0.0);
             }
 
         }
@@ -96,12 +97,29 @@ public class treeController {
         PageHelper.startPage(start,rows);
         List<String>stringList=registerservice.findstudent(status,major_id);
         PageInfo<String>pageInfo=new PageInfo<>(stringList);
-
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg",pageInfo);
         return  JSONObject.fromObject(msg);
 
     }
+    //浇水
+    //
+    @RequiresRoles("student")
+    @RequestMapping(value = "/tree/status")
+    @ResponseBody()
+    JSONObject treestatus(HttpServletRequest request,@RequestParam(name = "start",defaultValue = "0")int start,@RequestParam(name = "rows",defaultValue = "10")int rows){
 
+        //今天
+        HttpSession session=request.getSession();
+       int stu_id= (int) session.getAttribute("id");//账号
+        //专业的同学的id的时间
+        major mj=majorservice.findmajorname(stu_id);
+        String mojorcourse=mj.getGrade()+mj.getMarjorName()+mj.getClasses()+"班";
+        double total=redisUtil.score(AVERAGE_SCORE_RANK,mojorcourse);
+        Map<String,Object> msg=new HashMap<>();
+        msg.put("msg",mojorcourse+":"+total);
+        return  JSONObject.fromObject(msg);
+
+    }
 
 }

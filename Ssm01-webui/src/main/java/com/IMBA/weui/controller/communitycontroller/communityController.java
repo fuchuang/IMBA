@@ -103,6 +103,8 @@ public class communityController {
                 student s= studentservice.findstudentByid(post.getStudentId());
                 pmodel.setName(s.getStuName());
             }
+            pmodel.setId(post.getId());
+            pmodel.setStuid(post.getStudentId());
             pmodel.setPostsContent(post.getPostsContent());
             pmodel.setPostsTags(post.getPostsTags());
             Date date=post.getPostsTime();
@@ -145,10 +147,8 @@ public class communityController {
         if (post_id>0){
             record.setPostsId(post_id);
         }
-
         record.setStudentId(student_id);
         record.setSubCommentId(sub_comment_id);
-
         postsCommentsService.insert(record);
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg",record);
@@ -229,7 +229,7 @@ public class communityController {
             student s= studentservice.findstudentByid(p.getStudentId());
             studentmodel stu=new studentmodel();
             stu.setAvatarPath(s.getAvatarPath());
-            stu.setStuId(s.getStuId());
+            stu.setStuId(s.getId());
             stu.setStuName(s.getStuName());
             postcommentomdel1.setStudentmodel(stu);
             Date date=p.getCommentsTime();
@@ -267,9 +267,10 @@ public class communityController {
             pmodel.setIsanonymity(post.getIsanonymity());
             if (!post.getIsanonymity()){
                 student s= studentservice.findstudentByid(post.getStudentId());
-
                 pmodel.setName(s.getStuName());
             }
+            pmodel.setId(post.getId());
+            pmodel.setStuid(post.getStudentId());
             pmodel.setPostsContent(post.getPostsContent());
             pmodel.setPostsTags(post.getPostsTags());
             Date date=post.getPostsTime();

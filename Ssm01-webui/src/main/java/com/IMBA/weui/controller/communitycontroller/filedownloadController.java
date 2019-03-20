@@ -46,7 +46,7 @@ public class filedownloadController {
     //文件列表
     @RequestMapping(value = "/filedownload/filelist")
     @ResponseBody
-    JSONObject filelist(@RequestParam("course_id") int course_id){
+    JSONObject filelist(@RequestParam("courseinfoid") int course_id){
         List<course_files>course_filesList=courseFilesService.findbycouser_id(course_id);
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg",course_filesList);

@@ -18,7 +18,7 @@ public interface studentService {
     int insertAndGetId(student record);
 
     boolean updateSignature(int stuId,String content);
-
+    int updateIsAdmin(int stu_id,byte isadmin);
   /*  studentInfo getStuInfoById(int stuId);*/
 
 }

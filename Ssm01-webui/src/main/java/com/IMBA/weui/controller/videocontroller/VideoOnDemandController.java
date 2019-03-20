@@ -146,7 +146,7 @@ public class VideoOnDemandController {
 
     @RequestMapping(value = "/teacher/videoseries/list")
     @ResponseBody
-    JSONObject videoserieslist(@RequestParam(name = "course_type")String course_type,@RequestParam(name = "start",defaultValue = "0")int start,@RequestParam(name = "rows",defaultValue = "10")int rows){
+    JSONObject videoserieslist(@RequestParam(name = "course_type",defaultValue = "教育")String course_type,@RequestParam(name = "start",defaultValue = "0")int start,@RequestParam(name = "rows",defaultValue = "10")int rows){
         PageHelper.startPage(start,rows);
         List<video_series>video_seriesList=videoSeriesService.findvideo_seriesList(course_type);
         PageInfo<video_series>video_seriesPageInfo=new PageInfo<>(video_seriesList);
@@ -159,7 +159,7 @@ public class VideoOnDemandController {
 //    @RequiresRoles("teacher")
     @RequestMapping(value = "/video/list")
     @ResponseBody
-    JSONObject videolist(@RequestParam(name = "video_series_id")int video_series_id){
+    JSONObject videolist(@RequestParam(name = "video_series_id",defaultValue = "1")int video_series_id){
         List<videolistmodel>videolistmodels=videoSeriesService.findvideoList(video_series_id);
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg",videolistmodels);
@@ -168,7 +168,7 @@ public class VideoOnDemandController {
     //观看视频
     @RequestMapping(value = "/video/id")
     @ResponseBody
-    JSONObject video_id(@RequestParam(name = "video_id")int video_id,@RequestParam(name="video_series_id")int video_series_id){
+    JSONObject video_id(@RequestParam(name = "video_id",defaultValue = "1")int video_id,@RequestParam(name="video_series_id",defaultValue = "1")int video_series_id){
         //正在观看功能实现
         String video=videoservice.findvideo(video_id);
         Map<String,Object> msg=new HashMap<>();

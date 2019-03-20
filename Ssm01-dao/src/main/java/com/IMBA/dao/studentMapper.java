@@ -15,6 +15,7 @@ public interface studentMapper {
     public int findmajor(int stuid);
 
     student findByStuId(Integer stuId);
+    int updateIsAdmin(int stu_id,byte isadmin);
 
     int insertAndGetId(student record);
     int insertSelective(student record);

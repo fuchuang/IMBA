@@ -7,11 +7,13 @@ import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -29,7 +31,7 @@ public class LoginController {
     //确认登陆界面
     @RequestMapping("/user/CheckLogin")
     @ResponseBody
-    public JSONObject CheckLoginLogin(@RequestParam(name = "stuId")String stuId, @RequestParam(name = "password")String password){
+    public JSONObject CheckLoginLogin(@RequestParam(name = "stuId")String stuId, @RequestParam(name = "password")String password, HttpServletRequest request){
 
         Subject subject = SecurityUtils.getSubject();
         UsernamePasswordToken token = new UsernamePasswordToken(stuId, password);
@@ -43,8 +45,8 @@ public class LoginController {
             msg.put("msg","登陆失败: " + ae.getMessage());
             return  JSONObject.fromObject(msg);
         }
-
-        msg.put("msg","成功跳转index" );
+        int stu_id= (int) request.getSession().getAttribute("id");
+        msg.put("msg","stu_id:"+stu_id );
         return  JSONObject.fromObject(msg);
     }
 

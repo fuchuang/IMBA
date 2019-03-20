@@ -4,6 +4,7 @@ import com.IMBA.entity.*;
 import com.IMBA.utils.QRCodeUtil;
 import com.IMBA.utils.R;
 import org.apache.commons.io.FilenameUtils;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -20,6 +21,16 @@ import java.util.UUID;
 @Controller
 @RequestMapping("/schedule/")
 public class ScheduleController extends BaseController{
+
+    private String filePath;
+
+    @Value("#{conf.filepath}")
+
+    public void setFilePath(String filePath) {
+        System.out.println(filePath);
+        this.filePath = filePath;
+    }
+
     /**
         请求一周的课程表
      */
@@ -163,13 +174,15 @@ public class ScheduleController extends BaseController{
                          @RequestParam(value = "file",defaultValue = "1") MultipartFile file){
         try {
             if(!file.isEmpty()){
+                String fpath=filePath;
+
                 schedule_background bg=new schedule_background();
                 String filename= UUID.randomUUID().toString();
                 String ext= FilenameUtils.getExtension(file.getOriginalFilename());
                 //项目下的路径
                 String pathRoot =request.getSession().getServletContext().getRealPath("/upload");
-                file.transferTo(new File(pathRoot +"/"+filename+"."+ext));
-                bg.setImgPath("/upload"+filename+"."+ext);
+                file.transferTo(new File(fpath +"/"+filename+"."+ext));
+                bg.setImgPath("/upload/"+filename+"."+ext);
                 bg.setStudentId(stuId);
                 String path= backgroundService.saveBgImg(bg, stuId,pathRoot);
                 if(!path.isEmpty()){
