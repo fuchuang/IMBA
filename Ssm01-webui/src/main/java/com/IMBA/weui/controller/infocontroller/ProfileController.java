@@ -10,11 +10,9 @@ import com.IMBA.service.majorService;
 import com.IMBA.utils.DownloadFile;
 import com.IMBA.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,25 +20,26 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Controller("/Profile/")
+@Controller
+@RequestMapping("/Profile/")
 public class ProfileController extends BaseController {
+    private String filePath;
 
-    @Autowired
-    majorService majorservice;
+    @Value("#{conf.filepath}")
+
+    public void setFilePath(String filePath) {
+        System.out.println(filePath);
+        this.filePath = filePath;
+    }
+
     /**
      * 个人信息
      */
     @GetMapping("personalInfo")
     @ResponseBody
     public R personalInfo(@RequestParam(value="stuId")int stuId){
-        student s= studentservice.findbystuid( stuId);
-
-        if (s==null)return null;
-        major m= majorservice.findById(s.getMajorId());
-        studentInfo info=new studentInfo();
-        info.setInfo(s,m);
-
-        if (info!=null)return reToObj(info);
+        studentInfo result=studentservice.getStuInfoById(stuId);
+        if (result!=null)return reToObj(result);
         return error();
     }
 
@@ -170,10 +169,9 @@ public class ProfileController extends BaseController {
      */
     @GetMapping("downloadFile")
     @ResponseBody
-    public void downloadFile(HttpServletRequest request,
-                          HttpServletResponse response,
+    public void downloadFile( HttpServletResponse response,
                           @RequestParam(value="filePath")  String filePath){
-        String fileName=request.getSession().getServletContext().getRealPath("/")+filePath;
+        String fileName=filePath+filePath;
         DownloadFile.download(response,fileName);
     }
 
@@ -181,8 +179,6 @@ public class ProfileController extends BaseController {
      * 个人考勤表
      * @param stuId 学生id
      * @param year 学年 eg:2019年上半学期
-     *
-     *             ？？？？？
      */
     @GetMapping("attendanceRecord")
     @ResponseBody

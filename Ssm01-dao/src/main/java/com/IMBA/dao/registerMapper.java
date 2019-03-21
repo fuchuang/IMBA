@@ -1,7 +1,9 @@
 package com.IMBA.dao;
 
+import com.IMBA.dto.attendanceRecordDto;
 import com.IMBA.entity.register;
 import com.IMBA.entity.registerKey;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -21,4 +23,7 @@ public interface registerMapper {
     int updateByPrimaryKeySelective(register record);
 
     int updateByPrimaryKey(register record);
+
+    List<attendanceRecordDto> selectAttendanceRecordByYear(@Param("stuId") Integer stuId,
+                                                           @Param("year") String year);
 }

@@ -60,7 +60,7 @@ public class ScheduleController extends BaseController{
     }
 
     /**
-        添加课程表????
+        添加课程
      */
     @PostMapping("addSchedule")
     @ResponseBody
@@ -68,7 +68,7 @@ public class ScheduleController extends BaseController{
                          @RequestParam(value = "stuId") int stuId){
         int courseId=courseservice.addCourse(course);
         int n=stuCourseService.addStuCourse(stuId,courseId);
-        if (n==1){
+        if (n!=-1){
             return success();
         }else {
             return error();
@@ -165,28 +165,27 @@ public class ScheduleController extends BaseController{
     }
 //
     /**
-     * 上传背景图 返回图片路径
+     * 上传背景图
      */
     @RequestMapping("uploadBgImg")
     @ResponseBody
-    public R uploadBgImg(HttpServletRequest request,
+    public R uploadBgImg(HttpServletResponse response,
                          @RequestParam(value = "stuId",defaultValue = "1") int stuId,
                          @RequestParam(value = "file",defaultValue = "1") MultipartFile file){
+        response.setContentType("multipart/form-data");
         try {
             if(!file.isEmpty()){
                 String fpath=filePath;
-
                 schedule_background bg=new schedule_background();
                 String filename= UUID.randomUUID().toString();
                 String ext= FilenameUtils.getExtension(file.getOriginalFilename());
-                //项目下的路径
-                String pathRoot =request.getSession().getServletContext().getRealPath("/upload");
-                file.transferTo(new File(fpath +"/"+filename+"."+ext));
+                file.transferTo(new File(fpath +"/upload/"+filename+"."+ext));
                 bg.setImgPath("/upload/"+filename+"."+ext);
                 bg.setStudentId(stuId);
-                String path= backgroundService.saveBgImg(bg, stuId,pathRoot);
+                String path= backgroundService.saveBgImg(bg, stuId,fpath);
                 if(!path.isEmpty()){
-                    return success("path",path);
+                    backgroundService.writeToStream(response.getOutputStream(),fpath+bg.getImgPath());
+                    return success();
                 }
             }
             return error();
@@ -196,14 +195,21 @@ public class ScheduleController extends BaseController{
 
     }
 
-//     * 请求背景图 返回图片路径
+    /**
+     * 请求背景图
+     */
 
     @RequestMapping("showBgImg")
     @ResponseBody
-    public R showBgImg(@RequestParam(value="stuId",defaultValue = "1")int stuId){
+    public R showBgImg(HttpServletResponse response,@RequestParam(value="stuId",defaultValue = "1")int stuId){
         String path=backgroundService.findImgByStuId(stuId);
         if (path!=null){
-            return success("path",path);
+            try {
+                backgroundService.writeToStream(response.getOutputStream(),filePath+path);
+                return success();
+            } catch (IOException e) {
+                return error(e.getMessage());
+            }
         }else {
             return error();
         }
@@ -235,15 +241,13 @@ public class ScheduleController extends BaseController{
             }
         }
     }
-//
-//    /**
-//     * 每日一词?????
-//     */
+
+    /**
+     * 每日一词
+     */
     @RequestMapping("getSentence")
     @ResponseBody
     public R getSentence() {
-
-        System.out.println("ssss");
         Sentence result=sentenceservice.getSentence();
         if (result!=null)return reToObj(result);
         return error();

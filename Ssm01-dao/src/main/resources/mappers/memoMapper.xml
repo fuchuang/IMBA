@@ -8,7 +8,7 @@
     <result column="memo_content" property="memoContent" jdbcType="VARCHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    id, student_id, memo_content
+    id, student_id,course_id, memo_content
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.memoKey" >
     select

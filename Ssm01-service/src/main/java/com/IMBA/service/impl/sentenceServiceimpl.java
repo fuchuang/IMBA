@@ -10,6 +10,7 @@ import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.util.EntityUtils;
 import com.google.gson.Gson;
 
+import org.junit.Test;
 import org.springframework.stereotype.Service;
 
 
@@ -21,6 +22,7 @@ import static javafx.css.StyleOrigin.USER_AGENT;
 
 
 @Service("sentenceService")
+
 public class sentenceServiceimpl implements sentenceService {
 
     public Sentence getSentence() {
@@ -38,9 +40,6 @@ public class sentenceServiceimpl implements sentenceService {
         }
         Gson gson=new Gson();
         Map<String,String> jsonMap=gson.fromJson(content, HashMap.class);
-
-        System.out.println("ssss");
-        System.out.println(jsonMap);
         Sentence result=new Sentence();
         result.setContent(jsonMap.get("content"));
         result.setDateline(jsonMap.get("dateline"));

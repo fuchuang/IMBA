@@ -28,9 +28,9 @@ public class examinationServiceImpl implements examinationService {
         int month=calendar.get(Calendar.MONTH)+1;
         String schoolYear;
         if (3<month && month<9){
-            schoolYear=year+"年上半学期";
-        }else {
             schoolYear=year+"年下半学期";
+        }else {
+            schoolYear=year+"年上半学期";
         }
         List<examResultDto> result=examinationmapper.selectByYear(schoolYear,stuId);
         return result;

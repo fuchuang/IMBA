@@ -105,4 +105,10 @@
                                         on ec.elective_id=#{id,jdbcType=INTEGER}
                                         and ec.student_id=s.id;
   </select>
+  <insert id="insertAndGetId" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.elective_comments" >
+    insert into elective_comments ( elective_id, student_id,
+      comment_content, comment_time)
+    values (#{electiveId,jdbcType=INTEGER}, #{studentId,jdbcType=INTEGER},
+      #{commentContent,jdbcType=VARCHAR}, #{commentTime,jdbcType=TIMESTAMP})
+  </insert>
 </mapper>

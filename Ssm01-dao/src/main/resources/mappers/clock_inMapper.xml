@@ -12,7 +12,7 @@
     <id column="course_id" jdbcType="INTEGER" property="stuCourseId"/>
     <result column="course_name" jdbcType="VARCHAR" property="courseName"/>
     <result column="week_of_semester" jdbcType="INTEGER" property="week"/>
-    <result column="status" jdbcType="VARCHAR" property="status"/>
+    <result column="register_status" jdbcType="VARCHAR" property="status"/>
   </resultMap>
 
 

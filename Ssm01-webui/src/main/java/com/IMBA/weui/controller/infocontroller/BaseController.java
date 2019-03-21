@@ -89,6 +89,9 @@ public class BaseController {
     @Autowired
     sentenceService sentenceservice;
 
+    @Autowired
+    registerService registerservice;
+
 
 
 

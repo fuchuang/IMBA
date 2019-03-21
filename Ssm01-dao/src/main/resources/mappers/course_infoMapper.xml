@@ -47,6 +47,57 @@ select course_hour  from course_info where  id=#{0}
     delete from course_info where id=#{id,jdbcType=INTEGER}
   </delete>
 
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.course_info" >
+    insert into course_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="course_name != null" >
+        course_name,
+      </if>
+      <if test="classroom != null" >
+        classroom,
+      </if>
+      <if test="courseCredit != null" >
+        course_credit,
+      </if>
+      <if test="courseHour != null" >
+        course_hour,
+      </if>
+      <if test="courseQuota != null" >
+        course_quota,
+      </if>
+      <if test="courseYear != null" >
+        course_year,
+      </if>
+      <if test="courseType != null" >
+        course_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="course_name != null" >
+        #{course_name,jdbcType=VARCHAR},
+      </if>
+      <if test="classroom != null" >
+        #{classroom,jdbcType=VARCHAR},
+      </if>
+      <if test="courseCredit != null" >
+        #{courseCredit,jdbcType=REAL},
+      </if>
+      <if test="courseHour != null" >
+        #{courseHour,jdbcType=INTEGER},
+      </if>
+      <if test="courseQuota != null" >
+        #{courseQuota,jdbcType=INTEGER},
+      </if>
+      <if test="courseYear != null" >
+        #{courseYear,jdbcType=VARCHAR},
+      </if>
+      <if test="courseType != null" >
+        #{courseType,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
+
+
 
 
 

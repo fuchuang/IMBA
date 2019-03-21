@@ -12,6 +12,8 @@ public interface elective_commentsMapper {
 
     int insert(elective_comments record);
 
+    int insertAndGetId(elective_comments record);
+
     int insertSelective(elective_comments record);
 
     elective_comments selectByPrimaryKey(elective_commentsKey key);

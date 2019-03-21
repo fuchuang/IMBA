@@ -25,7 +25,7 @@ public class elective_commentsServiceImpl implements elective_commentsService {
         ec.setCommentTime(date);
         ec.setElectiveId(electiveId);
         ec.setStudentId(stuId);
-        int n=electiveCommentsMapper.insertSelective(ec);
+        int n=electiveCommentsMapper.insertAndGetId(ec);
         if(n==1)return true;
         return false;
     }

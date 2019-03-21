@@ -15,8 +15,8 @@ import java.util.List;
 public class studentServiceImpl implements studentService {
     @Autowired
     studentMapper mapper;
-//    @Autowired
-//    majorService majorService;
+    @Autowired
+    majorService majorService;
 
     public student findstudentBystuid(String stuid) {
 
@@ -80,4 +80,12 @@ public class studentServiceImpl implements studentService {
 //        info.setInfo(s,m);
 //        return info;
 //    }
+public studentInfo getStuInfoById(int stuId) {
+    student s=mapper.findByStuId(stuId);
+    if (s==null)return null;
+    major m=majorService.findById(s.getMajorId());
+    studentInfo info=new studentInfo();
+    info.setInfo(s,m);
+    return info;
+}
 }
