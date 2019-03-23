@@ -39,9 +39,6 @@ public class studentServiceImpl implements studentService {
 
 
 
-  
-
-
     public student findbystuid(int stuid) {
         student s=mapper.findByStuId(stuid);
         return s;

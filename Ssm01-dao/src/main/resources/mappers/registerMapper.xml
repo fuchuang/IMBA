@@ -20,6 +20,11 @@
   select s.stu_name from register r,student s where s.major_id=#{1} and r.register_status=#{0} and r.student_id=s.id and  to_days(r.register_time) = to_days(now())
 </select>
 
+<select id="findstudentbystu_idandcourse_id" resultType="int">
+  select count(*) from register r where r.student_id=#{0} and r.course_id=#{1}
+
+</select>
+
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.IMBA.entity.registerKey" >
     select 
@@ -88,10 +93,13 @@
         register_time = #{registerTime,jdbcType=TIMESTAMP},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where
       and student_id = #{studentId,jdbcType=INTEGER}
       and course_id = #{courseId,jdbcType=INTEGER}
   </update>
+
+
+
   <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.register" >
     update register
     set register_status = #{registerStatus,jdbcType=CHAR},

@@ -44,13 +44,14 @@
     <id column="id" property="student_id" jdbcType="INTEGER"></id>
     <result column="stu_name" property="stu_name" jdbcType="VARCHAR"></result>
     <result column="course_id" property="course_id"></result>
+    <result column="register_status" property="registerStatus"></result>
 
   </resultMap>
   <select id="findcount" resultType="int" parameterType="int">
     select count(*) from stu_course where course_id=#{courseid}
   </select>
   <select id="findstudentregistermodel" parameterType="int" resultMap="studentregistermodelBaseResultMap">
-    select  s.stu_name,s.id ,sc.course_id from stu_course sc ,student s,course c where c.course_info_id=#{0} and c.day_of_week=#{1} and c.week_of_semester=#{2} and c.lesson_of_day=#{3} and sc.course_id=c.id and sc.student_id=s.id
+   select  s.stu_name,s.id ,sc.course_id ,r.register_status  from  ((stu_course sc inner join student s on sc.student_id=s.id) LEFT JOIN course c  on sc.course_id=c.id)LEFT JOIN register r on r.course_id=c.id and r.student_id=s.id where c.course_info_id=#{0} and c.day_of_week=#{1} and c.week_of_semester=#{2} GROUP BY (s.id);
   </select>
 
 

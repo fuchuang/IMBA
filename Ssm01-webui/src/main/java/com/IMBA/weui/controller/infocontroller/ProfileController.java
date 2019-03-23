@@ -10,11 +10,9 @@ import com.IMBA.service.majorService;
 import com.IMBA.utils.DownloadFile;
 import com.IMBA.utils.R;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,7 +21,17 @@ import java.util.List;
 import java.util.Map;
 
 @Controller("/Profile/")
+@RequestMapping("/Profile/")
 public class ProfileController extends BaseController {
+    private String filePath;
+
+    @Value("#{conf.filepath}")
+
+    public void setFilePath(String filePath) {
+        System.out.println(filePath);
+        this.filePath = filePath;
+    }
+
 
     @Autowired
     majorService majorservice;
@@ -34,7 +42,6 @@ public class ProfileController extends BaseController {
     @ResponseBody
     public R personalInfo(@RequestParam(value="stuId")int stuId){
         student s= studentservice.findbystuid( stuId);
-
         if (s==null)return null;
         major m= majorservice.findById(s.getMajorId());
         studentInfo info=new studentInfo();
@@ -173,7 +180,7 @@ public class ProfileController extends BaseController {
     public void downloadFile(HttpServletRequest request,
                           HttpServletResponse response,
                           @RequestParam(value="filePath")  String filePath){
-        String fileName=request.getSession().getServletContext().getRealPath("/")+filePath;
+        String fileName=filePath+filePath;
         DownloadFile.download(response,fileName);
     }
 

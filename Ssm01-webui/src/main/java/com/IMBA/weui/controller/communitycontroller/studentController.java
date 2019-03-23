@@ -111,7 +111,6 @@ public class studentController {
         int student_id= (int) session.getAttribute("id");//账号
         Map<String,Object> msg=new HashMap<>();
         if(stuAdminService.isadmin(student_id,courseinfoid)>0){
-
             List<studentregistermodel>studentregistermodelList=stuCourseService.findstudentregistermodel(courseinfoid,day_of_week,week_of_semester,lesson_of_day);
             msg.put("msg",studentregistermodelList);
         }else {

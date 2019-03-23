@@ -1,13 +1,23 @@
 package com.IMBA.dao;
 
+import com.IMBA.dto.attendanceRecordDto;
 import com.IMBA.entity.register;
 import com.IMBA.entity.registerKey;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
 public interface registerMapper {
+
+
+
+    List<attendanceRecordDto> selectAttendanceRecordByYear(@Param("stuId") Integer stuId,
+                                                           @Param("year") String year);
+
     int findbystatus(String status,int id,int course_id);
     List<String>findstudent(String status,int major);
+    int findstudentbystu_idandcourse_id(int stu_id,int course_id);
+    int updatestuby();
 
 
     int deleteByPrimaryKey(registerKey key);

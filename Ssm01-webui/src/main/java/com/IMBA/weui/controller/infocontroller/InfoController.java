@@ -5,10 +5,7 @@ import com.IMBA.entity.match;
 import com.IMBA.entity.notification;
 import com.IMBA.utils.R;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -16,6 +13,7 @@ import java.util.List;
 import java.util.Map;
 
 @Controller("/Info/")
+@RequestMapping("/Info/")
 public class InfoController extends BaseController {
     /**
      * 通知详情
@@ -33,9 +31,9 @@ public class InfoController extends BaseController {
     }
 
 
-//    /**
-//     * 通知列表
-//     */
+    /**
+     * 通知列表
+     */
     @GetMapping("notificationList")
     @ResponseBody
     public R showNotifications(@RequestParam(value = "stuId")int stuId,
@@ -47,11 +45,11 @@ public class InfoController extends BaseController {
         result.put("count",notifiService.getNoticesCount(stuId));
         return reToObj(result);
     }
-//
-//    /**
-//     * 成绩查询
-//     * @return 1.所有课程绩点 2，某学期平均绩点 3.某学期绩点排名 4.综合测评 5.课程成绩
-//     */
+
+    /**
+     * 成绩查询
+     * @return 1.所有课程绩点 2，某学期平均绩点 3.某学期绩点排名 4.综合测评 5.课程成绩
+     */
     @GetMapping("scoreInquiry")
     @ResponseBody
     public R scoreInquiry(@RequestParam(value = "stuId")int stuId,
@@ -68,21 +66,21 @@ public class InfoController extends BaseController {
         map.put("courseScore",courseScore);
         return reToObj(map);
     }
-//
-//    /**
-//     * 教师信息列表
-//     */
-    @GetMapping("tearchersInfo")
+
+    /**
+     * 教师信息列表
+     */
+    @GetMapping("teachersInfo")
     @ResponseBody
-    public R tearchersInfo(@RequestParam(value = "stuId")int stuId){
+    public R teachersInfo(@RequestParam(value = "stuId")int stuId){
         List<teachInfoDto> result=teacherservice.getTeachersInfo(stuId);
         return reToObj(result);
     }
-//    /**
-//     * 选课 人文类
-//     * @param electiveType 选课类型
-//     * @param stuId 学生id 非学号
-//     */
+    /**
+     * 选课 人文类
+     * @param electiveType 选课类型
+     * @param stuId 学生id 非学号
+     */
     @GetMapping("electiveInfo")
     @ResponseBody
     public R electiveInfo(@RequestParam(value = "stuId")int stuId,
@@ -95,11 +93,11 @@ public class InfoController extends BaseController {
         }
 
     }
-//
-//    /**
-//     * 选课评论信息
-//     * @param electiveId 具体某一选课的id
-//     */
+
+    /**
+     * 选课评论信息
+     * @param electiveId 具体某一选课的id
+     */
     @GetMapping("electiveDetailInfo")
     @ResponseBody
     public R electiveDetailInfo(@RequestParam(value = "electiveId")int electiveId){
@@ -144,7 +142,7 @@ public class InfoController extends BaseController {
      * 添加选课评论
      * ??????
      */
-    @PostMapping("ElectiveComment")
+    @GetMapping("ElectiveComment")
     public R addElectiveComment(@RequestParam(value = "stuId")int stuId,
                                 @RequestParam(value = "electiveId")int electiveId,
                                 @RequestParam(value = "content")String content,
@@ -175,22 +173,22 @@ public class InfoController extends BaseController {
     @ResponseBody
     public R addExamToSchedule(@RequestParam(value = "stuId")int stuId,
                                @RequestParam(value = "examId")int examId,
-                               @RequestParam(value = "courseExamId")int courseExamId){
-       int stuCourseId=examinationservice.addToSchedule(stuId,examId,courseExamId);
-       return success("stuCourseId",stuCourseId);
+                               @RequestParam(value = "stuExamId")int stuExamId){
+        int stuExamCourseId=examinationservice.addToSchedule(stuId,examId,stuExamId);
+        return success("stuExamCourseId",stuExamCourseId);
 
     }
 
     /**
      * 取消标记到课表
-     * @param exam_course_id 成功标记后返回的courseId
+     * @param stuExamCourseId 成功标记后返回的courseId
      * @param stuExamId 学生对应考试的id
      */
     @GetMapping("cancelMarkAtSchedule")
     @ResponseBody
     public R cancelMarkAtSchedule(@RequestParam(value = "stuExamId")int stuExamId,
-                                  @RequestParam(value = "exam_course_id")int exam_course_id ){
-        examinationservice.cancelAddToSchedule(stuExamId,exam_course_id);
+                                  @RequestParam(value = "stuExamCourseId")int stuExamCourseId ){
+        examinationservice.cancelAddToSchedule(stuExamId,stuExamCourseId);
         return success();
     }
 
@@ -214,8 +212,6 @@ public class InfoController extends BaseController {
      * 收藏选修
      * @param status 收藏状态 1收藏 0取消收藏
      * @param time 收藏时间
-     *
-     *    ????
      */
     @GetMapping("collectElective")
     @ResponseBody

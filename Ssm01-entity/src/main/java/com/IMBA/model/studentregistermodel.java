@@ -4,6 +4,15 @@ public class studentregistermodel {
     private int student_id;
     private String stu_name;
     private int course_id;
+    private String registerStatus;
+
+    public String getRegisterStatus() {
+        return registerStatus;
+    }
+
+    public void setRegisterStatus(String registerStatus) {
+        this.registerStatus = registerStatus == null ? null : registerStatus.trim();
+    }
 
     public int getStudent_id() {
         return student_id;

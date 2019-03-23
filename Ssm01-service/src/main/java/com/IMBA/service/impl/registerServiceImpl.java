@@ -26,4 +26,12 @@ public class registerServiceImpl implements registerService {
         return mapper.findstudent(status,major);
     }
 
+    public int findstudentbystu_idandcourse_id(int stu_id, int course_id) {
+        return mapper.findstudentbystu_idandcourse_id(stu_id, course_id);
+    }
+
+    public int updateByPrimaryKeySelective(register record) {
+        return mapper.updateByPrimaryKeySelective(record);
+    }
+
 }

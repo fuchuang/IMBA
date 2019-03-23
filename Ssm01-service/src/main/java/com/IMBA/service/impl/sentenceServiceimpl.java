@@ -39,8 +39,6 @@ public class sentenceServiceimpl implements sentenceService {
         Gson gson=new Gson();
         Map<String,String> jsonMap=gson.fromJson(content, HashMap.class);
 
-        System.out.println("ssss");
-        System.out.println(jsonMap);
         Sentence result=new Sentence();
         result.setContent(jsonMap.get("content"));
         result.setDateline(jsonMap.get("dateline"));

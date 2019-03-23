@@ -8,6 +8,7 @@ import java.util.List;
 
 public interface elective_commentsMapper {
 
+
     int deleteByPrimaryKey(elective_commentsKey key);
 
     int insert(elective_comments record);
@@ -20,5 +21,8 @@ public interface elective_commentsMapper {
 
     int updateByPrimaryKey(elective_comments record);
 
+    int insertAndGetId(elective_comments record);
+
     List<electiveCommentsDto> selectCommentsById(Integer id);
+
 }

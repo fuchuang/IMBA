@@ -13,6 +13,10 @@ public class BaseController {
 //    @Autowired
 //    ScheduleService scheduleService;
 
+
+    @Autowired
+    registerService registerservice;
+
     //学生
     @Autowired
     studentService studentservice;

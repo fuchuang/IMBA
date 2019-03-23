@@ -6,6 +6,9 @@ import com.IMBA.service.BackgroundService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.OutputStream;
 
 
 @Service("schedule_backgroundService")
@@ -37,6 +40,24 @@ public class BackgroundServiceImpl implements BackgroundService {
         schedule_background bg= mapper.selectByStuId(stuId);
         if (bg!=null)return bg.getImgPath();
         else return null;
+    }
+
+    public void writeToStream(OutputStream stream, String path) throws IOException {
+        FileInputStream inputStream=null;
+        try {
+            inputStream=new FileInputStream(new File(path));
+            int len=0;
+            byte[] buffer=new byte[1024*10];
+            while ((len=inputStream.read(buffer))!=-1){
+                stream.write(buffer,0,len);
+            }
+            stream.flush();
+        }catch (Exception e){
+            e.printStackTrace();
+        }finally {
+            stream.close();
+            inputStream.close();
+        }
     }
 
     private boolean deleteImg(String realPath,String filePath){

@@ -81,10 +81,8 @@ public class teacherController {
     @ResponseBody
     JSONObject filesend(@RequestParam("file") CommonsMultipartFile partFile, @RequestParam("courseinfoid") int course_id, HttpServletRequest request) throws IOException {
 
-
         HttpSession session=request.getSession();
         int Uploaderid= (int) session.getAttribute("id");
-
         String path=filePath;
         String filename=UUID.randomUUID().toString()+partFile.getOriginalFilename();//上传时候的文件名
         File file = new File(path+"/"+filename);
@@ -100,7 +98,6 @@ public class teacherController {
         courseFilesService.insert(record);
 
         Map<String,Object> msg=new HashMap<>();
-
             msg.put("msg","success");
             return  JSONObject.fromObject(msg);
 
@@ -123,8 +120,6 @@ public class teacherController {
         teacherNotification.setCourse_id(courseinfoid);
         teacherNotification.setNotification(notification);
         teacherNotification.setPosttime(new Date());
-
-
         teachernotificationService.insert(teacherNotification);
         Map<String,Object> msg=new HashMap<>();
         msg.put("msg","success");
@@ -169,28 +164,32 @@ public class teacherController {
                            @RequestParam (value = "student_id",defaultValue = "1")int student_id,
                            @RequestParam(value = "course_id",defaultValue = "1")int course_id,
                            @RequestParam(value = "nums",defaultValue = "60")double nums){
+
         register record=new register();
+        record.setStudentId(student_id);
+        record.setCourseId(course_id);
         record.setRegisterStatus(register_status);
         record.setRegisterTime(new Date());
-        record.setCourseId(course_id);
-        record.setStudentId(student_id);
-        registerservice.insert(record);
-        //人数%1/num;
-
-        double score=1/nums;
-
-        //查找专业班级
-        major mj=majorservice.findmajorname(student_id);
-        String mojorcourse=mj.getGrade()+mj.getMarjorName()+mj.getClasses()+"班"+course_id;
-
-        String mojor=mj.getGrade()+mj.getMarjorName()+mj.getClasses()+"班";
-        if (register_status.equals("late")||register_status.equals("truant")){
+        if (registerservice.findstudentbystu_idandcourse_id(student_id,course_id)>0){
+            registerservice.updateByPrimaryKeySelective(record);
 
         }else {
-            redisUtil.set(MAJOR_COLLETION,mojorcourse);
-            redisUtil.incrementScore(SCORE_RANK,mojor,score);
-        }
+            record.setRegisterTime(new Date());
+            registerservice.insert(record);
 
+            double score=1/nums;
+            //查找专业班级
+            major mj=majorservice.findmajorname(student_id);
+            String mojorcourse=mj.getGrade()+mj.getMarjorName()+mj.getClasses()+"班"+course_id;
+            String mojor=mj.getGrade()+mj.getMarjorName()+mj.getClasses()+"班";
+            if (register_status.equals("late")||register_status.equals("truant")){
+
+            }else {
+                redisUtil.set(MAJOR_COLLETION,mojorcourse);
+                redisUtil.incrementScore(SCORE_RANK,mojor,score);
+            }
+
+        }
 
 
         Map<String,Object> msg=new HashMap<>();

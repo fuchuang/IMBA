@@ -56,7 +56,55 @@ select course_hour  from course_info where  id=#{0}
 
 
 
-
+  <insert id="insertSelective" useGeneratedKeys="true" keyProperty="id" parameterType="com.IMBA.entity.course_info" >
+    insert into course_info
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="courseName != null" >
+        course_name,
+      </if>
+      <if test="classroom != null" >
+        classroom,
+      </if>
+      <if test="courseCredit != null" >
+        course_credit,
+      </if>
+      <if test="courseHour != null" >
+        course_hour,
+      </if>
+      <if test="courseQuota != null" >
+        course_quota,
+      </if>
+      <if test="courseYear != null" >
+        course_year,
+      </if>
+      <if test="courseType != null" >
+        course_type,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="course_name != null" >
+        #{courseName,jdbcType=VARCHAR},
+      </if>
+      <if test="classroom != null" >
+        #{classroom,jdbcType=VARCHAR},
+      </if>
+      <if test="courseCredit != null" >
+        #{courseCredit,jdbcType=REAL},
+      </if>
+      <if test="courseHour != null" >
+        #{courseHour,jdbcType=INTEGER},
+      </if>
+      <if test="courseQuota != null" >
+        #{courseQuota,jdbcType=INTEGER},
+      </if>
+      <if test="courseYear != null" >
+        #{courseYear,jdbcType=VARCHAR},
+      </if>
+      <if test="courseType != null" >
+        #{courseType,jdbcType=CHAR},
+      </if>
+    </trim>
+  </insert>
 
 
 
@@ -73,68 +121,14 @@ select course_hour  from course_info where  id=#{0}
     where id = #{id,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.IMBA.entity.course_info">
-    insert into course_info (id, course_name, course_credit, 
+    insert into course_info (id, course_name, course_credit,
       course_hour, course_quota, classroom, 
       course_type, course_year)
     values (#{id,jdbcType=INTEGER}, #{courseName,jdbcType=VARCHAR}, #{courseCredit,jdbcType=REAL}, 
       #{courseHour,jdbcType=TINYINT}, #{courseQuota,jdbcType=INTEGER}, #{classroom,jdbcType=VARCHAR}, 
       #{courseType,jdbcType=CHAR}, #{courseYear,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.IMBA.entity.course_info">
-    insert into course_info
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="courseName != null">
-        course_name,
-      </if>
-      <if test="courseCredit != null">
-        course_credit,
-      </if>
-      <if test="courseHour != null">
-        course_hour,
-      </if>
-      <if test="courseQuota != null">
-        course_quota,
-      </if>
-      <if test="classroom != null">
-        classroom,
-      </if>
-      <if test="courseType != null">
-        course_type,
-      </if>
-      <if test="courseYear != null">
-        course_year,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="courseName != null">
-        #{courseName,jdbcType=VARCHAR},
-      </if>
-      <if test="courseCredit != null">
-        #{courseCredit,jdbcType=REAL},
-      </if>
-      <if test="courseHour != null">
-        #{courseHour,jdbcType=TINYINT},
-      </if>
-      <if test="courseQuota != null">
-        #{courseQuota,jdbcType=INTEGER},
-      </if>
-      <if test="classroom != null">
-        #{classroom,jdbcType=VARCHAR},
-      </if>
-      <if test="courseType != null">
-        #{courseType,jdbcType=CHAR},
-      </if>
-      <if test="courseYear != null">
-        #{courseYear,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.IMBA.entity.course_info">
     update course_info
     <set>
@@ -164,7 +158,7 @@ select course_hour  from course_info where  id=#{0}
   </update>
   <update id="updateByPrimaryKey" parameterType="com.IMBA.entity.course_info">
     update course_info
-    set course_name = #{courseName,jdbcType=VARCHAR},
+    set courseName = #{courseName,jdbcType=VARCHAR},
       course_credit = #{courseCredit,jdbcType=REAL},
       course_hour = #{courseHour,jdbcType=TINYINT},
       course_quota = #{courseQuota,jdbcType=INTEGER},
