@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service("memoService")
+/*@Service("memoService")*/
 public class memoServiceImpl implements memoService {
     @Autowired
     memoMapper mapper;

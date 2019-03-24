@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@Service("clock_inService")
+/*@Service("clock_inService")*/
 public class clock_inServiceImpl implements clock_inService {
     @Resource
     clock_inMapper clockInMapper;

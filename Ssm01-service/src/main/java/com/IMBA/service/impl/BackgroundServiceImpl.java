@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 
 
-@Service("schedule_backgroundService")
+/*@Service("schedule_backgroundService")*/
 public class BackgroundServiceImpl implements BackgroundService {
 
     @Autowired

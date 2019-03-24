@@ -20,7 +20,7 @@ import java.util.Map;
 import static javafx.css.StyleOrigin.USER_AGENT;
 
 
-@Service("sentenceService")
+/*@Service("sentenceService")*/
 public class sentenceServiceimpl implements sentenceService {
 
     public Sentence getSentence() {

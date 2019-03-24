@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+/*@Service*/
 public class teacher_questionnaireServiceImpl implements teacher_questionnaireService {
     @Autowired
     teacher_questionnaireMapper teacherQuestionnaireMapper;

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-@Service("electiveService")
+/*@Service("electiveService")*/
 public class electiveServiceImpl implements electiveService {
     @Autowired
     electiveMapper electivemapper;

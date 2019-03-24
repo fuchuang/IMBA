@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-@Service("scoreService")
+/*@Service("scoreService")*/
 public class scoreServiceImpl implements scoreService {
     @Autowired
     scoreMapper mapper;

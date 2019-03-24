@@ -10,7 +10,8 @@
         http://www.springframework.org/schema/mvc/spring-mvc-4.3.xsd">
 
     <import resource="classpath*:applicationContext-redis.xml" />
-
+<!--    <import resource="classpath:applicationContext-consumer.xml" />-->
+    <import resource="classpath:provider.xml" />
     <!-- 第二种方式是使用注解的方式注入，主要用在java代码中使用注解注入properties文件中相应的value值 -->
     <bean id="conf" class="org.springframework.beans.factory.config.PropertiesFactoryBean">
     <property name="locations">

@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service()
+/*@Service()*/
 public class bullet_commentsServiceImpl implements bullet_commentsService {
         @Resource
         private bullet_commentsMapper bullet_commentsMapper;

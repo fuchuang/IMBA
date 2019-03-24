@@ -143,42 +143,44 @@
     <session id="515167807">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="7" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.20" value="1" />
           <entry key="project.open.time.22" value="1" />
           <entry key="project.open.time.29" value="1" />
           <entry key="project.open.time.32" value="1" />
+          <entry key="project.open.time.44" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.7" value="1" />
+          <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
-          <entry key="project.opened" value="9" />
+          <entry key="project.opened" value="11" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="3" />
-          <entry key="java" value="369" />
+          <entry key="java" value="443" />
           <entry key="jsp" value="1" />
-          <entry key="properties" value="5" />
-          <entry key="xml" value="77" />
+          <entry key="properties" value="8" />
+          <entry key="xml" value="96" />
+          <entry key="xsd" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CLASS" value="3" />
-          <entry key="JAVA" value="369" />
+          <entry key="JAVA" value="443" />
           <entry key="JSP" value="1" />
-          <entry key="Properties" value="5" />
-          <entry key="XML" value="77" />
+          <entry key="Properties" value="8" />
+          <entry key="XML" value="97" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="1475" />
           <entry key="properties" value="2" />
-          <entry key="xml" value="366" />
+          <entry key="xml" value="525" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -186,7 +188,7 @@
           <entry key="JAVA" value="1475" />
           <entry key="Properties" value="2" />
           <entry key="SQL" value="7" />
-          <entry key="XML" value="359" />
+          <entry key="XML" value="518" />
         </counts>
       </usages-collector>
     </session>
@@ -194,64 +196,37 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/teacherController.java">
+        <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacherServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2356">
-              <caret line="150" column="57" selection-start-line="150" selection-start-column="57" selection-end-line="150" selection-end-column="57" />
+            <state relative-caret-position="152">
+              <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/studentController.java">
+        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/communityDatacontroller.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1558">
-              <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+            <state relative-caret-position="342">
+              <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/treeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="133">
+              <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/communityController.java">
+        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/studentController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="230" column="38" selection-start-line="230" selection-start-column="38" selection-end-line="230" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="931">
-              <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/resources/conf.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/registermodel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/studentregistermodel.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="33" />
+            <state relative-caret-position="152">
+              <caret line="104" column="38" lean-forward="true" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -263,20 +238,14 @@
       <list>
         <option value="JavaScript File" />
         <option value="properties" />
-        <option value="xml" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="xml" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>findbywatchnums</find>
-      <find>scoreservice</find>
-      <find>noticesDetail</find>
-      <find>AvatarPaht</find>
-      <find>selectByType</find>
-      <find>on</find>
       <find>on_schedule</find>
       <find>stuId</find>
       <find>StuMapper</find>
@@ -301,18 +270,44 @@
       <find>insertAndGetId</find>
       <find>course_name</find>
       <find>studentregistermodelBaseResultMap</find>
+      <find>service</find>
+      <find>ref</find>
+      <find>recently_readService</find>
+      <find>ref=</find>
+      <find>majorService</find>
+      <find>course_infoService</find>
     </findStrings>
     <replaceStrings>
-      <replace />
-      <replace>List&lt;posts&gt;</replace>
-      <replace>posts</replace>
-      <replace>courseinfoid</replace>
-      <replace>http://campus.gbdev.cn</replace>
-      <replace>campus.gbdev.cn</replace>
-      <replace>127.0.0.1</replace>
-      <replace>mapper</replace>
-      <replace>192.168.80.128</replace>
-      <replace>localhost</replace>
+      <replace>live_videoService</replace>
+      <replace>matchService</replace>
+      <replace>memoService</replace>
+      <replace>notificationService</replace>
+      <replace>posts_collectionService</replace>
+      <replace>posts_commentsService</replace>
+      <replace>postsService</replace>
+      <replace>recently_readService</replace>
+      <replace>registerService</replace>
+      <replace>scoreService</replace>
+      <replace>sentenceService</replace>
+      <replace>stu_adminService</replace>
+      <replace>stu_courseService</replace>
+      <replace>stu_examService</replace>
+      <replace>stu_notificationService</replace>
+      <replace>studentService</replace>
+      <replace>teacher_courseService</replace>
+      <replace>teacher_notificationService</replace>
+      <replace>teacher_questionnaireService</replace>
+      <replace>teacherService</replace>
+      <replace>teaching_evaluationService</replace>
+      <replace>video_collectionsService</replace>
+      <replace>video_recordService</replace>
+      <replace>video_series_likeService</replace>
+      <replace>video_seriesService</replace>
+      <replace>id</replace>
+      <replace>reference</replace>
+      <replace>videoService</replace>
+      <replace>id=</replace>
+      <replace>majorService</replace>
     </replaceStrings>
     <dirStrings>
       <dir>D:\Documents\Downloads\SSM01-master</dir>
@@ -325,57 +320,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/videocontroller/VideoOnDemandController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/postDatacontroller.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/videoDatacontroller.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/LoginRegisterController/LoginController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/majorMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/communityDatacontroller.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/treeController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-redis/src/main/java/com/IMBA/redis/RedisUtil.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/videocontroller/ClockController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/stu_teacher.java" />
-        <option value="$PROJECT_DIR$/Ssm01-shiro/src/main/java/com/IMBA/Shiro/MyShiroReaml.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/studentMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/studentMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/generatorConfig.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/stu_admin.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/stu_adminMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/stu_adminService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_adminServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/postmodel.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/filedownloadController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/communityController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/studentKey.java" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/studentmodel.java" />
-        <option value="$PROJECT_DIR$/Ssm01-redis/src/main/resources/applicationContext-redis.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/memoMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/BackgroundService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/elective_commentsServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/elective_commentsMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/notificationMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/clock_inMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/examinationServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/sentenceServiceimpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/studentService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/BaseController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/ScheduleController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/ProfileController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/InfoController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/elective_commentsMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/course_infoMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/studentController.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_adminMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/studentregistermodel.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/registerMapper.java" />
-        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/registerMapper.xml" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/registerService.java" />
-        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/registerServiceImpl.java" />
         <option value="$PROJECT_DIR$/Ssm01-webui/src/main/resources/conf.properties" />
         <option value="$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/teacherController.java" />
         <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/pom.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/resources/provider.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/resources/consumer.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/majorService.java" />
+        <option value="$PROJECT_DIR$/Ssm01-dao/src/main/resources/applicationContext-dao.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/resources/applicationContext-consumer.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/resources/springmvc-servlet.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-webui/src/main/resources/provider.xml" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/course_infoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacher_notificationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacher_questionnaireServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_adminServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/bullet_commentsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_recordServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/Video_series_likeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/clock_inServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/course_filesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/courseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/download_filesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/elective_collectionsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/elective_commentsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveLikeServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/examinationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/info_functionsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/live_videoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/majorServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/matchServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/memoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/notificationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/posts_collectionServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/posts_commentsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/postsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/recently_readServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/registerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/scoreServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/sentenceServiceimpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/videoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_seriesServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_collectionsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacherServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacher_courseServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_notificationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_examServiceImpl.java" />
+        <option value="$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_courseServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -393,8 +388,8 @@
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1418" />
-    <option name="y" value="49" />
+    <option name="x" value="1585" />
+    <option name="y" value="40" />
     <option name="width" value="1377" />
     <option name="height" value="948" />
   </component>
@@ -422,120 +417,12 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
               <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-dao" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mappers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
-              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
-              <item name="Ssm01-entity" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="IMBA" type="462c0819:PsiDirectoryNode" />
-              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
@@ -625,6 +512,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="admincontroller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
               <item name="communitycontroller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -635,16 +532,34 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="IMBA-master" type="b2602c69:ProjectViewProjectNode" />
+              <item name="IMBA-master" type="462c0819:PsiDirectoryNode" />
+              <item name="Ssm01-webui" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553161450352" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553361724201" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.0" />
@@ -652,10 +567,12 @@
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-dao\src\main\resources\mappers" />
-      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-redis\src\main\resources" />
-      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-webui\src\main\resources" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-webui\src\main\resources" />
+      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-service\src\main" />
+      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-dao\src\main\resources\mappers" />
+      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-entity\src\main\java\com\IMBA" />
+      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\Ssm01-dao\src\main\resources\mappers" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.IMBA.utils" />
@@ -664,12 +581,12 @@
       <recent name="com.IMBA.dao" />
       <recent name="com.IMBA.entity" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-dao\src\main\resources\mappers" />
-      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-entity\src\main\java\com\IMBA" />
-      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\Ssm01-dao\src\main\resources\mappers" />
-      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-common\src\main\java\com\IMBA\utils" />
-      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-webui\src\main\webapp\WEB-INF\views" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-service\src\main\resources" />
+      <recent name="F:\工具\比赛\3-25的比赛\整合\IMBA-master\IMBA-master\IMBA-master\Ssm01-webui\src\main\resources" />
+      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-dao\src\main\resources\mappers" />
+      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-redis\src\main\resources" />
+      <recent name="D:\Documents\Downloads\SSM01-master\Ssm01-webui\src\main\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -1009,13 +926,15 @@
       <workItem from="1553234060526" duration="8589000" />
       <workItem from="1553268283443" duration="721000" />
       <workItem from="1553340230485" duration="5000" />
+      <workItem from="1553340388784" duration="9961000" />
+      <workItem from="1553396052013" duration="1337000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="383727000" />
+    <option name="totallyTimeSpent" value="395025000" />
   </component>
-  <component name="TodoView" selected-index="1">
+  <component name="TodoView">
     <todo-panel id="selected-file">
       <is-autoscroll-to-source value="true" />
     </todo-panel>
@@ -1025,9 +944,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1881" y="170" width="1377" height="948" extended-state="0" />
+    <frame x="1585" y="40" width="1377" height="948" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24373576" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25132877" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1037,11 +957,11 @@
       <window_info id="Web" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.24864277" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6066098" weight="0.1791531" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6066098" weight="0.320304" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.58315563" weight="0.3843648" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.32899022" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.4978678" weight="0.3286334" />
       <window_info anchor="bottom" id="Application Servers" order="7" sideWeight="0.4989339" weight="0.32899022" />
       <window_info anchor="bottom" id="Spring" order="8" sideWeight="0.4989339" weight="0.32899022" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989339" weight="0.32899022" />
@@ -1050,7 +970,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="12" sideWeight="0.4989339" weight="0.32899022" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" sideWeight="0.4989339" weight="0.0032573289" />
-      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.4946695" weight="0.27361563" />
+      <window_info anchor="bottom" id="File Transfer" order="15" sideWeight="0.4946695" visible="true" weight="0.3099631" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1120,359 +1040,360 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/studentmodel.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teaching_evaluationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="22" lean-forward="true" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/treeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="65" column="62" lean-forward="true" selection-start-line="65" selection-start-column="62" selection-end-line="65" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/postDatacontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="45" column="29" selection-start-line="45" selection-start-column="29" selection-end-line="45" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/videoDatacontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_adminServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="63" lean-forward="true" selection-start-line="9" selection-start-column="63" selection-end-line="9" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/studentKey.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-redis/src/main/resources/applicationContext-redis.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="167">
-          <caret line="56" column="80" lean-forward="true" selection-start-line="56" selection-start-column="80" selection-end-line="56" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-redis/src/main/java/com/IMBA/redis/redisConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/communityDatacontroller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="90" column="5" selection-start-line="90" selection-start-column="5" selection-end-line="90" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-361">
-          <caret line="14" column="25" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/videocontroller/LiveController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="496">
-          <caret line="76" column="42" selection-start-line="76" selection-start-column="42" selection-end-line="76" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/elective_commentsMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/notificationMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/clock_inMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1938">
-          <caret line="102" lean-forward="true" selection-start-line="102" selection-end-line="102" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/elective_commentsService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="12" column="12" lean-forward="true" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="12" />
+        <state relative-caret-position="95">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/BackgroundService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="75" lean-forward="true" selection-start-line="18" selection-start-column="75" selection-end-line="18" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/memoMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="10" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="79">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/examinationMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="13" column="14" lean-forward="true" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/examinationServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="30" column="36" lean-forward="true" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/sentenceServiceimpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/studentService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="22" column="46" lean-forward="true" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/BaseController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1235">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="152">
+          <caret line="11" column="11" lean-forward="true" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/videocontroller/ClockController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="137" column="29" selection-start-line="137" selection-start-column="29" selection-end-line="137" selection-end-column="46" />
+        <state relative-caret-position="228">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/filedownloadController.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/BaseController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="50" column="47" lean-forward="true" selection-start-line="50" selection-start-column="47" selection-end-line="50" selection-end-column="47" />
+        <state relative-caret-position="225">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/BackgroundServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="13" column="42" lean-forward="true" selection-start-line="13" selection-start-column="42" selection-end-line="13" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/bullet_commentsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="13" column="63" selection-start-line="13" selection-start-column="63" selection-end-line="13" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/clock_inServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="2" selection-start-line="13" selection-end-line="13" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/course_filesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="2" selection-start-line="10" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/course_infoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="19" column="76" selection-start-line="19" selection-start-column="76" selection-end-line="19" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/courseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="20" column="2" selection-start-line="20" selection-end-line="20" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/download_filesServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="2" selection-start-line="8" selection-end-line="8" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/elective_collectionsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="11" column="2" selection-start-line="11" selection-end-line="11" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/elective_commentsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="51" />
+        <state relative-caret-position="76">
+          <caret line="12" column="2" selection-start-line="12" selection-end-line="12" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/elective_commentsMapper.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveLikeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="108" column="39" selection-start-line="108" selection-start-column="39" selection-end-line="108" selection-end-column="39" />
+        <state relative-caret-position="209">
+          <caret line="15" column="4" lean-forward="true" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/DataAdmin.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/electiveServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state relative-caret-position="76">
+          <caret line="14" column="2" selection-start-line="14" selection-end-line="14" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/InfoController.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/examinationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2641">
-          <caret line="149" column="49" selection-start-line="149" selection-start-column="49" selection-end-line="149" selection-end-column="49" />
+        <state relative-caret-position="76">
+          <caret line="14" column="2" selection-start-line="14" selection-end-line="14" selection-end-column="34" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/course_infoMapper.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/info_functionsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
+        <state relative-caret-position="76">
+          <caret line="7" column="2" selection-start-line="7" selection-end-line="7" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/course_info.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/live_videoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="22" selection-start-line="5" selection-start-column="22" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="76">
+          <caret line="11" column="2" selection-start-line="11" selection-end-line="11" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/course_infoMapper.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/majorServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="20" column="54" selection-start-line="20" selection-start-column="54" selection-end-line="20" selection-end-column="54" />
+        <state relative-caret-position="76">
+          <caret line="10" column="2" selection-start-line="10" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/entity/register.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/matchServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="9" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
+        <state relative-caret-position="76">
+          <caret line="10" column="2" selection-start-line="10" selection-end-line="10" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/stu_adminMapper.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/memoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+        <state relative-caret-position="76">
+          <caret line="13" column="2" selection-start-line="13" selection-end-line="13" selection-end-column="27" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/ProfileController.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/notificationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="35" column="14" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+        <state relative-caret-position="76">
+          <caret line="14" column="2" selection-start-line="14" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_adminMapper.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/posts_collectionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="76">
+          <caret line="8" column="2" selection-start-line="8" selection-end-line="8" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/infocontroller/ScheduleController.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/posts_commentsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="84" column="16" selection-start-line="84" selection-start-column="16" selection-end-line="84" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="76">
+          <caret line="11" column="2" selection-start-line="11" selection-end-line="11" selection-end-column="37" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/registerService.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/postsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="53" selection-start-line="11" selection-start-column="53" selection-end-line="11" selection-end-column="53" />
+        <state relative-caret-position="76">
+          <caret line="10" column="2" selection-start-line="10" selection-end-line="10" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/recently_readServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="2" selection-start-line="8" selection-end-line="8" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/registerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="33" column="56" selection-start-line="33" selection-start-column="56" selection-end-line="33" selection-end-column="56" />
+        <state relative-caret-position="76">
+          <caret line="10" column="2" selection-start-line="10" selection-end-line="10" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/registerMapper.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/resources/springmvc-servlet.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="19" column="39" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="39" />
+        <state relative-caret-position="-168">
+          <caret line="19" column="16" lean-forward="true" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/examinationService.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/resources/provider.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/scoreServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/videoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <caret line="8" column="2" selection-start-line="8" selection-end-line="8" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/courseMapper.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/java/com/IMBA/dao/registerMapper.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_seriesServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="30" column="53" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="30" selection-end-column="53" />
+        <state relative-caret-position="76">
+          <caret line="14" column="2" selection-start-line="14" selection-end-line="14" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/teacherController.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/Video_series_likeServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2356">
-          <caret line="150" column="57" selection-start-line="150" selection-start-column="57" selection-end-line="150" selection-end-column="57" />
+        <state relative-caret-position="76">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/studentController.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_recordServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1558">
-          <caret line="103" column="19" selection-start-line="103" selection-start-column="19" selection-end-line="103" selection-end-column="19" />
+        <state relative-caret-position="95">
+          <caret line="9" column="2" selection-start-line="9" selection-end-line="9" selection-end-column="12" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-dao/src/main/resources/mappers/stu_courseMapper.xml">
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/video_collectionsServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="931">
-          <caret line="49" column="62" selection-start-line="49" selection-start-column="62" selection-end-line="49" selection-end-column="62" />
+        <state relative-caret-position="76">
+          <caret line="8" column="2" selection-start-line="8" selection-end-line="8" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacher_questionnaireServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="2" selection-start-line="10" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacher_notificationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="10" column="2" selection-start-line="10" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacher_courseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="7" column="2" selection-start-line="7" selection-end-line="7" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/studentServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="13" column="2" selection-start-line="13" selection-end-line="13" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_examServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="2" selection-start-line="8" selection-end-line="8" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_courseServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="14" column="2" selection-start-line="14" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_adminServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/sentenceServiceimpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="23" column="47" selection-start-line="23" selection-start-column="47" selection-end-line="23" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/stu_notificationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="8" column="2" selection-start-line="8" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-service/src/main/java/com/IMBA/service/impl/teacherServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="21" column="14" lean-forward="true" selection-start-line="21" selection-start-column="14" selection-end-line="21" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/admincontroller/communityDatacontroller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="41" column="27" lean-forward="true" selection-start-line="41" selection-start-column="27" selection-end-line="41" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/communityController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="295" column="49" selection-start-line="295" selection-start-column="49" selection-end-line="295" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/filedownloadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="32" column="28" lean-forward="true" selection-start-line="32" selection-start-column="28" selection-end-line="32" selection-end-column="28" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/resources/conf.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="19">
-          <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
+          <caret line="1" column="28" selection-start-line="1" selection-start-column="28" selection-end-line="1" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/registermodel.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/treeController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <caret line="32" column="16" lean-forward="true" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-entity/src/main/java/com/IMBA/model/studentregistermodel.java">
+    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/studentController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Ssm01-webui/src/main/java/com/IMBA/weui/controller/communitycontroller/communityController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="230" column="38" selection-start-line="230" selection-start-column="38" selection-end-line="230" selection-end-column="38" />
+        <state relative-caret-position="152">
+          <caret line="104" column="38" lean-forward="true" selection-start-line="104" selection-start-column="38" selection-end-line="104" selection-end-column="38" />
         </state>
       </provider>
     </entry>

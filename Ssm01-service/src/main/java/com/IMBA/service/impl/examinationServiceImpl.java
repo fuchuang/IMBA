@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Calendar;
 import java.util.List;
 
-@Service("examinationService")
+/*@Service("examinationService")*/
 public class examinationServiceImpl implements examinationService {
     @Autowired
     examinationMapper examinationmapper;

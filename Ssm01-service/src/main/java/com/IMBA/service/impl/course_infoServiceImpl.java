@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+/*@Service*/
 public class course_infoServiceImpl implements course_infoService {
     @Autowired
     course_infoMapper  courseInfoMapper;

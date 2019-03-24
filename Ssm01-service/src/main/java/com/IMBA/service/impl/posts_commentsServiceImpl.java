@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("posts_commentsService")
+/*@Service("posts_commentsService")*/
 public class posts_commentsServiceImpl implements posts_commentsService {
     @Autowired
     posts_commentsMapper mapper;

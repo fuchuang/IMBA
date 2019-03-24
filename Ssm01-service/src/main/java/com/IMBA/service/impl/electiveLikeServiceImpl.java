@@ -5,8 +5,8 @@ import com.IMBA.entity.electiveLikes;
 import com.IMBA.service.electiveLikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-@Service("electiveLikeService")
+/*
+@Service("electiveLikeService")*/
 public class electiveLikeServiceImpl implements electiveLikeService {
     @Autowired
     elective_LikesMapper electiveLikesmapper;

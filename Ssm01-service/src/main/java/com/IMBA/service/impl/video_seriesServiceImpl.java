@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("video_seriesService")
+/*@Service("video_seriesService")*/
 public class video_seriesServiceImpl implements
         video_seriesService {
     @Autowired

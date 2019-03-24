@@ -6,7 +6,7 @@ import com.IMBA.service.video_series_likeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+/*@Service*/
 public class Video_series_likeServiceImpl implements video_series_likeService {
     @Autowired
     video_series_likeMapper videoSerieslikeMapper;

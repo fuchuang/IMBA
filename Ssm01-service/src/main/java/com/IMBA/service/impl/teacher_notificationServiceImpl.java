@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
+/*@Service*/
 public class teacher_notificationServiceImpl implements teacher_notificationService {
     @Autowired
     teacher_notificationMapper teacherNotificationMapper;

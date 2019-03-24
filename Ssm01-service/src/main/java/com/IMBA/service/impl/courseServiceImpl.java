@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.Calendar;
 import java.util.List;
 
-@Service("courseService")
+/*@Service("courseService")*/
 public class courseServiceImpl implements courseService {
     @Autowired
     courseMapper coursemapper;

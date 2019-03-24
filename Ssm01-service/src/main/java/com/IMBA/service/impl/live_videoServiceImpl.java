@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("live_videoService")
+/*@Service("live_videoService")*/
 public class live_videoServiceImpl implements live_videoService {
     @Autowired
     live_videoMapper liveVideoMapper;

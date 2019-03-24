@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("matchService")
+/*@Service("matchService")*/
 public class matchServiceImpl implements matchService {
     @Autowired
     matchMapper matchmapper;

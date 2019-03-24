@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("studentService")
+/*@Service("studentService")*/
 public class studentServiceImpl implements studentService {
     @Autowired
     studentMapper mapper;

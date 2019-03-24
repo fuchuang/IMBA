@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-@Service("stu_courseService")
+/*@Service("stu_courseService")*/
 public class stu_courseServiceImpl implements stu_courseService {
     @Autowired
     stu_courseMapper mapper;

@@ -7,7 +7,7 @@ import com.IMBA.service.video_recordService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service
+/*@Service*/
 public class video_recordServiceImpl implements video_recordService {
     @Autowired
     video_recordMapper mapper;

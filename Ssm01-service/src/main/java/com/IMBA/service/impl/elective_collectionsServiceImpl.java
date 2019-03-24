@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 
-@Service("elective_collectionsService")
+/*@Service("elective_collectionsService")*/
 public class elective_collectionsServiceImpl implements elective_collectionsService {
     @Autowired
     elective_collectionsMapper electiveCollectionsMapper;

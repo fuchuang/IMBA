@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://code.alibabatech.com/schema/dubbo
+    http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+    <dubbo:annotation package="com.IMBA.*" />
+    <!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="Ssm01-webui"/>
+
+    <!-- 使用zookeeper注册中心暴露服务地址 -->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+
+    <!-- 用dubbo协议在20880端口暴露服务 -->
+    <dubbo:protocol name="dubbo" port="20880"/>
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.IMBA.service.BackgroundService" ref="BackgroundService"/>
+    <dubbo:service interface="com.IMBA.service.bullet_commentsService" ref="bullet_commentsService"/>
+    <dubbo:service interface="com.IMBA.service.clock_inService" ref="clock_inService"/>
+    <dubbo:service interface="com.IMBA.service.course_filesService" ref="course_filesService"/>
+    <dubbo:service interface="com.IMBA.service.course_infoService" ref="course_infoService"/>
+    <dubbo:service interface="com.IMBA.service.courseService" ref="courseService"/>
+    <dubbo:service interface="com.IMBA.service.download_filesService" ref="download_filesService"/>
+
+    <dubbo:service interface="com.IMBA.service.elective_collectionsService" ref="elective_collectionsService"/>
+    <dubbo:service interface="com.IMBA.service.elective_commentsService" ref="elective_commentsService"/>
+    <dubbo:service interface="com.IMBA.service.electiveLikeService" ref="electiveLikeService"/>
+    <dubbo:service interface="com.IMBA.service.electiveService" ref="electiveService"/>
+    <dubbo:service interface="com.IMBA.service.examinationService" ref="examinationService"/>
+    <dubbo:service interface="com.IMBA.service.info_functionsService" ref="info_functionsService"/>
+    <dubbo:service interface="com.IMBA.service.live_videoService" ref="live_videoService"/>
+    <dubbo:service interface="com.IMBA.service.majorService" ref="majorService"/>
+    <dubbo:service interface="com.IMBA.service.matchService" ref="matchService"/>
+    <dubbo:service interface="com.IMBA.service.memoService" ref="memoService"/>
+    <dubbo:service interface="com.IMBA.service.notificationService" ref="notificationService"/>
+    <dubbo:service interface="com.IMBA.service.posts_collectionService" ref="posts_collectionService"/>
+    <dubbo:service interface="com.IMBA.service.posts_commentsService" ref="posts_commentsService"/>
+    <dubbo:service interface="com.IMBA.service.postsService" ref="postsService"/>
+    <dubbo:service interface="com.IMBA.service.recently_readService" ref="recently_readService"/>
+
+
+    <dubbo:service interface="com.IMBA.service.registerService" ref="registerService"/>
+    <dubbo:service interface="com.IMBA.service.scoreService" ref="scoreService"/>
+    <dubbo:service interface="com.IMBA.service.sentenceService" ref="sentenceService"/>
+    <dubbo:service interface="com.IMBA.service.stu_adminService" ref="stu_adminService"/>
+    <dubbo:service interface="com.IMBA.service.stu_courseService" ref="stu_courseService"/>
+    <dubbo:service interface="com.IMBA.service.stu_examService" ref="stu_examService"/>
+    <dubbo:service interface="com.IMBA.service.stu_notificationService" ref="stu_notificationService"/>
+    <dubbo:service interface="com.IMBA.service.studentService" ref="studentService"/>
+    <dubbo:service interface="com.IMBA.service.teacher_courseService" ref="teacher_courseService"/>
+    <dubbo:service interface="com.IMBA.service.teacher_notificationService" ref="teacher_notificationService"/>
+    <dubbo:service interface="com.IMBA.service.teacher_questionnaireService" ref="teacher_questionnaireService"/>
+    <dubbo:service interface="com.IMBA.service.teacherService" ref="teacherService"/>
+    <dubbo:service interface="com.IMBA.service.teaching_evaluationService" ref="teaching_evaluationService"/>
+    <dubbo:service interface="com.IMBA.service.video_collectionsService" ref="video_collectionsService"/>
+    <dubbo:service interface="com.IMBA.service.video_recordService" ref="video_recordService"/>
+    <dubbo:service interface="com.IMBA.service.video_series_likeService" ref="video_series_likeService"/>
+    <dubbo:service interface="com.IMBA.service.video_seriesService" ref="video_seriesService"/>
+    <dubbo:service interface="com.IMBA.service.videoService" ref="videoService"/>
+
+
+
+
+
+    <!-- 接口实现类-->
+    <bean id="BackgroundService" class="com.IMBA.service.impl.BackgroundServiceImpl"/>
+    <bean id="bullet_commentsService" class="com.IMBA.service.impl.bullet_commentsServiceImpl"/>
+    <bean id="clock_inService" class="com.IMBA.service.impl.clock_inServiceImpl"/>
+    <bean id="course_filesService" class="com.IMBA.service.impl.course_filesServiceImpl"/>
+    <bean id="course_infoService" class="com.IMBA.service.impl.course_infoServiceImpl"/>
+    <bean id="courseService" class="com.IMBA.service.impl.courseServiceImpl"/>
+    <bean id="download_filesService" class="com.IMBA.service.impl.download_filesServiceImpl"/>
+    <bean id="elective_collectionsService" class="com.IMBA.service.impl.elective_collectionsServiceImpl"/>
+    <bean id="elective_commentsService" class="com.IMBA.service.impl.elective_commentsServiceImpl"/>
+    <bean id="electiveLikeService" class="com.IMBA.service.impl.electiveLikeServiceImpl"/>
+    <bean id="electiveService" class="com.IMBA.service.impl.electiveServiceImpl"/>
+    <bean id="examinationService" class="com.IMBA.service.impl.examinationServiceImpl"/>
+    <bean id="info_functionsService" class="com.IMBA.service.impl.info_functionsServiceImpl"/>
+    <bean id="live_videoService" class="com.IMBA.service.impl.live_videoServiceImpl"/>
+    <bean id="majorService" class="com.IMBA.service.impl.majorServiceImpl"/>
+    <bean id="matchService" class="com.IMBA.service.impl.matchServiceImpl"/>
+    <bean id="memoService" class="com.IMBA.service.impl.memoServiceImpl"/>
+    <bean id="notificationService" class="com.IMBA.service.impl.notificationServiceImpl"/>
+    <bean id="posts_collectionService" class="com.IMBA.service.impl.posts_collectionServiceImpl"/>
+    <bean id="posts_commentsService" class="com.IMBA.service.impl.posts_commentsServiceImpl"/>
+    <bean id="postsService" class="com.IMBA.service.impl.postsServiceImpl"/>
+    <bean id="recently_readService" class="com.IMBA.service.impl.recently_readServiceImpl"/>
+    <bean id="registerService" class="com.IMBA.service.impl.registerServiceImpl"/>
+    <bean id="scoreService" class="com.IMBA.service.impl.scoreServiceImpl"/>
+    <bean id="sentenceService" class="com.IMBA.service.impl.sentenceServiceimpl"/>
+    <bean id="stu_adminService" class="com.IMBA.service.impl.stu_adminServiceImpl"/>
+    <bean id="stu_courseService" class="com.IMBA.service.impl.stu_courseServiceImpl"/>
+    <bean id="stu_examService" class="com.IMBA.service.impl.stu_examServiceImpl"/>
+    <bean id="stu_notificationService" class="com.IMBA.service.impl.stu_notificationServiceImpl"/>
+    <bean id="studentService" class="com.IMBA.service.impl.studentServiceImpl"/>
+    <bean id="teacher_courseService" class="com.IMBA.service.impl.teacher_courseServiceImpl"/>
+    <bean id="teacher_notificationService" class="com.IMBA.service.impl.teacher_notificationServiceImpl"/>
+    <bean id="teacher_questionnaireService" class="com.IMBA.service.impl.teacher_questionnaireServiceImpl"/>
+    <bean id="teacherService" class="com.IMBA.service.impl.teacherServiceImpl"/>
+    <bean id="teaching_evaluationService" class="com.IMBA.service.impl.teaching_evaluationServiceImpl"/>
+
+    <bean id="video_collectionsService" class="com.IMBA.service.impl.video_collectionsServiceImpl"/>
+    <bean id="video_recordService" class="com.IMBA.service.impl.video_recordServiceImpl"/>
+    <bean id="video_series_likeService" class="com.IMBA.service.impl.Video_series_likeServiceImpl"/>
+    <bean id="video_seriesService" class="com.IMBA.service.impl.video_seriesServiceImpl"/>
+    <bean id="videoService" class="com.IMBA.service.impl.videoServiceImpl"/>
+
+
+    <import resource="classpath*:applicationContext-dao.xml"/>
+</beans>

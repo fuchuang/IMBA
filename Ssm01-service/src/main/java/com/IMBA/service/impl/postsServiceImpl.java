@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service("postsService")
+/*@Service("postsService")*/
 public class postsServiceImpl implements postsService {
     @Autowired
     postsMapper mapper;

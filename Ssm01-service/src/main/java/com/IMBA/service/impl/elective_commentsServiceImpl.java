@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
 
-@Service("elective_commentsService")
+/*@Service("elective_commentsService")*/
 public class elective_commentsServiceImpl implements elective_commentsService {
     @Autowired
     elective_commentsMapper electiveCommentsMapper;

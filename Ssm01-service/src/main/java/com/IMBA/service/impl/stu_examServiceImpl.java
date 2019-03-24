@@ -6,7 +6,7 @@ import com.IMBA.service.stu_examService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("stu_examService")
+/*@Service("stu_examService")*/
 public class stu_examServiceImpl implements stu_examService {
     @Autowired
     stu_examMapper mapper;
